@@ -131,6 +131,37 @@
 		background: var(--color-nav-hor-active);
 		width: 100%;
 	}
+
+	#main_list{
+		background: var(--color-nav-hor-active);
+		display: grid;
+		grid-gap: 0px;
+		grid-template-rows: auto auto auto auto auto auto auto auto 4vh;
+		grid-template-columns: auto;
+	}
+	.list_items{
+		width: 100%;
+		height: 100%;
+	}
+	.list_items:nth-child(odd){
+		background: var(--color-nav-hor-active);
+	}
+	.list_items:nth-child(even){
+		background: var(--color-nav-hor);
+	}
+	#page_list{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		grid-area: 9 / 1 / 10 / 2 ;
+		background: var(--color-nav-hor-active);
+		width: 100%;
+	}
 	#footer{
 		background: var(--background-color);
 	}
+
+	#footer{
+		background: var(--background-color);
+	}
+
