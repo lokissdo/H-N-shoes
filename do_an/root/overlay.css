@@ -131,6 +131,7 @@
 		background: var(--color-nav-hor-active);
 		width: 100%;
 	}
+
 	#main_list{
 		background: var(--color-nav-hor-active);
 		display: grid;
@@ -159,3 +160,8 @@
 	#footer{
 		background: var(--background-color);
 	}
+
+	#footer{
+		background: var(--background-color);
+	}
+
