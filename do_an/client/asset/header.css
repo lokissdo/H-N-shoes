@@ -6,8 +6,8 @@
 :root{
     --color-text:rgba(255, 255, 255, 0.726);
     --headerHeight: 20vh;
-    --header__top:calc(var(--headerHeight)*0.7);
-    --header__bot:calc(var(--headerHeight)*0.3);
+    --header__top:calc(var(--headerHeight)*0.6);
+    --header__bot:calc(var(--headerHeight)*0.4);
 }
 header{
     height: var(--headerHeight);
@@ -23,16 +23,15 @@ a{
 
     display: flex;
     justify-content: space-around;
-
-
 }
+
 .header__bot{
     margin-top: var(--header__top);
     height: var(--header__bot);
     width: 100%;
     position: fixed;
 
-    background-color: #777;
+    background-color: #dcdcdc;
 
    
 }.header_drop{
@@ -55,6 +54,7 @@ li{
     padding: 15px 20px;
     padding-right: 50px;
     display: none;
+    color: black;
 }
 .wrap_items_header{
     display: flex;
@@ -66,10 +66,32 @@ li{
 .top_header_left{
    padding:10px;
    cursor: pointer;
+   margin-left: -150px;
 }
 .top_header_right{
    padding:10px;
    cursor: pointer; 
+   margin-right: -150px;
+    display: flex;
+    position: relative;
+}
+#search{
+    width: 250px;
+    border-radius: 10px;
+    border: 2px solid rgb(136, 131, 131);
+}
+.search_form{
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 200px;
+    height: 5vh;
+
+}
+.search_form_button{
+    width: 60px;
+    border-radius: 10px;
+ border: 2px solid rgb(136, 131, 131);
 }
 .sign__text{
    color :var(--color-text);
@@ -82,35 +104,22 @@ li{
     padding-right: 50px;
 }
 .wrapper_header__top{
-    
+    width: 100vw;
     display: flex;
     justify-content: space-around;
-    margin: 0px -100px;
+   
 }
 .cart_text{
    color :var(--color-text);
 }
 
-/* .top_header_mid{
-   
+.top_header_mid{
+   margin-left: -100px;
      
- } */
+ } 
 .items_top_header{
 padding-top: 20px;
 }
-/* .signin{
-
-}
-.signup{
-
-}
-.items_top_header{
-
-}
-.cart_text{
-
-} */
-=======
 .sign{
     display: inline-block;
 }
@@ -122,5 +131,9 @@ padding-top: 20px;
     font-weight: 700;
     font-family: sans-serif;
     padding: 10px 10px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
 }
-
+.items_header_bot:hover{
+    border-bottom: 2px solid #cd2b2f;
+}
