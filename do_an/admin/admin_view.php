@@ -96,27 +96,9 @@
 			</a>
 		</ul>
 		</div>
+			
 		<?php include "$list.php"; ?>
-
-			<a href="admin_view.php?link=admin" class="active"><li>Admin</li></a>
-			<a href="admin_view.php?link=manufacturers"><li>Nhà sản xuất</li></a>
-			<a href="admin_view.php?link=client"><li>Khách hàng</li></a>
-			<a href="admin_view.php?link=in"><li>Đơn nhập</li></a>
-			<a href="admin_view.php?link=out"><li>Đơn xuất</li></a>
-		</ul>
-		</div>
-		<div id="main_body">
-			<div class="items"></div>
-			<div class="items"></div>
-			<div class="items"></div>
-			<div class="items"></div>
-			<div class="items"></div>
-			<div class="items"></div>
-			<div class="items"></div>
-			<div class="items"></div>
-
-			<div id="page"></div>
-		</div>
+			
 		<div id="footer">
 			
 		</div>
