@@ -6,6 +6,7 @@
 	<title>Login admin</title>
 	<link rel="stylesheet" type="text/css" href="../root/overlay.css">
 
+
 </head>
 <body>
 
@@ -53,6 +54,7 @@
 
 	?>
 
+
 	<div id="main_div">
 		<div id="nav_ver">
 			<img src="//upload.wikimedia.org/wikipedia/vi/thumb/3/37/Bitis_logo.svg/501px-Bitis_logo.svg.png">
@@ -64,6 +66,7 @@
 		
 		<div id="compartment">
 
+
 			<form action="add_search.php">
 				<input type="text" name="tim_kiem" value="<?php echo $tim_kiem ?>">
 				<input type="text" name="link" value="<?php echo $link ?>" hidden >
@@ -73,11 +76,13 @@
 				<input type="text" name="tim_kiem">
 				<button>Tìm kiếm</button>
 
+
 			</form>
 		</div>
 		
 		<div id="nav_hor">
 		<ul>
+
 
 			<a href="admin_view.php?link=admin<?php echo ($tim_kiem) ? "&tim_kiem=$tim_kiem" : "" ?>" <?php if ($link == 'admin') {echo 'class="active"';} ?>>
 				<li>Admin</li>
@@ -99,10 +104,13 @@
 			
 		<?php include "$list.php"; ?>
 			
+
 		<div id="footer">
 			
 		</div>
 	</div>
+
 	<?php mysqli_close($ket_noi); ?>
 </body>
 </html>
+
