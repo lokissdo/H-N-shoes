@@ -71,6 +71,7 @@
 				<input type="text" name="tim_kiem" value="<?php echo $tim_kiem ?>">
 				<input type="text" name="link" value="<?php echo $link ?>" hidden >
 				<button type="submit">Tìm kiếm tên</button>
+			</form>
 		</div>
 		
 		<div id="nav_hor">
