@@ -69,11 +69,6 @@
 				<input type="text" name="link" value="<?php echo $link ?>" hidden >
 				<button type="submit">Tìm kiếm tên</button>
 
-			<form>
-				<input type="text" name="tim_kiem">
-				<button>Tìm kiếm</button>
-
-			</form>
 		</div>
 		
 		<div id="nav_hor">
