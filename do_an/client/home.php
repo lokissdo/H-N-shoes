@@ -9,7 +9,6 @@
    <link rel="stylesheet"  href="asset/grid.css">
    <link rel="stylesheet"  href="asset/body.css">
    <link rel="stylesheet"  href="asset/footer.css">
-
    <!-- media="(min-width:1024px)" -->
     <title>Store</title>
 </head>
@@ -19,14 +18,14 @@
             <div class="wrapper_header__top">
                 <div class="items_top_header top_header_left">
                     <div class=" sign signup">
-                        <a href="#" >
+                        <a href="./signup.php" >
                             <div class="sign__text">
                                 Đăng ký
                             </div>
                         </a>
                     </div>
                     <div class="sign signin"> 
-                        <a href="#" >
+                        <a href="./login.php" >
                             <div class="sign__text">
                                 Đăng nhập
                             </div>
@@ -204,8 +203,8 @@
             </div>
 
         </div>
-        <div class="footer_copy_right">
-           <div class="footer_copy_right-text">© Bản quyền thuộc về . Thiết kế website H&N </div>
+        <div class="footer_copyright">
+           <div class="footer_copyright-text">© Bản quyền thuộc về . Thiết kế website H&N </div>
         </div>
     </footer>
 </body>
