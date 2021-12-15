@@ -52,3 +52,13 @@ function buttonclick(e){
         
 }
 button.addEventListener('click',buttonclick)
+function success(){
+    warning.classList.add("successSignup");
+    warning.innerHTML="Đăng ký thành công !  <a href=./login.php>Đăng nhập</a> ";
+}
+function error(mess){
+ warning.textContent=mess;
+ setTimeout(()=>{
+     warning.textContent="";
+ },3000);
+}

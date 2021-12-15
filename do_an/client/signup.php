@@ -15,7 +15,7 @@
             <div class="loginform_container">
                 <div class="loginform_title">Đăng ký</div>
                 <div class="signup_instruct"> Đăng ký tài khoản để có trải nghiệm tốt nhất tại H&N SHOP</div>
-                <div id="warning_signup">
+                <div id="warning_signup" class="warning_signup">
                    <?php
                    $Error=0;
                     if (isset($_POST['email'])){
@@ -29,31 +29,19 @@
                         $birthday=isset($_POST['birthday'])?$_POST['birthday']:NULL;
                        $res=createNewUser($password,$fullname,$gender,$email,$phonenumber,$birthday);
                        if($res===1) echo "<script > 
-                                                var warning=document.querySelector(\"#warning_signup\");
-                                                 warning.classList.add(\"successSignup\");
-                                                 warning.innerHTML=\"Đăng ký thành công !  <a href=./login.php>Đăng nhập</a> \";
+                                                window.onload=()=>{success(); }
                                         </script>";
                         else if ($res===0){
                             echo" <script >
-                                    var warning=document.querySelector(\"#warning_signup\");
-                                    warning.classList.remove(\"successSignup\");
-                                    warning.textContent=\"Tài khoản đã tồn tại!\"
-                                    setTimeout(()=>{
-                                        warning.textContent=\"\";
-                                    },3000);
+                                    window.onload=()=>{error(\"Tài khoản đã tồn tại!\");}
                                 </script>";
                             $Error=1;
                         }
                         else {
-                            echo" <script >
-                            var warning=document.querySelector(\"#warning_signup\");
-                            warning.classList.remove(\"successSignup\");
-                            warning.textContent=\"Some thing goes wrong :( !\"
-                            setTimeout(()=>{
-                                warning.textContent=\"\";
-                            },3000);
-                        </script>";
-                    $Error=1;
+                            echo"<script >
+                                    window.onload=()=>{ error(\"Something goes wrong :(!\");}
+                                </script>";
+                         $Error=1;
                         }
                      }
                     ?> 

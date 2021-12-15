@@ -95,7 +95,7 @@ body {
 .required span{
  color: #000000;
 }
-#warning_signup{
+.warning_signup{
     margin-top: 20px;
     height: 30px;
     color: rgb(255, 0, 0);

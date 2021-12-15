@@ -40,13 +40,9 @@
                         $res=verifyUser($email,$password);
                        // echo "$email $password";
                         if(!$res){
-                            echo "      <script > 
-                                                var warning=document.querySelector(\"#warning_signin\");
-                                                 warning.textContent=\"Thông tin đăng nhập chưa chính xác! \";
-                                                 setTimeout(()=>{
-                                                    warning.textContent=\"\";
-                                                },3000);
-                                        </script>";
+                            echo "  <script > 
+                                        window.onload=()=>{error(); }
+                                    </script>";
                         }
                         else {
                             header("Location: ./home.php");

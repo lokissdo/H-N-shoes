@@ -15,3 +15,9 @@ function buttonclick(e){
         
 }
 button.addEventListener('click',buttonclick)
+function error(){
+     warning.textContent="Thông tin đăng nhập chưa chính xác! ";
+     setTimeout(()=>{
+        warning.textContent="";
+    },3000);
+}
