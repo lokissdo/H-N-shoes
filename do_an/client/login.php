@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,19 +36,29 @@
                 </div>
                 <div id="warning_signin">
                 <?php
+                  if(isset($_SESSION['error'])){
+                    echo " <script > 
+                            window.onload=()=>{error(); }
+                        </script>";
+                        unset($_SESSION['error']);
+                  }
                     if (isset($_POST['email'])){
                         require_once "api/signinProc.php";
-                        $email=$_POST['email'];
-                        $password=$_POST['password'];
-                        $res=verifyUser($email,$password);
+                        $id="";
+                        $email=addslashes($_POST['email']);
+                        $password=addslashes($_POST['password']);
+                        $res=verifyUser($email,$password,$id);
                        // echo "$email $password";
                         if(!$res){
-                            echo "  <script > 
-                                        window.onload=()=>{error(); }
-                                    </script>";
+                            $_SESSION['error']="yes";
+                            header("Location: ".$_SERVER['PHP_SELF']);
+                            // header('location:'.$_SERVER['REQUEST_URI'].'');
+                            exit;
                         }
                         else {
-                            header("Location: ./home.php");
+                            $_SESSION['id']=$id;                     
+                            header("Location: ./");
+                            exit;
                         }
                     }; 
                         ?>

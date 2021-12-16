@@ -29,7 +29,7 @@ function buttonclick(e){
     {
         e.preventDefault();
         warning.classList.remove("successSignup");
-        warning.textContent="Mật khẩu khôn trùng khớp!";
+        warning.textContent="Mật khẩu không trùng khớp!";
         countGender=0;
         setTimeout(()=>{
             warning.textContent="";
