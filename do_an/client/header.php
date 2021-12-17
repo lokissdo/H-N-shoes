@@ -10,9 +10,20 @@
                         </a>
                     </div>
                     <div class="sign signin"> 
-                        <a href="./login.php" >
+                        <a href=
+                        <?php
+                            require "api/authenticate.php";
+                         if (Authenticate()){
+                            echo "\"./signout.php\"";
+                        }else echo  "\"./login.php\"";
+                        ?> >
                             <div class="sign__text">
-                                Đăng nhập
+                            <?php
+                            if (Authenticate()){
+                                echo "Đăng xuất";
+                            }
+                            else echo "Đăng nhập";
+                            ?>  
                             </div>
                         </a> 
                     </div>

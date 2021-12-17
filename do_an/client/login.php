@@ -1,5 +1,11 @@
 <?php
 session_start();
+require "api/authenticate.php";
+if (Authenticate()){
+    header("Location: ./");
+    exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,28 +43,34 @@ session_start();
                 <div id="warning_signin">
                 <?php
                   if(isset($_SESSION['error'])){
-                    echo " <script > 
-                            window.onload=()=>{error(); }
-                        </script>";
-                        unset($_SESSION['error']);
+                    // echo " <script > 
+                    //         window.onload=()=>{error($_SESSION[error]); }
+                    //     </script>";
+                    $temp=$_SESSION['error'];
+                    echo $temp;
+                    unset($_SESSION['error']);
                   }
                     if (isset($_POST['email'])){
                         require_once "api/signinProc.php";
                         $id="";
                         $email=addslashes($_POST['email']);
                         $password=addslashes($_POST['password']);
-                        $res=verifyUser($email,$password,$id);
-                       // echo "$email $password";
+                        $res=verifyUser($email,$password,$id);                       
                         if(!$res){
-                            $_SESSION['error']="yes";
+                            $_SESSION['error']="Thông tin đăng nhập chưa chính xác!";
                             header("Location: ".$_SERVER['PHP_SELF']);
                             // header('location:'.$_SERVER['REQUEST_URI'].'');
                             exit;
                         }
                         else {
-                            $_SESSION['id']=$id;                     
-                            header("Location: ./");
-                            exit;
+                            $_SESSION['id']=$id;
+                            $token= md5(time()).strval(time());
+                            if (isset($_POST['remembered'])) {
+                                setcookie('token',$token,time()+86400*30);
+                                updateToken($token);
+                            }                               
+                           header("Location: ./");
+                           exit;
                         }
                     }; 
                         ?>
@@ -70,7 +82,7 @@ session_start();
                     </div>
                     <div class="loginform_saved_forgotpassword">
                         <div class="savedpassword">
-                            <input type="checkbox" id="checkbox"> 
+                            <input type="checkbox" name="remembered" id="checkbox"> 
                             <label for="checkbox">Nhớ mật khẩu</label>         
                         </div>
                         <div class="forgotpassword"> Quên mật khẩu</div>

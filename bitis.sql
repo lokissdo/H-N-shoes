@@ -43,9 +43,10 @@ CREATE TABLE `cli_list` (
   `address` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
   `phone` varchar(15) NOT NULL,
-  `photo` varchar(200) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `birthday` date
+  `photo` varchar(200) ,
+  `password` varchar(200) NOT NULL,
+  `birthday` date,
+  `token` varchar(200),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Change Structure

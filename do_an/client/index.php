@@ -1,5 +1,6 @@
 <?php
  session_start();  
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +21,7 @@
     <div class="body_product">
         <div class="grid wide">
             <div class="row">
-                <div class="col m-3 c-3 l-3">
+                <div class="col m-4 c-6 l-3">
                    <div class="container_product">
                         <img src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/sale-off-3.jpg" width="100%" height="70%"alt="">
                         <div class="name_product">
@@ -31,57 +32,57 @@
                         </div>
                    </div>
                 </div>
-                <div class="col m-3 c-3 l-3">
+                <div class="col m-4 c-6 l-3">
                     <div class="container_product">
 
                     </div>
                 </div>
-                <div class="col m-3 c-3 l-3">
+                <div class="col m-4 c-6 l-3">
                     <div class="container_product">
 
                     </div>
                 </div>
-                <div class="col m-3 c-3 l-3">
+                <div class="col m-4 c-6 l-3">
                     <div class="container_product">
 
                     </div>
                 </div>
-                <div class="col m-3 c-3 l-3">
+                <div class="col m-4 c-6 l-3">
                     <div class="container_product">
 
                     </div>
                 </div>
-                <div class="col m-3 c-3 l-3">
+                <div class="col m-4 c-6 l-3">
                     <div class="container_product">
  
                     </div>
                  </div>
-                 <div class="col m-3 c-3 l-3">
+                 <div class="col m-4 c-6 l-3">
                      <div class="container_product">
  
                      </div>
                  </div>
-                 <div class="col m-3 c-3 l-3">
+                 <div class="col m-4 c-6 l-3">
                      <div class="container_product">
  
                      </div>
                  </div>
-                 <div class="col m-3 c-3 l-3">
+                 <div class="col m-4 c-6 l-3">
                      <div class="container_product">
  
                      </div>
                  </div>
-                 <div class="col m-3 c-3 l-3">
+                 <div class="col m-4 c-6 l-3">
                      <div class="container_product">
  
                      </div>
                  </div>
-                 <div class="col m-3 c-3 l-3">
+                 <div class="col m-4 c-6 l-3">
                     <div class="container_product">
 
                     </div>
                 </div>
-                <div class="col m-3 c-3 l-3">
+                <div class="col m-4 c-6 l-3">
                     <div class="container_product">
 
                     </div>

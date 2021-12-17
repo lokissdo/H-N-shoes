@@ -2,7 +2,7 @@ let button=document.querySelector("#button_login");
 var warning=document.querySelector("#warning_signin");
 function buttonclick(e){
     let input=document.querySelectorAll("input")
-    if(!input[0].value ||!input[0].value){
+    if(!input[0].value ||!input[1].value){
         e.preventDefault();
         warning.textContent="Vui lòng điền đầy đủ thông tin!"
         setTimeout(()=>{
@@ -15,9 +15,10 @@ function buttonclick(e){
         
 }
 button.addEventListener('click',buttonclick)
-function error(){
-     warning.textContent="Thông tin đăng nhập chưa chính xác! ";
+function error(mess){
+     warning.textContent=mess;
      setTimeout(()=>{
         warning.textContent="";
     },3000);
+    console.log(mess);
 }
