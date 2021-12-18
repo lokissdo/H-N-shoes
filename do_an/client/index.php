@@ -9,87 +9,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="public/icongame.jpg" type="image/.jpg">
-   <link rel="stylesheet"  href="asset/header.css">
-   <link rel="stylesheet"  href="asset/grid.css">
-   <link rel="stylesheet"  href="asset/body.css">
    <link rel="stylesheet"  href="asset/footer.css">
    <!-- media="(min-width:1024px)" -->
     <title>Store</title>
 </head>
 <body>
     <?php include "header.php" ?>
-    <div class="body_product">
-        <div class="grid wide">
-            <div class="row">
-                <div class="col m-4 c-6 l-3">
-                   <div class="container_product">
-                        <img src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/sale-off-3.jpg" width="100%" height="70%"alt="">
-                        <div class="name_product">
-                            Tên giày
-                        </div>
-                        <div class="price_product">
-                            Giá giày
-                        </div>
-                   </div>
-                </div>
-                <div class="col m-4 c-6 l-3">
-                    <div class="container_product">
-
-                    </div>
-                </div>
-                <div class="col m-4 c-6 l-3">
-                    <div class="container_product">
-
-                    </div>
-                </div>
-                <div class="col m-4 c-6 l-3">
-                    <div class="container_product">
-
-                    </div>
-                </div>
-                <div class="col m-4 c-6 l-3">
-                    <div class="container_product">
-
-                    </div>
-                </div>
-                <div class="col m-4 c-6 l-3">
-                    <div class="container_product">
- 
-                    </div>
-                 </div>
-                 <div class="col m-4 c-6 l-3">
-                     <div class="container_product">
- 
-                     </div>
-                 </div>
-                 <div class="col m-4 c-6 l-3">
-                     <div class="container_product">
- 
-                     </div>
-                 </div>
-                 <div class="col m-4 c-6 l-3">
-                     <div class="container_product">
- 
-                     </div>
-                 </div>
-                 <div class="col m-4 c-6 l-3">
-                     <div class="container_product">
- 
-                     </div>
-                 </div>
-                 <div class="col m-4 c-6 l-3">
-                    <div class="container_product">
-
-                    </div>
-                </div>
-                <div class="col m-4 c-6 l-3">
-                    <div class="container_product">
-
-                    </div>
-                </div>
-            </div>
-        </div>
+    <?php include "slider.php" ?>
+    <?php include "category.php" ?>
+    <div>
+    <?php include "itemhome.php"?>
     </div>
+
+
     <footer class="footer">
         <div class="container_footer">
             <div class="footer_item">

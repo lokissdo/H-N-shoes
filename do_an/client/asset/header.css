@@ -11,6 +11,8 @@
 }
 header{
     height: var(--headerHeight);
+    position: relative;
+    z-index: 1000;
 }
 a{
     text-decoration: none;
@@ -20,7 +22,6 @@ a{
     width: 100vw;
     position: fixed; 
     background-color: black;
-
     display: flex;
     justify-content: space-around;
 }
@@ -77,21 +78,46 @@ li{
 }
 #search{
     width: 250px;
-    border-radius: 10px;
-    border: 2px solid rgb(136, 131, 131);
+    border-radius: 40px;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.search_input{
+    visibility:hidden;
+}
+.showInput{
+    visibility: visible;
+    animation: fadeIn 1s ease ;
+
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
 }
 .search_form{
     display: flex;
     position: absolute;
     top: 10px;
     right: 200px;
-    height: 5vh;
+    height: 7vh;
 
 }
 .search_form_button{
-    width: 60px;
-    border-radius: 10px;
- border: 2px solid rgb(136, 131, 131);
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     border: 2px solid black;  
+    cursor: pointer;
+ background: url('https://www.converse.com.vn/catalog/view/theme/default/images/search.png') center center no-repeat;
+}
+.search_form_button:hover{
+    border: 2px solid rgb(136, 131, 131);   
+
 }
 .sign__text{
    color :var(--color-text);

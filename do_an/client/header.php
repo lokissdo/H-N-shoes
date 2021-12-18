@@ -1,3 +1,8 @@
+
+<head>
+    <link rel="stylesheet" href="asset/header.css">
+</head>
+<body>
 <header>
         <div class="header__top">
             <div class="wrapper_header__top">
@@ -39,8 +44,8 @@
                     <div class="search">
                         <form class="search_form"action="./Process/search.php" method="GET">
                             <!-- <label for="fname">Anh:</label><br> -->
-                            <input type="text" id="search" name="search"><br>
-                            <button class="search_form_button" type="submit">Tìm kiếm</button>
+                            <input type="text" placeholder="   Tìm kiếm"class="search_input"id="search" name="search" ><br>
+                            <button id="search_form_button"class="search_form_button" type="submit"></button>
                         </form>
                     </div>
                     <div class="cart">
@@ -83,3 +88,5 @@
             </div>
         </div>
     </header>
+    <script src="js/header.js"></script>
+</body>

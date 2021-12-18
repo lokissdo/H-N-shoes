@@ -1,0 +1,57 @@
+body{
+ margin: 0px;
+}
+.slider {
+    color: black;
+    width: 100%;
+    display: flex;
+    height: calc(100vw*0.3);
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth; 
+}
+  .slide {
+    width: 100%;
+    height: calc(100vw*0.3);
+  }
+  .slide_button_container{
+      margin: 0px 46%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  .slide_button{
+      border-radius: 20px;
+      padding: 5px;
+      background-color: white;
+      margin-top: 20px;
+      cursor:context-menu;
+      transition: all 0.5s ease;
+  }
+  .hovered:hover{
+    cursor: pointer;
+    border: 1px solid rgb(182 182 182);
+  }
+  .bordered{
+    border: 1px solid rgb(182 182 182);
+  }
+  .slide_button div{
+    background-color:rgb(182 182 182);
+    padding: 8px;
+    border-radius: 8px;
+  }
+  #slide-1{
+      background-image: url("https://file.hstatic.net/1000230642/file/banner_d87d78755b4e48b6b2fc6e51b0ba4d38_master.jpg");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+  }
+  #slide-2{
+      background-image: url("https://www.converse.com.vn/pictures/catalog/home/slide-homepage/Chuck-70-banner-web-grid-wall.jpg");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+  }
+  #slide-3{
+      background-image: url("https://www.converse.com.vn/pictures/catalog/home/slide-homepage/Create-Next-Home-1920x730.jpg");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+  }

@@ -1,0 +1,73 @@
+.categories{
+    margin-bottom: 10px;
+}
+.cate_top{
+    display: flex;
+    margin-top: 40px;
+
+}
+.cate_top_text{
+    position: relative;
+    padding: 0px 10px;
+    font-size: 30px;  top: -10px;
+    font-weight: 540;
+    font-family: sans-serif, 'Courier New', Courier, monospace;
+}
+.cate_top_itemLR{
+    border-bottom: 1px dotted rgb(19, 17, 17);
+    height: 10px;
+    flex: 1;
+}
+.cate_mid{
+display: flex;
+margin-left: 10vw;
+margin-right: 5vw;
+width: 85vw;
+}
+.cate_bot{
+    border-bottom: 1px solid black;
+}
+.cate_mid h2{
+ margin: 0px;
+ margin-left: 20%;
+}
+.cate_mid_item{
+    flex:1;
+    position: relative;
+    cursor: pointer;
+}
+.cate_mid_item a{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.cate_mid_item div{
+height: 15vw;
+width: 20vw; 
+
+ background-size: 100% 100%;
+}
+.cate-men div{
+    background-image: url('https://www.converse.com.vn/pictures/catalog/products/sneakers/2021/ctas/171573c/171573Cstandard.jpg') ;
+}
+.cate-women div{
+    background-image: url('https://www.converse.com.vn/pictures/catalog/products/sneakers/2021/ctas/571357c/571357Cstandard.jpg') ;
+}
+.cate-kid div{
+    background-image: url('https://www.converse.com.vn/pictures/catalog/products/sneakers/chuck-taylor-all-star/756117c/756117standard.jpg') ;
+}
+
+.cate_arrow-down {
+    border: solid rgb(82, 81, 81);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 17px;
+    transform: rotate(45deg);
+    margin-top: -17px;
+    background-image: linear-gradient(135deg,rgba(255, 255, 255, 0), rgba(255, 255, 0, 0),white,white,white, rgba(0, 0, 255, 0));
+    margin-left: 17%;
+    /* position: relative;
+    z-index: 1; */
+}
