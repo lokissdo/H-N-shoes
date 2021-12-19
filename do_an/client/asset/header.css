@@ -137,8 +137,12 @@ li{
 }
 .cart_text{
    color :var(--color-text);
+   padding-top: 10%;
 }
-
+.cart a{
+    display: flex;
+    width: 100px;
+}
 .top_header_mid{
    margin-left: -100px;
      
