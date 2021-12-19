@@ -1,3 +1,12 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: Dec 19, 2021 at 06:20 AM
+-- Server version: 5.7.33
+-- PHP Version: 7.4.19
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -44,7 +53,9 @@ CREATE TABLE `cli_list` (
   `email` varchar(200) NOT NULL,
   `phone` varchar(15) NOT NULL,
   `photo` varchar(200) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `birthday` date NOT NULL,
+  `token` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
