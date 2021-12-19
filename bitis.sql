@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 19, 2021 at 06:18 AM
+-- Generation Time: Dec 19, 2021 at 06:20 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `bitis`
 --
+CREATE DATABASE IF NOT EXISTS `bitis` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `bitis`;
 
 -- --------------------------------------------------------
 
