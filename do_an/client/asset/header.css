@@ -135,8 +135,18 @@ li{
     justify-content: space-around;
    
 }
+.cart a{
+    display: flex;
+    width: max-content;
+}
+.cart{
+    width: 20%;
+}
 .cart_text{
    color :var(--color-text);
+   width: 60px;
+   margin-right: 10px;
+   padding-top: 10%;
 }
 
 .top_header_mid{

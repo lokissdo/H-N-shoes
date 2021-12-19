@@ -1,3 +1,4 @@
+<<<<<<< HEAD:do_an/root/overlay.css
 
 	:root {
 		--color-nav-hor: limegreen;
@@ -181,3 +182,141 @@
 
 	}
 
+=======
+
+	:root {
+		--color-nav-hor: limegreen;
+		--color-nav-hor-active: darkgreen;
+		--color-nav-ver: cyan;
+		--color-nav-ver-active: navy;
+		--text-color: black;
+		--text-color-active: white;
+		--background-color: lightcyan;
+	}
+	body{
+		margin: 0px;
+		box-sizing: border-box;
+	}
+	#main_div {
+		width: 100vw;
+		height: 100vh;
+		display: grid;
+		grid-gap: 0px;
+		grid-template-columns: 14vw 86vw;
+		grid-template-rows: 6vh 6vh 85vh 3vh;
+		background: var(--background-color)
+	}
+	#nav_ver{
+		grid-row: 1 / 5;
+		background: var(--background-color);
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: column;
+	}
+	#nav_ver ul{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-direction: column;
+		list-style-type: none;
+		margin: 5px 0px 0px 0px;
+		padding:  0px;
+		width: 100%;
+	}
+	#nav_ver a{
+		width: 14vw;
+		height: 10vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		background: var(--color-nav-ver);
+		color: var(--text-color);
+		font-weight: bold;
+		border-top-left-radius: 5vh;
+		border-bottom-left-radius:5vh;
+		box-shadow: inset 0px 0px 10px 10px rgba(255, 255, 255, 0.3), -2px 0px 3px 2px rgba(0, 0, 0, 0.5);
+
+	}
+	#nav_ver a.active{
+		background: linear-gradient(-90deg, var(--color-nav-hor-active) 0%, var(--color-nav-ver-active) 25%);
+		color: var(--text-color-active);
+		box-shadow: inset 0px 0px 13px 10px rgba(0, 0, 0, 0.3);
+	}
+	#nav_ver img{
+		width: 100%;
+		align-self: center;
+	}
+	#compartment{
+		background: var(--background-color);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-top: 1vw;
+		padding-bottom: 1vw;
+	}
+	#compartment input,button{
+		height: 4vh;
+	}
+	#compartment input{
+		width: 30vw;
+	}
+	#nav_hor{
+		background: var(--background-color);
+		display: flex;
+		justify-content: flex-end;
+	}
+	#nav_hor > ul{
+		width: 50vw;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		list-style-type: none;
+		margin: 0px;
+		padding:  0px;
+
+	}
+	#nav_hor a{
+		height: 100%;
+		width: 10vw;
+		display: flex;
+		background: var(--color-nav-hor);
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		color: var(--text-color);
+		font-weight: bold;
+		border-top-left-radius: 5vw;
+		border-top-right-radius: 5vw;
+	}
+	#nav_hor a.active {
+		background: var(--color-nav-hor-active);
+		color: var(--text-color-active);
+	}
+	#main_body{
+		background: var(--color-nav-hor-active);
+		display: grid;
+		grid-gap: 0px;
+		grid-template-rows: auto auto 4vh;
+		grid-template-columns: auto auto auto auto;
+		justify-content: space-evenly;
+		align-content: space-between;
+	}
+	.items {
+		background: purple;
+		width: 15vw;
+		height: 32vh;
+		margin-top: 5vh;
+	}
+	#page{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		grid-area: 3 / 1 / 4 / 5;
+		background: var(--color-nav-hor-active);
+		width: 100%;
+	}
+	#footer{
+		background: var(--background-color);
+	}
+>>>>>>> main:do_an_1/root/overlay.css
