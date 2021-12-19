@@ -3,10 +3,10 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */
-/*!40101 SET NAMES utf8mb4 */
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `bitis`
@@ -26,7 +26,7 @@ CREATE TABLE `adm_list` (
   `name` varchar(50) NOT NULL,
   `access` tinyint(5) NOT NULL,
   `photo` varchar(200) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -40,20 +40,15 @@ CREATE TABLE `cli_list` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `gender` bit(2) NOT NULL,
-  `address` varchar(200) NOT NULL,
+  `address` varchar(200) ,
   `email` varchar(200) NOT NULL,
   `phone` varchar(15) NOT NULL,
   `photo` varchar(200) ,
   `password` varchar(200) NOT NULL,
-  `birthday` date,
-  `token` varchar(200),
+  `birthday` date ,
+  `token` varchar(200) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Change Structure
--- ALTER TABLE out_list
--- DROP FOREIGN KEY FK_out_client_id;
--- ALTER TABLE `out_list`
--- ADD CONSTRAINT `FK_out_client_id` FOREIGN KEY (`client_id`) REFERENCES `cli_list` (`id`);
 -- --------------------------------------------------------
 
 --
@@ -183,8 +178,6 @@ ALTER TABLE `products_list`
 ALTER TABLE `out_list`
   ADD CONSTRAINT `FK_out_client_id` FOREIGN KEY (`client_id`) REFERENCES `cli_list` (`id`),
   ADD CONSTRAINT `FK_out_products_id` FOREIGN KEY (`products_id`) REFERENCES `products_list` (`manufacturers_id`);
-
-
 
 --
 -- Constraints for table `products_list`

@@ -4,7 +4,13 @@
 }
 .footer{
     background-color: #171717;
+<<<<<<< HEAD
 }
+=======
+
+}
+
+>>>>>>> b0809e70315d3661e94183b82de22cd66f5566b3
 .container_footer{
   
     color: aliceblue;
@@ -51,13 +57,21 @@
 .footer_item_detail-icon{
     margin-right: 10px;
 }
+<<<<<<< HEAD
 .footer_copyright{
+=======
+.footer_copy_right{
+>>>>>>> b0809e70315d3661e94183b82de22cd66f5566b3
     width: 100%;
     height: 5vh;
     background-color: black;
     color: aliceblue;    
 }
+<<<<<<< HEAD
 .footer_copyright-text{
+=======
+.footer_copy_right-text{
+>>>>>>> b0809e70315d3661e94183b82de22cd66f5566b3
     text-align: center;
     padding: 8px;
     color: #cac8cf;
