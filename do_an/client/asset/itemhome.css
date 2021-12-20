@@ -7,7 +7,7 @@
     background-clip: content-box;
     margin-top: 8px;
     margin-bottom: 8px;
-    height: 40vh;
+    height: 45vh;
     position: relative;
 }
 .price_product{
@@ -40,7 +40,7 @@
 }
 .prod_container_pic img{
     width: 100%;
-    display: block;
+    height: 180px;
     display: block;
 }
 .price_product{
@@ -58,4 +58,7 @@ top:0;
 bottom: 0;
 left: 0;
 right: 0;
+}
+.hide-container{
+    display: none;
 }

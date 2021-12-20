@@ -50,11 +50,11 @@
                     </div>
                     <div class="cart">
                         <a href="#" >
-                        <img src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/40/000000/external-cart-essentials-icongeek26-linear-colour-icongeek26.png"/>
+                        
                             <div class="cart_text">
                                 Giỏ hàng
                             </div>
-                           
+                            <img src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/40/000000/external-cart-essentials-icongeek26-linear-colour-icongeek26.png"/>
                         </a>
                         <div class="cart_label"></div>
 
@@ -70,19 +70,17 @@
                     Nữ
                     <div class="header_drop-list">
                         <div class="header_drop-list-item">Giày thể thao</div>
-                        <div class="header_drop-list-item">Giày da</div>
-                        <div class="header_drop-list-item">Giày cao cổ</div>
-                        <div class="header_drop-list-item">Giày lười</div>
+                        <div class="header_drop-list-item">Giày Tây</div>
+                        <div class="header_drop-list-item">Giày Sandal</div>
                     </div>
     
                 </a>
                 <a href="#"class="items_header_bot header_drop">
                     Nam
                     <div class="header_drop-list">
-                        <div class="header_drop-list-item">Giày thể thao</div>
-                        <div class="header_drop-list-item">Giày da</div>
-                        <div class="header_drop-list-item">Giày cao cổ</div>
-                        <div class="header_drop-list-item">Giày lười</div>
+                    <div class="header_drop-list-item">Giày thể thao</div>
+                        <div class="header_drop-list-item">Giày Tây</div>
+                        <div class="header_drop-list-item">Giày Sandal</div>
                     </div>
                 </a>
                 <a href="#"class="items_header_bot ">Trẻ Em</a>
