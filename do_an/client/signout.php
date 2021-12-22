@@ -5,5 +5,6 @@ if (isset($_COOKIE['token'])) {
     unset($_COOKIE['token']); 
     setcookie('token','', time()-2000); 
 }
+if(isset($_SESSION['cart'])) unset($_SESSION['cart']);
 header("Location: ./");
 ?>

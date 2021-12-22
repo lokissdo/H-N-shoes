@@ -2,15 +2,22 @@
 include "api/start.php";
 include "api/connect.php";
 
-$men="select * from products_list where
-      gender=1 or gender=2";
-$women="select * from products_list where
-      gender=0 or gender=2";
-$kids="select * from products_list where
-      gender=3 ";
+$sql="SELECT products_list.id,products_list.name,products_list.price,products_list.quantity,products_list.photo,category_list.cate,category_list.gender
+FROM ((products_list
+INNER JOIN category_list ON category_list.id=products_list.category_id)
+INNER JOIN manufactures ON manufactures.id=products_list.manufacturers_id) 
+ ";
+
+$men=$sql." WHERE category_list.gender=\"Nam\" or category_list.gender=\"Nam, Nữ\" ";
+$women=$sql." WHERE category_list.gender=\"Nữ\" or category_list.gender=\"Nam, Nữ\" ";
+$kids=$sql." WHERE category_list.gender=\"Trẻ em\" ";
 $resmen=mysqli_query($connect,$men);
 $reswomen=mysqli_query($connect,$women);
 $reskids=mysqli_query($connect,$kids);
+// print_r(count(mysqli_fetch_all($resmen)));
+// echo $sql;
+
+// //die($kids);
 
 ?>
 <html>
@@ -34,7 +41,7 @@ $reskids=mysqli_query($connect,$kids);
                        </div>
                        <h4># 171305V</h4>
                        <div class="price_product">
-                       <?php echo $manitem['price']?>
+                       <?php echo number_format($manitem['price'])." VND"?>
                        </div>
                        <a href="./product.php?id=<?php echo $manitem['id']?> "></a>
                   </div>
@@ -58,7 +65,7 @@ $reskids=mysqli_query($connect,$kids);
                        </div>
                        <h4># 171305V</h4>
                        <div class="price_product">
-                       <?php echo $womanitem['price']?>
+                       <?php echo number_format($womanitem['price'])." VND"?>
                        </div>
                        <a href="./product.php?id=<?php echo $womanitem['id']?> "></a>
                   </div>
@@ -82,7 +89,7 @@ $reskids=mysqli_query($connect,$kids);
                        </div>
                        <h4># 171305V</h4>
                        <div class="price_product">
-                       <?php echo $kiditem['price']?>
+                       <?php  echo  number_format($kiditem['price'])." VND"?> 
                        </div>
                        <a href="./product.php?id=<?php echo $kiditem['id']?> "></a>
                   </div>

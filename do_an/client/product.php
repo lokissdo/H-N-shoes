@@ -4,44 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="public/icongame.jpg" type="image/.jpg">
+    <title>Product</title>
     <link rel="stylesheet" href="asset/product.css">
 </head>
 <body>
     <?php
-    require "header.php";
     include "api/start.php";
     include "api/connect.php";
     if(empty($_GET['id'])){
         header("Location: ./");
         exit;
     }
-    $sql="select * from products_list where
-          id=$_GET[id]";
+    $sql="SELECT products_list.id,products_list.name,products_list.price,products_list.quantity,products_list.photo,category_list.cate,category_list.gender
+    FROM ((products_list
+    INNER JOIN category_list ON category_list.id=products_list.category_id)
+    INNER JOIN manufactures ON manufactures.id=products_list.manufacturers_id) 
+    WHERE products_list.id=$_GET[id]";
     $resmen=mysqli_query($connect,$sql);
     $item=mysqli_fetch_assoc($resmen);
+    // print_r($item);
+    // die($sql);
+    // exit;
     $gender=$item['gender'];
+    $_SESSION['page']=$gender;
+    require "header.php";
     ?>
     <div class="cate_header">
         <?php 
-            if($gender==1|| $gender==2 )
-                echo "MEN";
-            else if ($gender==0)
-            echo "WOMEN";
-            else echo "KIDS";
+          echo $gender;
         ?> </div>
     <div class="cate">
         <div class="cate_itemLR"></div>
         <div class="cate_mid">
-            <div class="cate_mid_item <?php if($item['category']=='Giày thể thao' ) echo "cate_mid_item-chosen" ?> linked">
+            <div class="cate_mid_item <?php if($item['cate']=='Giày Thể Thao' ) echo "cate_mid_item-chosen" ?> linked">
                 Giày thể thao
                 <a href="#"></a>
             </div>
-            <div class="cate_mid_item <?php if($item['category']=='Giày Tây' ) echo "cate_mid_item-chosen" ?> linked">
+            <div class="cate_mid_item <?php if($item['cate']=='Giày Tây' ) echo "cate_mid_item-chosen" ?> linked">
                 Giày Tây 
                 <a href="#"></a>
             </div>
-            <div class="cate_mid_item <?php if($item['category']=='Giày Sandal' ) echo "cate_mid_item-chosen" ?> linked">
+            <div class="cate_mid_item <?php if($item['cate']=='Giày Sandal' ) echo "cate_mid_item-chosen" ?> linked">
                 Giày Sandal
                 <a href="#"></a>
             </div>
@@ -66,13 +70,7 @@
                     </div>
                     <div class="des_gender">Giới tính:                         
                      <?php 
-                          if($gender==1)
-                              echo "Men";
-                          else if ($gender==0)
-                          echo "Women";
-                          else if ($gender==2)
-                          echo "Men, Women";
-                          else echo "Kids";
+                          echo $gender
                       ?>
                     </div>
                 </div>
@@ -83,7 +81,7 @@
             <div class="quantity"> Còn hàng: <?php echo $item['quantity']?> sản phẩm</div>
             <div class="add_to_cart linked">
                 ADD TO CART
-                <a href="#"></a>
+                <a id="add-to-cart" href="#" datalink="./api/addproduct.php?id=<?php echo $item['id']?>"></a>
             </div>
         </div>
     </div>
@@ -94,5 +92,6 @@
         </div>
         <div class="cate_itemLR"></div>
     </div>
+    <script src="js/product.js"> </script>
 </body>
 </html>

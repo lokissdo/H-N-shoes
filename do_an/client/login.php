@@ -43,12 +43,11 @@ if (Authenticate()){
                 <div id="warning_signin">
                 <?php
                   if(isset($_SESSION['error'])){
-                    // echo " <script > 
-                    //         window.onload=()=>{error($_SESSION[error]); }
-                    //     </script>";
                     $temp=$_SESSION['error'];
-                    echo $temp;
-                    unset($_SESSION['error']);
+                    echo " <script> 
+                             window.onload=()=>{error(\"$temp\")}
+                         </script> ";
+                   unset($_SESSION['error']);
                   }
                     if (isset($_POST['email'])){
                         require_once "api/signinProc.php";

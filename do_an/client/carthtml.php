@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,23 +11,11 @@
     <link rel="stylesheet"  href="asset/footer.css">
 </head>
 <body>
-    <?php 
-    require "./api/start.php";
-    $_SESSION['page']="cart";
-    require "api/authenticate.php";
-    if(!Authenticate()){
-        $_SESSION['error']="Vui lòng đăng nhập để vào giỏ hàng";
-        header("Location: ./login.php");
-        exit;
-    }   
-    include "header.php";
-
-    ?>
+    <?php require "header.php"?>
     <div class="container-cart grid wide">
          <h2 class="header-text">
              GIỎ HÀNG CỦA BẠN
          </h2>
-    <?php if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0){ ?>
         <div class="row name-table-container ">
             <div class="tb-name-product c-4 m-4 l-4 l-o-2 col"> TÊN SẢN PHẨM</div>
             <div class="l-2 c-2 m-2 col" >SỐ LƯỢNG</div>
@@ -38,47 +25,61 @@
 
 
 
-        <?php $sum=0; foreach ($_SESSION['cart'] as $key=> $item) {
-                ?>
-        <div class="row" id="<?php echo $key?>">
+        <div class="row">
             <div class="product-img c-2 m-2 l-2">
-                <img src="<?php echo $item['photo'] ?> "alt="">
+                <img src="https://product.hstatic.net/1000230642/product/artboard_1-100_c6cd15bd196d4f4aa2dc869c2d02920d_1024x1024.jpg" alt="">
             </div>
             <div class="c-4 m-4 l-4 col">
                 <div class="product-name linked">
-                <?php echo $item['name'] ?>
+                    Giày Thể Thao Nam Biti's Hunter x Marvel Spider-man YFNS DSMH09211DEN (Đen)+ [Gift] Lưỡi Gà...
                 </div>
                 <div class="product-co-size-del">
                         <div class="color">Màu: Đen</div>
                         <div class="size">Size: 39</div>
-                        <div key="<?php echo $key?>" id="delete" class="delete-button "> Xóa</div>
+                        <div class="delete-button"> Xóa</div>
                 </div>
 
             </div>
             <div class="quantity c-2 m-2 l-2 col">
-                <input key="<?php echo $key?>" id="quantity" autocomplete="off"  type="number" min="0" max="1000" value="<?php echo $item['quantity'] ?>">
+                <input autocomplete="off"  data-price="152900000" item-price="152900000" id="updates_1081609216" data-id="1081609216"   type="number" min="1" max="42" value="42">
             </div>
-            <div class="one-price c-2 m-2 l-2 col"><?php echo number_format($item['price']) ?> ₫</div>
-            <div class="sum-price c-2 m-2 l-2 col"><?php echo number_format($item['price']*$item['quantity']); $sum+=$item['price']*$item['quantity'] ?> ₫</div>
-            <div class="barrier"> </div>
+            <div class="one-price c-2 m-2 l-2 col">1,592,000đ</div>
+            <div class="sum-price c-2 m-2 l-2 col">64,218,000 ₫</div>
         </div>
-       
-        <?php } ?>
+        <div class="barrier"> </div>
+
+
+        <div class="row">
+            <div class="product-img c-2 m-2 l-2">
+                <img src="https://product.hstatic.net/1000230642/product/artboard_1-100_c6cd15bd196d4f4aa2dc869c2d02920d_1024x1024.jpg" alt="">
+            </div>
+            <div class="c-4 m-4 l-4 col">
+                <div class="product-name linked">
+                    Giày Thể Thao Nam Biti's Hunter x Marvel Spider-man YFNS DSMH09211DEN (Đen)+ [Gift] Lưỡi Gà...
+                </div>
+                <div class="product-co-size-del">
+                        <div class="color">Màu: Đen</div>
+                        <div class="size">Size: 39</div>
+                        <div class="delete-button"> Xóa</div>
+                </div>
+
+            </div>
+            <div class="quantity c-2 m-2 l-2 col">
+                <input autocomplete="off"  data-price="152900000" item-price="152900000" id="updates_1081609216" data-id="1081609216"   type="number" min="1" max="42" value="42">
+            </div>
+            <div class="one-price c-2 m-2 l-2 col">1,592,000đ</div>
+            <div class="sum-price c-2 m-2 l-2 col">64,218,000 ₫</div>
+        </div>
+        <div class="barrier"> </div>
+
         
-
-
         <div class="sum-money"> 
-            Tạm Tính: <span id="sum-money"><?php echo number_format($sum) ?> ₫</span>
+            Tạm Tính: <span>65,718,000 ₫</span>
         </div>
         <div class="payment"> 
             <div class="payment-item payment-item-inter">ĐẶT HÀNG QUỐC TẾ<br>(áp dụng cho quốc gia khác)</div>
             <div class="payment-item ">THANH TOÁN NGAY<br>(áp dụng cho Việt Nam)</div>
         </div>
-        <?php }
-        else {
-            echo "<h1> Mua hàng đi nào bạn yêu !!! <333 </h1>";
-        }
-         ?>
     </div>
     
     <div class="list-img-ht">HASHTAG <SPAN>H&N</SPAN> ĐỂ CÓ CƠ HỘI XUẤT HIỆN CÙNG CHÚNG TÔI</div>
@@ -93,6 +94,5 @@
       <div class="list-img-item"> <img src="https://file.hstatic.net/1000230642/file/bitis-hashtag-7_d1c84d44fdef4846adcc74e17a5526ad.jpg" alt=""></div>
     </div>
     <?php require "footer.php"?>
-    <script src="js/cart.js"></script>
 </body>
 </html>

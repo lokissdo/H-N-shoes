@@ -17,7 +17,7 @@
                     <div class="sign signin"> 
                         <a href=
                         <?php
-                            require "api/authenticate.php";
+                          require_once "api/authenticate.php";
                          if (Authenticate()){
                             echo "\"./signout.php\"";
                         }else echo  "\"./login.php\"";
@@ -49,12 +49,17 @@
                         </form>
                     </div>
                     <div class="cart">
-                        <a href="#" >
+                        <a href="./cart.php" >
                         
-                            <div class="cart_text">
-                                Giỏ hàng
-                            </div>
+                           
                             <img src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/40/000000/external-cart-essentials-icongeek26-linear-colour-icongeek26.png"/>
+                            <div class="cart_text">
+                                <?php 
+                                if(isset($_COOKIE['quantity']))                               
+                                echo $_COOKIE['quantity'];
+                                else echo 0;
+                                ?> 
+                            </div>
                         </a>
                         <div class="cart_label"></div>
 
@@ -64,9 +69,15 @@
         </div>
         <div class="header__bot">
             <div class="wrap_items_header">
-                <a href="#"class="items_header_bot ">Trang chủ</a>
+                <a href="./"class="items_header_bot 
+                    <?php if (!empty($_SESSION['page'])){
+                        if ($_SESSION['page']=="home" ) echo "chosen"; } ?> 
+                ">Trang chủ</a>
                 <a href="#"class="items_header_bot ">Giới Thiệu</a>
-                <a href="#"class="items_header_bot header_drop ">
+                <a href="#"class="items_header_bot header_drop 
+                <?php if (!empty($_SESSION['page'])){
+                    if ($_SESSION['page']=="Nữ" || $_SESSION['page']=="Nam, Nữ") echo "chosen"; } ?> 
+                    ">
                     Nữ
                     <div class="header_drop-list">
                         <div class="header_drop-list-item">Giày thể thao</div>
@@ -75,7 +86,10 @@
                     </div>
     
                 </a>
-                <a href="#"class="items_header_bot header_drop">
+                <a href="#"class="items_header_bot header_drop
+                <?php if (!empty($_SESSION['page'])){
+                    if ($_SESSION['page']=="Nam" || $_SESSION['page']=="Nam, Nữ") echo "chosen"; } ?> 
+                ">
                     Nam
                     <div class="header_drop-list">
                     <div class="header_drop-list-item">Giày thể thao</div>
@@ -83,7 +97,10 @@
                         <div class="header_drop-list-item">Giày Sandal</div>
                     </div>
                 </a>
-                <a href="#"class="items_header_bot ">Trẻ Em</a>
+                <a href="#"class="items_header_bot 
+                <?php if (!empty($_SESSION['page'])){
+                    if ($_SESSION['page']=="Trẻ em") echo "chosen"; } ?> 
+                 ">Trẻ Em</a>
                 <a href="#"class="items_header_bot ">Phụ kiện khác</a>
             </div>
         </div>
