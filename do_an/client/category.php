@@ -30,7 +30,7 @@
             </div>
             <div class="cate_mid_item cate-kid">
                 <h2>
-                    Kid
+                    Kids
                 </h2>
                 <div>
                     
@@ -45,20 +45,4 @@
 
         <!-- <div class="cate_arrow-down"></div> -->
     </div>
-    <script>
-        var arrow=document.querySelector(".cate_arrow-down");
-        var catemen=document.querySelector(".cate-men")
-        var catewomen=document.querySelector(".cate-women")
-        var catekid=document.querySelector(".cate-kid")
-        catemen.addEventListener('mouseover', event => {
-            arrow.style['margin-left']="17%";
-        })
-        catewomen.addEventListener('mouseover', event => {
-            arrow.style['margin-left']="45%";
-        })
-        catekid.addEventListener('mouseover', event => {
-            arrow.style['margin-left']="75%";
-        })
-        console.log(catemen)
-    </script>
 </body>

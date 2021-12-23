@@ -17,8 +17,9 @@ function buttonclick(e){
 button.addEventListener('click',buttonclick)
 function error(mess){
      warning.textContent=mess;
+     console.log(mess);
      setTimeout(()=>{
         warning.textContent="";
     },3000);
-    console.log(mess);
+    //console.log(mess);
 }
