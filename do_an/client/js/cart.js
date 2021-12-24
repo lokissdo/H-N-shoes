@@ -14,6 +14,7 @@ for (let i=0;i<input.length;i++){
     input[i].onchange=(e)=>{
         let key=e.target.attributes.key.value;
         let quantity=e.target.value;
+        if(quantity > 1000) return;
         updateProductCart(key,quantity);
         console.log(key);
         console.log(e.target);

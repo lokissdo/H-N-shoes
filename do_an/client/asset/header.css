@@ -5,14 +5,14 @@
 }
 :root{
     --color-text:rgba(255, 255, 255, 0.726);
-    --headerHeight: 20vh;
+    --headerHeight: 15vh;
     --header__top:calc(var(--headerHeight)*0.6);
     --header__bot:calc(var(--headerHeight)*0.4);
 }
 header{
     height: var(--headerHeight);
     position: relative;
-    z-index: 1000;
+    z-index: 10;
 }
 a{
     text-decoration: none;
@@ -43,6 +43,8 @@ position: fixed;
 background-color: white;
 margin-left: -15px;
 border-radius: 10px;
+z-index: 100;
+
 }
 li{
     list-style: none;
@@ -155,13 +157,10 @@ li{
      
  } 
 .items_top_header{
-padding-top: 20px;
+padding-top: 10px;
 }
 .sign{
     display: inline-block;
-}
-.items_top_header{
-padding-top: 20px;
 }
 .items_header_bot{
     color: black;
@@ -169,10 +168,9 @@ padding-top: 20px;
     font-family: sans-serif;
     padding: 10px 5px;
     text-align: center;
-    padding-top: 20px;
     flex: 1;
 }
-.items_header_bot:hover{
+.items_header_bot:hover , .header_drop-list-item:hover{
     border-bottom: 2px solid #cd2b2f;
 }
 .chosen{

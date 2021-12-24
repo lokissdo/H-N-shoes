@@ -22,7 +22,6 @@
         exit;
     }   
     include "header.php";
-
     ?>
     <div class="container-cart grid wide">
          <h2 class="header-text">
