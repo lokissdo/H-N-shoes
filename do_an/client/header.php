@@ -42,7 +42,7 @@
                 </div>
                 <div class="items_top_header top_header_right">
                     <div class="search">
-                        <form class="search_form"action="./Process/search.php" method="GET">
+                        <form class="search_form" action="./search.php" method="GET">
                             <!-- <label for="fname">Anh:</label><br> -->
                             <input type="text" placeholder="   Tìm kiếm"class="search_input"id="search" name="search" ><br>
                             <button id="search_form_button"class="search_form_button" type="submit"></button>

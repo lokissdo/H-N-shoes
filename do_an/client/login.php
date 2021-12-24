@@ -23,7 +23,7 @@ if (Authenticate()){
             <div class="intro_overlay">
                 <div class="intro_container">
                     <div class="intro_title">H&N SHOP</div>
-                    <div class="intro_description">Chào mừng các bạn đến với website của chúng tôi! Hãy đăng nhập để có những trải nghiệm tốt nhất</div>
+                    <div class="intro_description"></div>
                     <div class="intro_text_sociallogin">Login with social media</div>
                     <div class="intro_sociallogin">
                         <a href="https://www.facebook.com"><img class="sociallogin-icon" src="https://img.icons8.com/fluency/40/000000/facebook-new.png"/></a>

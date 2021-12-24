@@ -17,7 +17,7 @@ for (let i=0;i<a.length;i++){
 }
 now++;
 if(now==3) now=0;
-mytimeout=setTimeout(recursive,5000);
+mytimeout=setTimeout(recursive,4000);
 }
 function click(){
 var arr=document.querySelectorAll(".slide_button");

@@ -20,12 +20,13 @@ function createNewUser($password,$name,$gender,$email,$phone,$birthday){
     {
         $dob = date('Y-m-d', strtotime($birthday));
         $sqlAddUser=" INSERT INTO cli_list (`name`,`gender`,`address`,`email`,`phone`,`photo`,`password`,`birthday`)
-        VALUES ('$name',b'$gender','no','$email','$phone','no','$hash','$dob');";
+        VALUES ('$name',b'$gender','','$email','$phone','','$hash','$dob');";
     }
     else {
         $sqlAddUser=" INSERT INTO cli_list (`name`,`gender`,`address`,`email`,`phone`,`photo`,`password`)
-        VALUES ('$name',b'$gender','no','$email','$phone','no','$hash');";
+        VALUES ('$name',b'$gender','','$email','$phone','','$hash');";
     }
+  
     mysqli_query($connect,$sqlAddUser);
     $loi=mysqli_error($connect);
     if($loi) {

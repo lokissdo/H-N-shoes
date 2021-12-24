@@ -23,3 +23,20 @@ function error(mess){
     },3000);
     //console.log(mess);
 }
+var string = "Chào mừng các bạn đến với website của chúng tôi! Hãy đăng nhập để có những trải nghiệm tốt nhất"; /* type your text here */
+var array = string.split("");
+var loopTimer;
+function frameLooper () {
+	if (array.length > 0) {
+		var text=document.querySelector(".intro_description").textContent 
+        text=text.slice(0,-1);
+        console.log(text);
+        document.querySelector(".intro_description").textContent = text+array.shift()+'|';
+	    loopTimer = setTimeout(frameLooper,70); 
+	} else {
+        document.querySelector(".intro_description").textContent=document.querySelector(".intro_description").textContent.slice(0,-1);
+		clearTimeout(loopTimer);
+    }
+}
+frameLooper();
+

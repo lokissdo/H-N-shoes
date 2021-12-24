@@ -9,6 +9,7 @@
     color: aliceblue;
     display: flex;
     padding: 10px 50px;
+    flex-wrap: wrap;
 }
 .footer_item{
     flex: 1;
