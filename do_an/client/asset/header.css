@@ -5,12 +5,14 @@
 }
 :root{
     --color-text:rgba(255, 255, 255, 0.726);
-    --headerHeight: 20vh;
+    --headerHeight: 15vh;
     --header__top:calc(var(--headerHeight)*0.6);
     --header__bot:calc(var(--headerHeight)*0.4);
 }
 header{
     height: var(--headerHeight);
+    position: relative;
+    z-index: 10;
 }
 a{
     text-decoration: none;
@@ -20,7 +22,6 @@ a{
     width: 100vw;
     position: fixed; 
     background-color: black;
-
     display: flex;
     justify-content: space-around;
 }
@@ -42,6 +43,8 @@ position: fixed;
 background-color: white;
 margin-left: -15px;
 border-radius: 10px;
+z-index: 100;
+
 }
 li{
     list-style: none;
@@ -60,7 +63,7 @@ li{
     display: flex;
     justify-content: space-around;
     height: 100%;
-    margin:5px 25vw 5px 25vw;
+    margin:0px 25vw 0px 25vw;
 
 }
 .top_header_left{
@@ -77,27 +80,53 @@ li{
 }
 #search{
     width: 250px;
-    border-radius: 10px;
-    border: 2px solid rgb(136, 131, 131);
+    border-radius: 40px;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.search_input{
+    visibility:hidden;
+}
+.showInput{
+    visibility: visible;
+    animation: fadeIn 1s ease ;
+
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
 }
 .search_form{
     display: flex;
     position: absolute;
     top: 10px;
     right: 200px;
-    height: 5vh;
+    height: 7vh;
 
 }
 .search_form_button{
-    width: 60px;
-    border-radius: 10px;
- border: 2px solid rgb(136, 131, 131);
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     border: 2px solid black;  
+    cursor: pointer;
+ background: url('https://www.converse.com.vn/catalog/view/theme/default/images/search.png') center center no-repeat;
+}
+.search_form_button:hover{
+    border: 2px solid rgb(136, 131, 131);   
+
 }
 .sign__text{
    color :var(--color-text);
    display: inline-block;
    padding: 0px 5px;
 }
+
 .header_mid_text{
     color :white;
     font-size: 2rem;
@@ -111,29 +140,41 @@ li{
 }
 .cart_text{
    color :var(--color-text);
+   padding: 3px 8px 3px 8px;
+   color: rgba(255, 255, 255, 0.849);
+   background-color: rgb(252, 26, 26);
+   border-radius: 20px;
+   margin-bottom: 20%;
+   text-align: center;
+   font-size: 1.3rem;
 }
-
+.cart a{
+    display: flex;
+    width: 100px;
+}
 .top_header_mid{
    margin-left: -100px;
      
  } 
 .items_top_header{
-padding-top: 20px;
+padding-top: 10px;
 }
 .sign{
     display: inline-block;
-}
-.items_top_header{
-padding-top: 20px;
 }
 .items_header_bot{
     color: black;
     font-weight: 700;
     font-family: sans-serif;
-    padding: 10px 10px;
-    padding-bottom: 0px;
-    margin-bottom: 10px;
+    padding: 10px 5px;
+    text-align: center;
+    flex: 1;
 }
-.items_header_bot:hover{
+.items_header_bot:hover , .header_drop-list-item:hover{
     border-bottom: 2px solid #cd2b2f;
+}
+.chosen{
+    color: aliceblue;
+    background-color: #363636e0;
+    background-clip: border-box;
 }
