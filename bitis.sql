@@ -99,14 +99,7 @@ INSERT INTO `manufactures` (`id`, `name`, `description`, `phone`, `photo`, `addr
 (3, 'Bitis', '', '', '', ''),
 (4, 'Nike', '', '', '', '');
 
---
--- Dumping data for table `manufactures`
---
 
-INSERT INTO `manufactures` (`id`, `name`, `description`, `phone`, `photo`, `delivery_address`, `receiving_address`) VALUES
-(1, 'CONVERSE', '', '123', '', 'here', 'there'),
-(3, 'Bitis', '', '', '', '', ''),
-(4, 'Nike', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
