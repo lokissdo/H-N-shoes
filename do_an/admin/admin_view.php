@@ -5,8 +5,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Admin page</title>
-	<link rel="stylesheet" type="text/css" href="../root/overlay.css">
-
+	<style type="text/css">
+	<?php require "../root/overlay.css" ?>
+	</style>
 </head>
 <body>
 	<?php 
@@ -44,7 +45,6 @@
 	$sql = "select * from $table $attachment where name = '$tim_kiem'";
 	$ket_qua = mysqli_query($ket_noi,$sql);
 	$bang = mysqli_fetch_array($ket_qua);
-
 
 
 	?>
