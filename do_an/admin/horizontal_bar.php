@@ -1,4 +1,4 @@
-<?php if ($_SESSION['accesss'] == 1) {
+<?php if (!empty($_SESSION['accesss'])) {
 	include "super_admin.php";
 };
 ?>

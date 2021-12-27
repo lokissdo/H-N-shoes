@@ -1,4 +1,4 @@
-<?php require '../root/check_login_admin.php'; ?>
+<?php// require '../root/check_login_admin.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,9 +41,9 @@
 			$attachment = "join cli_list on $table.client_id = cli_list.id";
 			break;
 	}
-	$sql = "select * from $table $attachment where name = $tim_kiem";
+	$sql = "select * from $table $attachment where name = '$tim_kiem'";
 	$ket_qua = mysqli_query($ket_noi,$sql);
-
+	$bang = mysqli_fetch_array($ket_qua);
 
 
 
