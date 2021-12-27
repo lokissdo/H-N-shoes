@@ -4,7 +4,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Login admin</title>
-	<link rel="stylesheet" type="text/css" href="../root/overlay_login.css">
+	<style type="text/css">
+	<?php require "../root/overlay_login.css" ?>
+	</style>
 </head>
 <body>
 	<div id="main_body">
