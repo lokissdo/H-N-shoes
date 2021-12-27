@@ -1,9 +1,10 @@
+<?php require '../root/check_login_admin.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Login admin</title>
+	<title>Admin page</title>
 	<link rel="stylesheet" type="text/css" href="../root/overlay.css">
 
 </head>
@@ -13,7 +14,7 @@
 	if(isset($_GET['link'])){
 	$link = $_GET['link'];
 	} else {
-		$link = 'admin';
+		$link = 'out';
 	}
 	if(isset($_GET['tim_kiem'])){
 		$tim_kiem = $_GET['tim_kiem'];
@@ -28,10 +29,6 @@
 			break;
 		case 'manufacturers':
 			$table = 'manufactures';
-			$list = 'detail_list';
-			break;
-		case 'client':
-			$table = 'cli_list';
 			$list = 'detail_list';
 			break;
 		case 'product':
@@ -70,21 +67,7 @@
 		
 		<div id="nav_hor">
 		<ul>
-			<a href="admin_view.php?link=admin<?php echo ($tim_kiem) ? "&tim_kiem=$tim_kiem" : "" ?>" <?php if ($link == 'admin') {echo 'class="active"';} ?>>
-				<li>Admin</li>
-			</a>
-			<a href="admin_view.php?link=manufacturers<?php echo ($tim_kiem) ? "&tim_kiem=$tim_kiem" : "" ?>" <?php if ($link == 'manufacturers') {echo 'class="active"';} ?>>
-				<li>Nhà sản xuất</li>
-			</a>
-			<a href="admin_view.php?link=client<?php echo ($tim_kiem) ? "&tim_kiem=$tim_kiem" : "" ?>" <?php if ($link == 'client') {echo 'class="active"';} ?>>
-				<li>Khách hàng</li>
-			</a>
-			<a href="admin_view.php?link=product<?php echo ($tim_kiem) ? "&tim_kiem=$tim_kiem" : "" ?>" <?php if ($link == 'product') {echo 'class="active"';} ?>>
-				<li>Sản phẩm</li>
-			</a>
-			<a href="admin_view.php?link=out<?php echo ($tim_kiem) ? "&tim_kiem=$tim_kiem" : "" ?>" <?php if ($link == 'out') {echo 'class="active"';} ?>>
-				<li>Đơn hàng</li>
-			</a>
+			<?php require "horizontal_bar.php"; ?>
 		</ul>
 		</div>
 		<?php include "$list.php"; ?>
@@ -94,5 +77,4 @@
 	</div>
 	<?php mysqli_close($ket_noi); ?>
 </body>
-
 </html>

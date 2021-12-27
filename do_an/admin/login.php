@@ -15,7 +15,7 @@
 			<div id="form_body">
 				
 				<h1>Đăng nhập</h1>
-				<input type="text" class="form_margin input" name="username" placeholder="Tên đăng nhập">
+				<input type="email" class="form_margin input" name="email" placeholder="Email">
 				<div id="username_error" class="form_margin error"></div>
 				<input type="password" name="password" class="form_margin input" placeholder="Mật khẩu">
 				<div id="password_error" class="form_margin"></div>
