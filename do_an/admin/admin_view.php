@@ -23,6 +23,8 @@
 		$tim_kiem = "";
 	} 
 	$attachment = '';
+	$target = '*';
+	$surfix = '';
 	switch ($link) {
 		case 'admin':
 			$table = 'adm_list';
@@ -35,25 +37,42 @@
 		case 'product':
 			$table = 'products_list';
 			$list = 'detail_list';
+			$target = 'products_list.*,manufactures.name as manufactures_name';
+			$attachment = "join manufactures on $table.manufacturers_id = manufactures.id";
+			$surfix = 'products_list.';
 			break;
 		case 'out':
 			$table = 'out_list';
 			$list = 'detail_list';
 			$attachment = "join cli_list on $table.client_id = cli_list.id";
 			break;
+		default:
+			header('location:logout.php');
+			exit();
 	}
-	$sql = "select * from $table $attachment where name = '$tim_kiem'";
+	if (isset($_GET['page'])){
+		$page = $_GET['page'];
+	}else {
+			$page = 1;
+		};
+	$sql_dem = "select count(*) from $table $attachment where ".$surfix."name like '%$tim_kiem%'";
+	$ket_qua_dem = mysqli_fetch_array(mysqli_query($ket_noi,$sql_dem));
+	$so_ket_qua = $ket_qua_dem['count(*)'];
+	$so_ket_qua_1_trang = 7;
+	$max_page = ceil($so_ket_qua / $so_ket_qua_1_trang);
+	$offset = $so_ket_qua_1_trang*($page-1);
+
+	$sql = "select $target from $table $attachment 
+			where ".$surfix."name like '%$tim_kiem%'
+			limit $so_ket_qua_1_trang offset $offset";
 	$ket_qua = mysqli_query($ket_noi,$sql);
-	$bang = mysqli_fetch_array($ket_qua);
-
-
+	
 	?>
 	<div id="main_div">
 		<div id="nav_ver">
 			<img src="//upload.wikimedia.org/wikipedia/vi/thumb/3/37/Bitis_logo.svg/501px-Bitis_logo.svg.png">
 		<ul>
-			<a href="#" class="active"><li>Danh sách</li></a>
-			<a href="#"><li>Tổng quan</li></a>
+			<?php include "nav_ver.php"; ?>			
 		</ul>
 		</div>
 		
