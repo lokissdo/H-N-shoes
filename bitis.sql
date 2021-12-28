@@ -1,3 +1,12 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: Dec 28, 2021 at 03:17 PM
+-- Server version: 5.7.33
+-- PHP Version: 7.4.19
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -18,11 +27,9 @@ SET time_zone = "+00:00";
 -- Table structure for table `adm_list`
 --
 
-
 DROP TABLE IF EXISTS `adm_list`;
 CREATE TABLE IF NOT EXISTS `adm_list` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-
   `name` varchar(50) NOT NULL,
   `phone` varchar(15) NOT NULL,
   `address` varchar(100) NOT NULL,
@@ -33,7 +40,15 @@ CREATE TABLE IF NOT EXISTS `adm_list` (
   `password` varchar(50) NOT NULL,
   `access` bit(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `adm_list`
+--
+
+INSERT INTO `adm_list` (`id`, `name`, `phone`, `address`, `gender`, `birthday`, `email`, `photo`, `password`, `access`) VALUES
+(1, 'Nhat', '09771168123', 'Điện Biên Phủ, Quận 1', b'01', '1997-09-23', 'red@gmail.com', 'https://static.wikia.nocookie.net/heroes-and-villians/images/8/83/Winnie_the_Pooh.png/revision/latest/scale-to-width-down/1000?cb=20191229203055', 'abc', b'01'),
+(3, 'Huy', '0982224466', 'Hải Phòng', b'01', '1998-07-23', 'blue@gmail.com', '//upload.wikimedia.org/wikipedia/vi/thumb/1/1a/Mickey-Mouse.jpg/220px-Mickey-Mouse.jpg', 'abc', b'00');
 
 -- --------------------------------------------------------
 
@@ -41,17 +56,14 @@ CREATE TABLE IF NOT EXISTS `adm_list` (
 -- Table structure for table `cli_list`
 --
 
-
 DROP TABLE IF EXISTS `cli_list`;
 CREATE TABLE IF NOT EXISTS `cli_list` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-
   `name` varchar(50) NOT NULL,
   `gender` bit(2) NOT NULL,
-  `address` varchar(200) DEFAULT NULL,
+  `address` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
   `phone` varchar(15) NOT NULL,
-
   `photo` varchar(200) NOT NULL,
   `password` varchar(50) NOT NULL,
   `birthday` date NOT NULL,
@@ -64,20 +76,19 @@ CREATE TABLE IF NOT EXISTS `cli_list` (
 --
 
 INSERT INTO `cli_list` (`id`, `name`, `gender`, `address`, `email`, `phone`, `photo`, `password`, `birthday`, `token`) VALUES
-(4, '12', b'01', 'no', 'dokhaihung2003@gmail.com2222', '1', 'no', '$2y$10$15PoIrYmtFjoD/9rAOVmJeb7b2DpNW4rU81LrcJOYQs58JqbcKVju', '2021-12-25', NULL),
-(5, 'Lokiss', b'00', 'no', '2@2', '12', 'no', '$2y$10$ktGfaSY4oxpCqfSr3Q7qa.MT9WgGq2gl47z80jzAPVJ.kwSGzznZS', '2021-12-10', '695bcb9f1897e98235f64704a06753b31640178666'),
-(9, '2', b'00', '', '2@34', '2', '', '$2y$10$I9Ttuye/k3EYydgDY425rO0ZXSbe0OcLA63gSdhrzrloNGBRfE/P2', '2021-12-25', NULL),
-(10, '22', b'00', '', 'dokhaihung2003@gmail.com11', '2', '', '$2y$10$vT8fLQ1.0KM/6dTFwN6SwOAc9UaMH3Y694Ob0luSs0rrEGPEEIs2.', NULL, NULL),
-(11, '23', b'00', '', '1@111', '2', '', '$2y$10$LHVNhnIAwRcbtr3rI4YzWO41w80BoRJX6dGJqb.ScB1AR1Ig/Qg2W', NULL, NULL),
-(12, '2', b'01', '', '22@3', '2', '', '$2y$10$luJ2l6oUgNjRUxPsP8597u0omxHR5hlph1E521LU9m1DlZ1t4jMcK', '2021-12-21', NULL),
-(13, '1', b'01', '', 'dokhaihung2003@gmail.com', '1', '', '$2y$10$jM8Mi22bdRg4XLdJaomTBuXOgvX9mOOkTjUMQGQe4pDoy3BwKWBna', NULL, 'd5d44c5c39f71300c70b9b8649c347121640254101');
+(4, '12', b'01', 'no', 'dokhaihung2003@gmail.com2222', '1', 'no', '$2y$10$15PoIrYmtFjoD/9rAOVmJeb7b2DpNW4rU81LrcJOYQs', '2021-12-25', ''),
+(5, 'Lokiss', b'00', 'no', '2@2', '12', 'no', '$2y$10$ktGfaSY4oxpCqfSr3Q7qa.MT9WgGq2gl47z80jzAPVJ', '2021-12-10', '695bcb9f1897e98235f64704a06753b31640178666'),
+(9, '2', b'00', '', '2@34', '2', '', '$2y$10$I9Ttuye/k3EYydgDY425rO0ZXSbe0OcLA63gSdhrzrl', '2021-12-25', ''),
+(10, '22', b'00', '', 'dokhaihung2003@gmail.com11', '2', '', '$2y$10$vT8fLQ1.0KM/6dTFwN6SwOAc9UaMH3Y694Ob0luSs0r', '0000-00-00', ''),
+(11, '23', b'00', '', '1@111', '2', '', '$2y$10$LHVNhnIAwRcbtr3rI4YzWO41w80BoRJX6dGJqb.ScB1', '0000-00-00', ''),
+(12, '2', b'01', '', '22@3', '2', '', '$2y$10$luJ2l6oUgNjRUxPsP8597u0omxHR5hlph1E521LU9m1', '2021-12-21', ''),
+(13, '1', b'01', '', 'dokhaihung2003@gmail.com', '1', '', '$2y$10$jM8Mi22bdRg4XLdJaomTBuXOgvX9mOOkTjUMQGQe4pD', '0000-00-00', 'd5d44c5c39f71300c70b9b8649c347121640254101');
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `manufactures`
 --
-
 
 DROP TABLE IF EXISTS `manufactures`;
 CREATE TABLE IF NOT EXISTS `manufactures` (
@@ -99,8 +110,6 @@ INSERT INTO `manufactures` (`id`, `name`, `description`, `phone`, `photo`, `addr
 (3, 'Bitis', '', '', '', ''),
 (4, 'Nike', '', '', '', '');
 
-
-
 -- --------------------------------------------------------
 
 --
@@ -110,21 +119,27 @@ INSERT INTO `manufactures` (`id`, `name`, `description`, `phone`, `photo`, `addr
 DROP TABLE IF EXISTS `out_list`;
 CREATE TABLE IF NOT EXISTS `out_list` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-
   `client_id` int(11) NOT NULL,
   `order_time` timestamp NOT NULL,
   `receiver_name` varchar(50) NOT NULL,
   `receiver_phone` varchar(15) NOT NULL,
   `receiver_address` varchar(100) NOT NULL,
-  `note` text NOT NULL,
+  `note` enum('hủy','mới','duyệt') NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_out_manufacturers_id` (`client_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `out_list`
+--
+
+INSERT INTO `out_list` (`id`, `client_id`, `order_time`, `receiver_name`, `receiver_phone`, `receiver_address`, `note`) VALUES
+(1, 5, '2021-12-24 10:33:32', 'Danh', '0922113344', 'Đà Nẵng', 'mới'),
+(2, 5, '2021-12-24 10:33:32', 'Danh', '0922113344', 'Đà Nẵng', 'mới');
 
 -- --------------------------------------------------------
 
 --
-
 -- Table structure for table `out_product`
 --
 
@@ -139,8 +154,8 @@ CREATE TABLE IF NOT EXISTS `out_product` (
 
 -- --------------------------------------------------------
 
+--
 -- Table structure for table `products_category`
-
 --
 
 DROP TABLE IF EXISTS `products_category`;
@@ -158,7 +173,6 @@ INSERT INTO `products_category` (`id`, `category`) VALUES
 (1, 'Giày Sandal'),
 (2, 'Giày Tây'),
 (3, 'Giày Thể Thao');
-
 
 -- --------------------------------------------------------
 
@@ -197,7 +211,7 @@ CREATE TABLE IF NOT EXISTS `products_list` (
   `quantity` int(11) NOT NULL,
   `gender_id` tinyint(4) NOT NULL,
   `category_id` int(11) NOT NULL,
-  `descrpition` text NOT NULL,
+  `description` text NOT NULL,
   `photo` varchar(200) NOT NULL,
   `manufacturers_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
@@ -210,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `products_list` (
 -- Dumping data for table `products_list`
 --
 
-INSERT INTO `products_list` (`id`, `name`, `price`, `quantity`, `gender_id`, `category_id`, `descrpition`, `photo`, `manufacturers_id`) VALUES
+INSERT INTO `products_list` (`id`, `name`, `price`, `quantity`, `gender_id`, `category_id`, `description`, `photo`, `manufacturers_id`) VALUES
 (2, 'Run Star Hike Create Next Purpose: Sustainability Hi-Top\r\n', 2500000, 1000, 3, 3, '', 'https://www.converse.com.vn/pictures/catalog/products/sneakers/2021/ctas/171575/171575Cstandard.jpg', 1),
 (5, 'Chuck Taylor All Star Lift Surface Fusion', 1500000, 1000, 3, 3, '', 'https://www.converse.com.vn/pictures/catalog/products/sneakers/2021/ctas/571670c/571670Cstandard.jpg', 1),
 (6, 'Chuck Taylor All Star Crater Knit High Top', 1500000, 1000, 4, 3, '', 'https://www.converse.com.vn/pictures/catalog/products/sneakers/2021/ctas/170869c/170869Cshot2.jpg', 1),
@@ -261,10 +275,8 @@ ALTER TABLE `out_product`
 -- Constraints for table `products_list`
 --
 ALTER TABLE `products_list`
-
   ADD CONSTRAINT `FK_products_category_id` FOREIGN KEY (`category_id`) REFERENCES `products_category` (`id`),
   ADD CONSTRAINT `FK_products_gender_id` FOREIGN KEY (`gender_id`) REFERENCES `products_gender` (`id`),
-
   ADD CONSTRAINT `FK_products_manufacturers_id` FOREIGN KEY (`manufacturers_id`) REFERENCES `manufactures` (`id`);
 
 --
