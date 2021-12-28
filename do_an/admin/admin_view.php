@@ -44,7 +44,9 @@
 		case 'out':
 			$table = 'out_list';
 			$list = 'detail_list';
-			$attachment = "join cli_list on $table.client_id = cli_list.id";
+			$attachment = "join cli_list on $table.client_id = cli_list.id join receipt_history on $table.id = receipt_history.out_id left join adm_list on receipt_history.adm_id = adm_list.id";
+			$surfix = 'cli_list.';
+			$target = 'out_list.*,cli_list.*,receipt_history.*,adm_list.name as adm_name';
 			break;
 		default:
 			header('location:logout.php');
@@ -66,7 +68,6 @@
 			where ".$surfix."name like '%$tim_kiem%'
 			limit $so_ket_qua_1_trang offset $offset";
 	$ket_qua = mysqli_query($ket_noi,$sql);
-	
 	?>
 	<div id="main_div">
 		<div id="nav_ver">
