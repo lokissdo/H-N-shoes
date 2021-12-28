@@ -35,12 +35,16 @@
 		case 'product':
 			$table = 'products_list';
 			$list = 'detail_list';
+			$attachment = "join manufactures on $table.manufacturers_id = manufactures.id";
 			break;
 		case 'out':
 			$table = 'out_list';
 			$list = 'detail_list';
 			$attachment = "join cli_list on $table.client_id = cli_list.id";
 			break;
+		default:
+			header('location:logout.php');
+			exit();
 	}
 	$sql = "select * from $table $attachment where name = '$tim_kiem'";
 	$ket_qua = mysqli_query($ket_noi,$sql);
@@ -52,8 +56,7 @@
 		<div id="nav_ver">
 			<img src="//upload.wikimedia.org/wikipedia/vi/thumb/3/37/Bitis_logo.svg/501px-Bitis_logo.svg.png">
 		<ul>
-			<a href="#" class="active"><li>Danh sách</li></a>
-			<a href="#"><li>Tổng quan</li></a>
+			<?php include "nav_ver.php"; ?>			
 		</ul>
 		</div>
 		
