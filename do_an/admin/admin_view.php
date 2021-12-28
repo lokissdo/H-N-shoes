@@ -1,4 +1,4 @@
-<?php// require '../root/check_login_admin.php'; ?>
+<?php require '../root/check_login_admin.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
