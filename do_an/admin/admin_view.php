@@ -96,5 +96,26 @@
 		</div>
 	</div>
 	<?php mysqli_close($ket_noi); ?>
+	<script type="text/javascript">
+		function viewpage(link,num){
+			const xhttp = new XMLHttpRequest();
+			xhttp.onload = function() {
+				document.getElementById('main_list').innerHTML = this.
+			}
+			switch(link){
+				case 'product':
+				xhttp.open("GET","detail_view/product_detail.php?d=" + num);
+				break;
+				case 'out':
+				xhttp.open("GET","detail_view/order_detail.php?d=" + num);
+				break;
+				<?php if($_SESSION['access'] == 1){
+					include 'super_admin_view.php';
+				} ?>
+			}
+			xhttp.send();
+			
+		}
+	</script>
 </body>
 </html>
