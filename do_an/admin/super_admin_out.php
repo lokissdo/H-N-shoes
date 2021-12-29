@@ -23,6 +23,9 @@
 						<div><?php echo $each['order_time'];?></div>
 						<div><?php echo $each['receipt_stat'];?></div>
 						<div><?php echo $adm_name = $each['adm_name']??'x';?></div>
-						<div><?php echo $work_time = $each['work_time']??'x';?></div>
+						<div><?php $work_time = $each['work_time']??'x';
+									if($work_time!== 'x')
+										{echo date('H:i:s d/m/Y',strtotime($work_time));}
+										else{echo $work_time;} ?></div>
 					</div>
 				<?php 	};
