@@ -1,4 +1,4 @@
-<?php if(empty($_SESSION['accesss'])) {
+<?php if(empty($_SESSION['access'])) {
 	header('location:logout.php');
 	exit;
 }else{ ?>	

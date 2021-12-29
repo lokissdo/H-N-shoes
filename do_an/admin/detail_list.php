@@ -13,7 +13,7 @@
 				foreach ($ket_qua as $each) {
 					?>
 					<div class="list_items">
-						<div><?php echo $each['name']; ?></div>
+						<div onclick="viewpage(<?php echo $link; ?>,<?php echo $each['id']?>)"><?php echo $each['name']; ?></div>
 						<div><?php echo $each['price']; ?></div>
 						<div><?php echo $each['manufactures_name'];?></div>
 						<div><?php echo $each['description'];?></div>
@@ -21,7 +21,7 @@
 				<?php 	};	
 				break;
 				case 'out':
-				if ($_SESSION['accesss'] == 1) {
+				if ($_SESSION['access'] == 1) {
 					include 'super_admin_out.php';
 				} else {
 					?>
@@ -47,7 +47,7 @@
 							</div>
 							<div><?php echo $each['order_time'];?></div>
 							<form action="order_stat_change.php" method="POST">
-								<?php $_POST['order_id'] = $each['out_id']; ?>
+								<input type="text" name="order" hidden value="<?php echo $each['out_id']; ?>">
 								<select name="receipt_stat">
 									<option <?php echo ($each['receipt_stat'] === 'Mới')? 'selected' :"" ?>>
 										Mới
@@ -66,7 +66,7 @@
 				};	
 				break;
 				case 'manufacturers':
-				if($_SESSION['accesss'] == 1) {
+				if($_SESSION['access'] == 1) {
 					?>
 					<div class="list_items">
 						<div>Tên nhà sản xuất</div>
