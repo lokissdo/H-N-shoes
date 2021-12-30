@@ -13,7 +13,7 @@
 				foreach ($ket_qua as $each) {
 					?>
 					<div class="list_items">
-						<div onclick="viewpage(<?php echo $link; ?>,<?php echo $each['id']?>)"><?php echo $each['name']; ?></div>
+						<div onclick="viewpage(<?php echo $link; ?>,<?php echo $each['id'];?>)"><?php echo $each['name']; ?></div>
 						<div><?php echo $each['price']; ?></div>
 						<div><?php echo $each['manufactures_name'];?></div>
 						<div><?php echo $each['description'];?></div>

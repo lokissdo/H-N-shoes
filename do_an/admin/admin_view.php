@@ -100,7 +100,7 @@
 		function viewpage(link,num){
 			const xhttp = new XMLHttpRequest();
 			xhttp.onload = function() {
-				document.getElementById('main_list').innerHTML = this.
+				document.getElementById('main_list').innerHTML = this.responseText;
 			}
 			switch(link){
 				case 'product':
