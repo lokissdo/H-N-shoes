@@ -1,3 +1,4 @@
+
 				case 'manufactures':
 				xhttp.open("GET","detail_view/manufacturers_detail.php?d=" + num);
 				break;

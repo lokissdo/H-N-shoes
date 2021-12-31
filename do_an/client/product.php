@@ -35,7 +35,8 @@
     <div class="cate_header">
         <?php 
           echo $gender;
-        ?> </div>
+        ?> 
+    </div>
     <div class="cate">
         <div class="cate_itemLR"></div>
         <div class="cate_mid">

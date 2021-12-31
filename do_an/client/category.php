@@ -16,7 +16,7 @@
                 </h2>
                 <div>
                 </div>
-                <a href="#"></a>
+                <a href="./collection.php/men"></a>
             </div>
             <div class="cate_mid_item cate-women">
                 <h2>
@@ -25,7 +25,7 @@
                 <div>
                     
                 </div>
-                <a href="#"></a>
+                <a href="./collection.php/women"></a>
 
             </div>
             <div class="cate_mid_item cate-kid">
@@ -35,7 +35,7 @@
                 <div>
                     
                 </div>
-                <a href="#"></a>
+                <a href="./collection.php/kids"></a>
 
             </div>
         </div>
