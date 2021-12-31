@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 28, 2021 at 03:17 PM
+-- Generation Time: Dec 31, 2021 at 11:50 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -37,10 +37,10 @@ CREATE TABLE IF NOT EXISTS `adm_list` (
   `birthday` date NOT NULL,
   `email` varchar(100) NOT NULL,
   `photo` varchar(200) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(200) NOT NULL,
   `access` bit(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `adm_list`
@@ -48,7 +48,8 @@ CREATE TABLE IF NOT EXISTS `adm_list` (
 
 INSERT INTO `adm_list` (`id`, `name`, `phone`, `address`, `gender`, `birthday`, `email`, `photo`, `password`, `access`) VALUES
 (1, 'Nhat', '09771168123', 'Điện Biên Phủ, Quận 1', b'01', '1997-09-23', 'red@gmail.com', 'https://static.wikia.nocookie.net/heroes-and-villians/images/8/83/Winnie_the_Pooh.png/revision/latest/scale-to-width-down/1000?cb=20191229203055', 'abc', b'01'),
-(3, 'Huy', '0982224466', 'Hải Phòng', b'01', '1998-07-23', 'blue@gmail.com', '//upload.wikimedia.org/wikipedia/vi/thumb/1/1a/Mickey-Mouse.jpg/220px-Mickey-Mouse.jpg', 'abc', b'00');
+(3, 'Huy', '0982224466', 'Hải Phòng', b'01', '1998-07-23', 'blue@gmail.com', '//upload.wikimedia.org/wikipedia/vi/thumb/1/1a/Mickey-Mouse.jpg/220px-Mickey-Mouse.jpg', 'abc', b'00'),
+(5, 'Hùng', '0977227990', 'Vũng Tàu', b'01', '1991-02-14', 'yellow@gmail.com', 'https://bigcedar.com/wp-content/uploads/2020/12/AdobeStock_453941794-1.jpg', 'abc', b'00');
 
 -- --------------------------------------------------------
 
@@ -61,13 +62,13 @@ CREATE TABLE IF NOT EXISTS `cli_list` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `gender` bit(2) NOT NULL,
-  `address` varchar(200) NOT NULL,
+  `address` varchar(200) DEFAULT NULL,
   `email` varchar(200) NOT NULL,
   `phone` varchar(15) NOT NULL,
-  `photo` varchar(200) NOT NULL,
+  `photo` varchar(200) DEFAULT NULL,
   `password` varchar(50) NOT NULL,
-  `birthday` date NOT NULL,
-  `token` varchar(200) NOT NULL,
+  `birthday` date DEFAULT NULL,
+  `token` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 
@@ -124,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `out_list` (
   `receiver_name` varchar(50) NOT NULL,
   `receiver_phone` varchar(15) NOT NULL,
   `receiver_address` varchar(100) NOT NULL,
-  `note` enum('hủy','mới','duyệt') NOT NULL,
+  `note` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_out_manufacturers_id` (`client_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
@@ -151,6 +152,15 @@ CREATE TABLE IF NOT EXISTS `out_product` (
   PRIMARY KEY (`out_id`,`product_id`),
   KEY `FK_product_id` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `out_product`
+--
+
+INSERT INTO `out_product` (`out_id`, `product_id`, `quantity`) VALUES
+(1, 5, 2),
+(1, 11, 1),
+(2, 15, 2);
 
 -- --------------------------------------------------------
 
@@ -247,12 +257,20 @@ INSERT INTO `products_list` (`id`, `name`, `price`, `quantity`, `gender_id`, `ca
 DROP TABLE IF EXISTS `receipt_history`;
 CREATE TABLE IF NOT EXISTS `receipt_history` (
   `out_id` int(11) NOT NULL,
-  `adm_id` int(11) NOT NULL,
-  `receipt_stat` tinyint(4) NOT NULL,
-  `work_time` timestamp NOT NULL,
-  PRIMARY KEY (`out_id`,`adm_id`),
-  KEY `FK_admin_id` (`adm_id`)
+  `adm_id` int(11) DEFAULT NULL,
+  `receipt_stat` enum('Đã hủy','Mới','Đã duyệt') NOT NULL,
+  `work_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`out_id`),
+  KEY `FK_out_adm_id` (`adm_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `receipt_history`
+--
+
+INSERT INTO `receipt_history` (`out_id`, `adm_id`, `receipt_stat`, `work_time`) VALUES
+(1, 3, 'Đã duyệt', '2021-12-29 19:47:17'),
+(2, NULL, 'Mới', NULL);
 
 --
 -- Constraints for dumped tables
@@ -283,7 +301,7 @@ ALTER TABLE `products_list`
 -- Constraints for table `receipt_history`
 --
 ALTER TABLE `receipt_history`
-  ADD CONSTRAINT `FK_admin_id` FOREIGN KEY (`adm_id`) REFERENCES `adm_list` (`id`),
+  ADD CONSTRAINT `FK_out_adm_id` FOREIGN KEY (`adm_id`) REFERENCES `adm_list` (`id`),
   ADD CONSTRAINT `FK_out_history_id` FOREIGN KEY (`out_id`) REFERENCES `out_list` (`id`);
 COMMIT;
 
