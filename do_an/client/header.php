@@ -74,30 +74,35 @@
                         if ($_SESSION['page']=="home" ) echo "chosen"; } ?> 
                 ">Trang chủ</a>
                 <a href="#"class="items_header_bot ">Giới Thiệu</a>
-                <a href="#"class="items_header_bot header_drop 
-                <?php if (!empty($_SESSION['page'])){
-                    if ($_SESSION['page']=="Nữ" || $_SESSION['page']=="Nam, Nữ") echo "chosen"; } ?> 
-                    ">
-                    Nữ
-                    <div class="header_drop-list">
-                        <div class="header_drop-list-item">Giày thể thao</div>
-                        <div class="header_drop-list-item">Giày Tây</div>
-                        <div class="header_drop-list-item">Giày Sandal</div>
-                    </div>
-    
-                </a>
-                <a href="#"class="items_header_bot header_drop
+                
+                
+                <a href="./collection.php/men"class="items_header_bot header_drop
                 <?php if (!empty($_SESSION['page'])){
                     if ($_SESSION['page']=="Nam" || $_SESSION['page']=="Nam, Nữ") echo "chosen"; } ?> 
                 ">
                     Nam
                     <div class="header_drop-list">
-                    <div class="header_drop-list-item">Giày thể thao</div>
+                    <div class="header_drop-list-item">Giày Thể Thao</div>
                         <div class="header_drop-list-item">Giày Tây</div>
                         <div class="header_drop-list-item">Giày Sandal</div>
                     </div>
                 </a>
-                <a href="#"class="items_header_bot 
+
+                <a href="./collection.php/women"class="items_header_bot header_drop 
+                <?php if (!empty($_SESSION['page'])){
+                    if ($_SESSION['page']=="Nữ" || $_SESSION['page']=="Nam, Nữ") echo "chosen"; } ?> 
+                    ">
+                    Nữ
+                    <div class="header_drop-list">
+                        <div class="header_drop-list-item">Giày Thể Thao</div>
+                        <div class="header_drop-list-item">Giày Tây</div>
+                        <div class="header_drop-list-item">Giày Sandal</div>
+                    </div>
+    
+                </a>
+
+                
+                <a href="./collection.php/kids"class="items_header_bot 
                 <?php if (!empty($_SESSION['page'])){
                     if ($_SESSION['page']=="Trẻ em") echo "chosen"; } ?> 
                  ">Trẻ Em</a>

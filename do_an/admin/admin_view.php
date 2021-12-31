@@ -1,21 +1,21 @@
+<?php require '../root/check_login_admin.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Login admin</title>
-	<link rel="stylesheet" type="text/css" href="../root/overlay.css">
-
-
+	<title>Admin page</title>
+	<style type="text/css">
+	<?php require "../root/overlay.css" ?>
+	</style>
 </head>
 <body>
-
 	<?php 
 	require_once '../root/connect.php';
 	if(isset($_GET['link'])){
 	$link = $_GET['link'];
 	} else {
-		$link = 'admin';
+		$link = 'out';
 	}
 	if(isset($_GET['tim_kiem'])){
 		$tim_kiem = $_GET['tim_kiem'];
@@ -23,6 +23,8 @@
 		$tim_kiem = "";
 	} 
 	$attachment = '';
+	$target = '*';
+	$surfix = '';
 	switch ($link) {
 		case 'admin':
 			$table = 'adm_list';
@@ -32,41 +34,50 @@
 			$table = 'manufactures';
 			$list = 'detail_list';
 			break;
-		case 'client':
-			$table = 'cli_list';
-			$list = 'detail_list';
-			break;
 		case 'product':
 			$table = 'products_list';
 			$list = 'detail_list';
+			$target = 'products_list.*,manufactures.name as manufactures_name';
+			$attachment = "join manufactures on $table.manufacturers_id = manufactures.id";
+			$surfix = 'products_list.';
 			break;
 		case 'out':
 			$table = 'out_list';
 			$list = 'detail_list';
-			$attachment = "join cli_list on $table.client_id = cli_list.id";
+			$attachment = "join cli_list on $table.client_id = cli_list.id join receipt_history on $table.id = receipt_history.out_id left join adm_list on receipt_history.adm_id = adm_list.id";
+			$surfix = 'cli_list.';
+			$target = 'out_list.*,cli_list.*,receipt_history.*,adm_list.name as adm_name';
 			break;
+		default:
+			header('location:logout.php');
+			exit();
 	}
-	$sql = "select * from $table $attachment where name = $tim_kiem";
+	if (isset($_GET['page'])){
+		$page = $_GET['page'];
+	}else {
+			$page = 1;
+		};
+	$sql_dem = "select count(*) from $table $attachment where ".$surfix."name like '%$tim_kiem%'";
+	$ket_qua_dem = mysqli_fetch_array(mysqli_query($ket_noi,$sql_dem));
+	$so_ket_qua = $ket_qua_dem['count(*)'];
+	$so_ket_qua_1_trang = 7;
+	$max_page = ceil($so_ket_qua / $so_ket_qua_1_trang);
+	$offset = $so_ket_qua_1_trang*($page-1);
+
+	$sql = "select $target from $table $attachment 
+			where ".$surfix."name like '%$tim_kiem%'
+			limit $so_ket_qua_1_trang offset $offset";
 	$ket_qua = mysqli_query($ket_noi,$sql);
-
-
-
-
 	?>
-
-
 	<div id="main_div">
 		<div id="nav_ver">
 			<img src="//upload.wikimedia.org/wikipedia/vi/thumb/3/37/Bitis_logo.svg/501px-Bitis_logo.svg.png">
 		<ul>
-			<a href="#" class="active"><li>Danh sách</li></a>
-			<a href="#"><li>Tổng quan</li></a>
+			<?php include "nav_ver.php"; ?>			
 		</ul>
 		</div>
 		
 		<div id="compartment">
-
-
 			<form action="add_search.php">
 				<input type="text" name="tim_kiem" value="<?php echo $tim_kiem ?>">
 				<input type="text" name="link" value="<?php echo $link ?>" hidden >
@@ -76,34 +87,35 @@
 		
 		<div id="nav_hor">
 		<ul>
-
-
-			<a href="admin_view.php?link=admin<?php echo ($tim_kiem) ? "&tim_kiem=$tim_kiem" : "" ?>" <?php if ($link == 'admin') {echo 'class="active"';} ?>>
-				<li>Admin</li>
-			</a>
-			<a href="admin_view.php?link=manufacturers<?php echo ($tim_kiem) ? "&tim_kiem=$tim_kiem" : "" ?>" <?php if ($link == 'manufacturers') {echo 'class="active"';} ?>>
-				<li>Nhà sản xuất</li>
-			</a>
-			<a href="admin_view.php?link=client<?php echo ($tim_kiem) ? "&tim_kiem=$tim_kiem" : "" ?>" <?php if ($link == 'client') {echo 'class="active"';} ?>>
-				<li>Khách hàng</li>
-			</a>
-			<a href="admin_view.php?link=product<?php echo ($tim_kiem) ? "&tim_kiem=$tim_kiem" : "" ?>" <?php if ($link == 'product') {echo 'class="active"';} ?>>
-				<li>Sản phẩm</li>
-			</a>
-			<a href="admin_view.php?link=out<?php echo ($tim_kiem) ? "&tim_kiem=$tim_kiem" : "" ?>" <?php if ($link == 'out') {echo 'class="active"';} ?>>
-				<li>Đơn hàng</li>
-			</a>
+			<?php require "horizontal_bar.php"; ?>
 		</ul>
 		</div>
-			
 		<?php include "$list.php"; ?>
-			
-
 		<div id="footer">
 			
 		</div>
 	</div>
-
 	<?php mysqli_close($ket_noi); ?>
+	<script type="text/javascript">
+		function viewpage(link,num){
+			const xhttp = new XMLHttpRequest();
+			xhttp.onload = function() {
+				document.getElementById('main_list').innerHTML = this.responseText;
+			}
+			switch(link){
+				case 'product':
+				xhttp.open("GET","detail_view/product_detail.php?d=" + num);
+				break;
+				case 'out':
+				xhttp.open("GET","detail_view/order_detail.php?d=" + num);
+				break;
+				<?php if($_SESSION['access'] == 1){
+					include 'super_admin_view.php';
+				} ?>
+			}
+			xhttp.send();
+			
+		}
+	</script>
 </body>
 </html>
