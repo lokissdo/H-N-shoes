@@ -1,3 +1,4 @@
+
 <?php if(empty($_SESSION['access'])) {
 	header('location:logout.php');
 	exit;
