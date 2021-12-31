@@ -1,11 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
---
--- Host: localhost:3306
--- Generation Time: Dec 31, 2021 at 11:50 AM
--- Server version: 5.7.33
--- PHP Version: 7.4.19
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,6 +35,7 @@ CREATE TABLE IF NOT EXISTS `adm_list` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
+
 --
 -- Dumping data for table `adm_list`
 --
@@ -66,24 +60,19 @@ CREATE TABLE IF NOT EXISTS `cli_list` (
   `email` varchar(200) NOT NULL,
   `phone` varchar(15) NOT NULL,
   `photo` varchar(200) DEFAULT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(200) NOT NULL,
   `birthday` date DEFAULT NULL,
   `token` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
-
 --
 -- Dumping data for table `cli_list`
 --
 
 INSERT INTO `cli_list` (`id`, `name`, `gender`, `address`, `email`, `phone`, `photo`, `password`, `birthday`, `token`) VALUES
-(4, '12', b'01', 'no', 'dokhaihung2003@gmail.com2222', '1', 'no', '$2y$10$15PoIrYmtFjoD/9rAOVmJeb7b2DpNW4rU81LrcJOYQs', '2021-12-25', ''),
-(5, 'Lokiss', b'00', 'no', '2@2', '12', 'no', '$2y$10$ktGfaSY4oxpCqfSr3Q7qa.MT9WgGq2gl47z80jzAPVJ', '2021-12-10', '695bcb9f1897e98235f64704a06753b31640178666'),
-(9, '2', b'00', '', '2@34', '2', '', '$2y$10$I9Ttuye/k3EYydgDY425rO0ZXSbe0OcLA63gSdhrzrl', '2021-12-25', ''),
-(10, '22', b'00', '', 'dokhaihung2003@gmail.com11', '2', '', '$2y$10$vT8fLQ1.0KM/6dTFwN6SwOAc9UaMH3Y694Ob0luSs0r', '0000-00-00', ''),
-(11, '23', b'00', '', '1@111', '2', '', '$2y$10$LHVNhnIAwRcbtr3rI4YzWO41w80BoRJX6dGJqb.ScB1', '0000-00-00', ''),
-(12, '2', b'01', '', '22@3', '2', '', '$2y$10$luJ2l6oUgNjRUxPsP8597u0omxHR5hlph1E521LU9m1', '2021-12-21', ''),
-(13, '1', b'01', '', 'dokhaihung2003@gmail.com', '1', '', '$2y$10$jM8Mi22bdRg4XLdJaomTBuXOgvX9mOOkTjUMQGQe4pD', '0000-00-00', 'd5d44c5c39f71300c70b9b8649c347121640254101');
+(5, 'Lokiss', b'00', 'no', '2@2', '12', 'no', '', '2021-12-10', '695bcb9f1897e98235f64704a06753b31640178666'),
+(14, '1', b'01', '', 'dokhaihung2003@gmail.com', '1', '', '$2y$10$DvjscuNyVQYCd/B3D6wnVu1NuF.CVOVyuRSBHSmsbKJozMBrVv43C', NULL, '2ee7906b28075db68ad1a02e2f4641a61640932025'),
+(15, '2', b'01', '', 'dokhaihung2003@gmail.com2', '2', '', '$2y$10$04FOKbl86y9Vg.qOIv1YGuFxbt7h4PqrRmwYtzhZTYL6RPLCl8kZy', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -130,6 +119,7 @@ CREATE TABLE IF NOT EXISTS `out_list` (
   KEY `FK_out_manufacturers_id` (`client_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
+
 --
 -- Dumping data for table `out_list`
 --
@@ -152,7 +142,6 @@ CREATE TABLE IF NOT EXISTS `out_product` (
   PRIMARY KEY (`out_id`,`product_id`),
   KEY `FK_product_id` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 --
 -- Dumping data for table `out_product`
 --
@@ -196,7 +185,6 @@ CREATE TABLE IF NOT EXISTS `products_gender` (
   `gender` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
-
 --
 -- Dumping data for table `products_gender`
 --
