@@ -46,7 +46,7 @@
 								<?php echo "Địa chỉ người nhận: ".$each['receiver_address'];?><br>
 								<?php echo "Số điện thoại người đặt: ".$each['receiver_phone']; ?>
 							</div>
-							<div class="align_center"><?php echodate('H:i:s d/m/Y',strtotime($each['order_time']));?></div>
+							<div class="align_center"><?php echo date('H:i:s d/m/Y',strtotime($each['order_time']));?></div>
 							<form action="order_parts/order_stat_change.php" method="POST">
 								<input type="text" name="order" hidden value="<?php echo $each['out_id']; ?>">
 								<select name="receipt_stat">
