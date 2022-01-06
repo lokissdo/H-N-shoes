@@ -12,6 +12,7 @@
 				<label>Tên nhân viên:</label>
 				<div>
 					<input type="text" name="name">
+					<div>
 				</div>
 				<label>Số điện thoại:</label>
 				<div>
