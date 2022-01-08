@@ -1,13 +1,13 @@
 <?php
-	$name = $_POST['name'];
-	$phone = $_POST['phone'];
-	$address = $_POST['address'];
-	$gender = $_POST['gender'];
-	$birthday = $_POST['birthday'];
-	$email = $_POST['email'];
-	$photo = $_POST['photo'];
-	$password = $_POST['password'];
-	$access = $_POST['access'];
+	$name = strip_tags($_POST['name']);
+	$phone = strip_tags($_POST['phone']);
+	$address = strip_tags($_POST['address']);
+	$gender = strip_tags($_POST['gender']);
+	$birthday = strip_tags($_POST['birthday']);
+	$email = strip_tags($_POST['email']);
+	$photo = strip_tags($_POST['photo']);
+	$password = strip_tags($_POST['password']);
+	$access = strip_tags($_POST['access']);
 
 	require_once '../../root/connect.php';
 
