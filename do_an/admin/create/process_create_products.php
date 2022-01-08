@@ -9,6 +9,8 @@
 	$photo = strip_tags($_POST['photo']);
 
 	require_once '../../root/connect.php';
+
+	
 	$insert = "insert into products_list (name,gender_id,category_id,manufacturers_id,price,quantity,description,photo)
 				values ('$name','$gender','$category','$manufactures','$price','$quantity','$description','$photo')";
 	mysqli_query($ket_noi,$insert);

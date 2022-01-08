@@ -182,7 +182,7 @@
 						}?>
 			xhttp.send();
 		}
-		<?php if ($tool === 'create'){include 'javascript/js_validate.php'}?>
+		<?php if ($tool === 'create'){include 'javascript/js_validate.php';}?>
 	</script>
 </body>
 </html>
