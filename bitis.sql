@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 12, 2022 at 04:37 AM
+-- Generation Time: Jan 12, 2022 at 04:51 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -230,7 +230,7 @@ CREATE TABLE IF NOT EXISTS `products_list` (
   KEY `FK_products_manufacturers_id` (`manufacturers_id`),
   KEY `FK_products_gender` (`gender_id`) USING BTREE,
   KEY `FK_products_category` (`category_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `products_list`
@@ -250,7 +250,25 @@ INSERT INTO `products_list` (`id`, `name`, `price`, `quantity`, `gender_id`, `ca
 (14, 'Giày Thể Thao Cao Cấp Nữ Biti', 15000009, 998, 2, 3, '', 'https://product.hstatic.net/1000230642/product/02800hog__2__dd6e1a064a294e108c2c90e7a728470d_1024x1024.jpg', 3),
 (15, 'Giày Tây Nam Biti\'s DVM283770NAD (Nâu)', 150000, 999, 1, 2, '', 'https://product.hstatic.net/1000230642/product/dvm283770nad_dd6947c86c3049a99227e2854ddc1ef0_1024x1024.jpg', 3),
 (16, 'ZX 10000 KRUSTY BURGER', 3100000, 1000, 3, 3, 'Giày thể thao năng động đầy màu sắc', 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c59ed45d8b8c443481fcac7c01403b85_9366/ZX_10000_KRUSTY_BURGER_trang_H05783_01_standard.jpg', 5),
-(17, 'Giày Superstar 82', 3500000, 999, 1, 3, 'Giày thể thao sành điệu chất chơi', 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/8c3a61df8aea41d48b16ad6500b34711_9366/Giay_Superstar_82_DJen_GX3746_01_standard.jpg', 5);
+(17, 'Giày Superstar 82', 3500000, 999, 1, 3, 'Giày thể thao sành điệu chất chơi', 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/8c3a61df8aea41d48b16ad6500b34711_9366/Giay_Superstar_82_DJen_GX3746_01_standard.jpg', 5),
+(18, 'Nike Air Zoom Alphafly NEXT%', 8059000, 1, 1, 3, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d8e174e1-0c79-47e2-b7fc-1486288af645/air-zoom-alphafly-next-road-racing-shoes-13jzhr.png', 4),
+(19, 'Nike Free Run 5.0', 2929000, 5, 1, 3, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/bed45cdc-fe4c-4eb1-828e-ff6a4184970c/free-run-5-road-running-shoes-m8L9mr.png', 4),
+(20, 'Nike Air Zoom Pegasus 38', 3519000, 1, 2, 3, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/aefbcede-5ec1-4453-adf1-e86f8fd8d94d/air-zoom-pegasus-38-road-running-shoes-D1tCt1.png', 4),
+(21, 'Nike Dunk High LX', 3829000, 1, 2, 3, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/aa761450-2f52-4922-890c-99f9f7f6d684/dunk-high-lx-shoes-4gJ041.png', 4),
+(22, 'Nike Zoom Fly 4', 4699000, 1, 2, 3, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/3dd4c47e-5edf-4bdc-aff4-edc396c3f83e/zoom-fly-4-road-running-shoes-HMG6C0.png', 4),
+(23, 'Nike Air Max 97', 4999000, 1, 2, 3, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/5cbc21e7-886a-4265-80a1-2494e30daf51/air-max-97-shoes-B2TV3Z.png', 4),
+(24, 'Nike Star Runner 3', 1279000, 1, 4, 3, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a4552edd-3bfa-41aa-bf58-430f868f5678/star-runner-3-younger-shoes-dvMzC9.png', 4),
+(25, 'Nike Flex Runner', 1149000, 2, 4, 3, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fda8133f-8444-477b-8848-fa70bc02f1c5/flex-runner-younger-shoe-J8bH4L.png', 4),
+(26, 'Nike Force 1 LV8', 1789000, 1222, 4, 3, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8b09b7c9-beb7-42b8-93df-403c70a22c42/force-1-lv8-younger-shoes-CC5l2z.png', 4),
+(27, 'Tour Yellow', 5589000, 999, 4, 3, '', 'https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/b0612b56-5306-4f1e-84dd-42513f5067f9/air-jordan-4-tour-yellow-release-date.jpg', 4),
+(28, 'Giày Tây Da Nam Cao Cấp', 1044050, 234, 1, 2, '', 'https://product.hstatic.net/1000230642/product/dvm276880den__5__6c27b227ff064822b62bf5d95e3e0f50_1024x1024.jpg', 3),
+(29, 'Biti\'s X DMM359880VDB', 1200000, 99, 1, 2, '', 'https://product.hstatic.net/1000230642/product/dmm359880vdb__6__96238fb14e1b4c94915f0cee56267286_1024x1024.jpg', 3),
+(30, 'Giày Tây Da Nam Cao Cấp Biti\'s X DVM277880DEN', 1044050, 111, 1, 3, '', 'https://product.hstatic.net/1000230642/product/dvm277880den__5__50683fa5f129415f80860a029ba55354_1024x1024.jpg', 3),
+(31, 'Sandal Da Thật Nữ Gosto Slinky', 854050, 99, 2, 1, '', 'https://product.hstatic.net/1000230642/product/gfw017300den__3__74f3a4a8014e4830b92292186e8f9db0_1024x1024.png', 3),
+(32, 'Sandal Bé Trai Biti\'s DRB030700XNH', 275000, 999, 4, 1, '', 'https://product.hstatic.net/1000230642/product/drb030700xnh_193393af24044f4989d825bacb64a365_1024x1024.jpg', 3),
+(33, 'Giày Thể Thao Bé Trai Biti\'s DSB137300TRG (Trắng)', 123456, 987, 4, 3, '', 'https://product.hstatic.net/1000230642/product/dsb137300trg28__5__0a6f100c2ced4d69821e55059c1f4efc_1024x1024.jpg', 4),
+(34, 'Giày Thể Thao Si Bé Trai Biti\'s DSB131900DEN', 395000, 100, 4, 3, '', 'https://product.hstatic.net/1000230642/product/dsb131900den__5__1e63f186a9ed46cf91d0c83820fccacf_1024x1024.jpg', 3),
+(35, 'Run Star Hike Pride High Top', 2500000, 25, 1, 3, '', 'https://www.converse.com.vn/pictures/catalog/products/sneakers/2021/ctas/170824v/170824Cstandard.jpg', 1);
 
 -- --------------------------------------------------------
 

@@ -13,22 +13,20 @@ $reswomen=array();
 $reskids=array();
 $res=mysqli_query($connect,$sql);
 while($row=$res->fetch_assoc()){
-   if($row['gender']=="Nam, Nữ"){
+   if($row['gender']=="Nam, Nữ" &&(count($resmen) < 12||count($reswomen)<12)){
      if(count($resmen) < 12) array_push($resmen,$row);
      if(count($reswomen) < 12) array_push($reswomen,$row);
    }
-   else if($row['gender']=='Nữ' ){
-      if(count($reswomen) < 12)  
+   else if($row['gender']=='Nữ' &&count($reswomen) < 12){  
       array_push($reswomen,$row);
    }
-   else if($row['gender']=='Nam' ){
-      if(count($resmen) < 12)  
+   else if($row['gender']=='Nam' && count($resmen) < 12){
       array_push($resmen,$row);
    }
-   else {
-      if(count($reskids) < 12)  
+   else if($row['gender']=='Trẻ em' &&count($reskids) < 12) {     
       array_push($reskids,$row);
    } 
+   else break;
 
 }
 
