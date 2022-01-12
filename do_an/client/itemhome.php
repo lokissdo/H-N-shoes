@@ -5,7 +5,7 @@ include "api/connect.php";
 $sql="SELECT products_list.id,products_list.name,products_list.price,products_list.quantity,products_list.photo,products_category.category,products_gender.gender
 FROM products_list
 INNER JOIN products_gender ON products_gender.id=products_list.gender_id
-INNER JOIN products_category ON products_category.id=products_list.category_id 
+INNER JOIN products_category ON products_category.id=products_list.category_id
  ";
 
 $resmen=array();
@@ -14,14 +14,22 @@ $reskids=array();
 $res=mysqli_query($connect,$sql);
 while($row=$res->fetch_assoc()){
    if($row['gender']=="Nam, Nữ"){
-      array_push($resmen,$row);
+     if(count($resmen) < 12) array_push($resmen,$row);
+     if(count($reswomen) < 12) array_push($reswomen,$row);
+   }
+   else if($row['gender']=='Nữ' ){
+      if(count($reswomen) < 12)  
       array_push($reswomen,$row);
    }
-   else if($row['gender']=='Nữ' )
-      array_push($reswomen,$row);
-   else if($row['gender']=='Nam' )
+   else if($row['gender']=='Nam' ){
+      if(count($resmen) < 12)  
       array_push($resmen,$row);
-   else  array_push($reskids,$row);
+   }
+   else {
+      if(count($reskids) < 12)  
+      array_push($reskids,$row);
+   } 
+
 }
 
 

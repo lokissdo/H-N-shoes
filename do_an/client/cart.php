@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="asset/grid.css">
     <link rel="stylesheet"  href="asset/footer.css">
+    <link rel="icon" href="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/40/000000/external-cart-essentials-icongeek26-linear-colour-icongeek26.png" type="image/.jpg">
 </head>
 <body>
     <?php 
