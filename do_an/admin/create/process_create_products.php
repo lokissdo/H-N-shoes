@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 	$name = strip_tags($_POST['name']);
 	$gender = strip_tags($_POST['gender']);
@@ -17,6 +18,8 @@
 	mysqli_query($ket_noi,$insert);
 	mysqli_close($ket_noi);
 =======
+=======
+>>>>>>> dd59bda (update main to hung)
 <?php
 	$name = strip_tags($_POST['name']);
 	$gender = strip_tags($_POST['gender']);
@@ -34,5 +37,8 @@
 				values ('$name','$gender','$category','$manufactures','$price','$quantity','$description','$photo')";
 	mysqli_query($ket_noi,$insert);
 	mysqli_close($ket_noi);
+<<<<<<< HEAD
+>>>>>>> dd59bda (update main to hung)
+=======
 >>>>>>> dd59bda (update main to hung)
 	header('location:../admin_view.php?link=product');

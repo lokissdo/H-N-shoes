@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 $name = strip_tags($_POST['name']);
 $phone = strip_tags($_POST['phone']);
@@ -30,6 +31,8 @@ else {
 	header('location:../admin_view.php?link=admin');
 }
 =======
+=======
+>>>>>>> dd59bda (update main to hung)
 <?php
 $name = strip_tags($_POST['name']);
 $phone = strip_tags($_POST['phone']);
@@ -59,8 +62,16 @@ if (preg_match($regex_email, $email) == 1 && preg_match($regex_password, $passwo
 }
 else {
 	header('location:../admin_view.php?link=admin');
+<<<<<<< HEAD
+<<<<<<< HEAD
 }
 <<<<<<< HEAD
 >>>>>>> dd59bda (update main to hung)
 =======
+>>>>>>> baee69e (hung)
+=======
+}
+>>>>>>> dd59bda (update main to hung)
+=======
+}
 >>>>>>> baee69e (hung)

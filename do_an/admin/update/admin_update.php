@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php 
 	$id = $_POST['id'];
 	$name = $_POST['admin_name'];
@@ -20,6 +21,8 @@
 	mysqli_query($ket_noi,$update_sql);
 	mysqli_close($ket_noi);
 =======
+=======
+>>>>>>> dd59bda (update main to hung)
 <?php 
 	$id = $_POST['id'];
 	$name = $_POST['admin_name'];
@@ -40,5 +43,8 @@
 
 	mysqli_query($ket_noi,$update_sql);
 	mysqli_close($ket_noi);
+<<<<<<< HEAD
+>>>>>>> dd59bda (update main to hung)
+=======
 >>>>>>> dd59bda (update main to hung)
 	header("location:../admin_view.php?link=admin");

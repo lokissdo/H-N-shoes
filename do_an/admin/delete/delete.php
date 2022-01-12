@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php if($_SESSION['access'] != 1){
 	header('location:logout.php');
 }
@@ -72,6 +73,8 @@ switch($link) {
 }
 ?>
 =======
+=======
+>>>>>>> dd59bda (update main to hung)
 <?php if($_SESSION['access'] != 1){
 	header('location:logout.php');
 }
@@ -143,8 +146,16 @@ switch($link) {
 	header('location:logout.php');
 	exit();
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
 ?>
 <<<<<<< HEAD
 >>>>>>> dd59bda (update main to hung)
 =======
+>>>>>>> baee69e (hung)
+=======
+?>
+>>>>>>> dd59bda (update main to hung)
+=======
+?>
 >>>>>>> baee69e (hung)

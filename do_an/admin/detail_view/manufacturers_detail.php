@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 	$id = $_GET['d'];
 	require_once '../../root/connect.php';
@@ -14,6 +15,8 @@ echo "Mô tả: ".$result['description']."<br>";
 echo "<button onclick=\"fix_page(".$id.")\">Sửa thông tin</button>";
 echo "</div>";
 =======
+=======
+>>>>>>> dd59bda (update main to hung)
 <?php
 	$id = $_GET['d'];
 	require_once '../../root/connect.php';
@@ -28,5 +31,8 @@ echo "Địa chỉ: ".$result['address']."<br>";
 echo "Mô tả: ".$result['description']."<br>";
 echo "<button onclick=\"fix_page(".$id.")\">Sửa thông tin</button>";
 echo "</div>";
+<<<<<<< HEAD
+>>>>>>> dd59bda (update main to hung)
+=======
 >>>>>>> dd59bda (update main to hung)
 mysqli_close($ket_noi);

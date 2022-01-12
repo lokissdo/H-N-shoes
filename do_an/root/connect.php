@@ -1,7 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 
 	$ket_noi = mysqli_connect('localhost','root','','bitis');
+=======
+<?php
+
+	$ket_noi = mysqli_connect('localhost','root','','bitis');
+>>>>>>> dd59bda (update main to hung)
 =======
 <?php
 

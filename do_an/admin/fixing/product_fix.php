@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 	$id = $_GET['d'];
 	require_once '../../root/connect.php';
@@ -55,6 +56,8 @@ echo 	"Mô tả: <textarea name='description'>".$result['description']."</textar
 echo "<button type=\"submit\">Sửa thông tin</button>";
 echo 	"</form>";
 =======
+=======
+>>>>>>> dd59bda (update main to hung)
 <?php
 	$id = $_GET['d'];
 	require_once '../../root/connect.php';
@@ -110,5 +113,8 @@ echo	"Số lượng: <input type='text' name='quantity' value='".$result['quanti
 echo 	"Mô tả: <textarea name='description'>".$result['description']."</textarea><br>";
 echo "<button type=\"submit\">Sửa thông tin</button>";
 echo 	"</form>";
+<<<<<<< HEAD
+>>>>>>> dd59bda (update main to hung)
+=======
 >>>>>>> dd59bda (update main to hung)
 mysqli_close($ket_noi);

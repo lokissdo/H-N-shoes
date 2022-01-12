@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 :root {
 		--color-button: cyan;
@@ -57,6 +58,8 @@
 		color: var(--text-color-active);
 	}
 =======
+=======
+>>>>>>> dd59bda (update main to hung)
 
 :root {
 		--color-button: cyan;
@@ -114,4 +117,7 @@
 		background-color: var(--color-active);
 		color: var(--text-color-active);
 	}
+<<<<<<< HEAD
+>>>>>>> dd59bda (update main to hung)
+=======
 >>>>>>> dd59bda (update main to hung)

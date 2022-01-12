@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 	$id = $_GET['d'];
 	require_once '../../root/connect.php';
@@ -30,6 +31,8 @@ echo "</div>";
 	header('location:logout.php');
 }
 =======
+=======
+>>>>>>> dd59bda (update main to hung)
 <?php
 	$id = $_GET['d'];
 	require_once '../../root/connect.php';
@@ -60,5 +63,8 @@ echo "</div>";
 } else{
 	header('location:logout.php');
 }
+<<<<<<< HEAD
+>>>>>>> dd59bda (update main to hung)
+=======
 >>>>>>> dd59bda (update main to hung)
 mysqli_close($ket_noi);

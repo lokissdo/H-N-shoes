@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 	$name = strip_tags($_POST['name']);
 	$phone = strip_tags($_POST['phone']);
@@ -23,6 +24,8 @@ $regex_address = "/^(?:Tỉnh|Thành phố) [A-ZÀÁẢÃẠĂẮẰẲẴẶÂ�
 	mysqli_close($ket_noi);
 	header('location:../admin_view.php?link=manufacturers');
 =======
+=======
+>>>>>>> dd59bda (update main to hung)
 <?php
 	$name = strip_tags($_POST['name']);
 	$phone = strip_tags($_POST['phone']);
@@ -45,8 +48,16 @@ $regex_address = "/^(?:Tỉnh|Thành phố) [A-ZÀÁẢÃẠĂẮẰẲẴẶÂ�
 	mysqli_query($ket_noi,$insert);
 }
 	mysqli_close($ket_noi);
+<<<<<<< HEAD
+<<<<<<< HEAD
 	header('location:../admin_view.php?link=manufacturers');
 <<<<<<< HEAD
 >>>>>>> dd59bda (update main to hung)
 =======
+>>>>>>> baee69e (hung)
+=======
+	header('location:../admin_view.php?link=manufacturers');
+>>>>>>> dd59bda (update main to hung)
+=======
+	header('location:../admin_view.php?link=manufacturers');
 >>>>>>> baee69e (hung)
