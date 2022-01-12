@@ -1,4 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> dd59bda (update main to hung)
+=======
+
+>>>>>>> baee69e (hung)
 <?php 
 $id = $_GET['d'];
 require_once '../../root/connect.php';

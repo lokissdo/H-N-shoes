@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 :root {
 		--color-button: cyan;
@@ -55,3 +56,62 @@
 		background-color: var(--color-active);
 		color: var(--text-color-active);
 	}
+=======
+
+:root {
+		--color-button: cyan;
+		--color-active: navy;
+		--text-color: black;
+		--text-color-active: white;
+		--color-error: red;
+		--background-color: lightcyan;
+		}
+		body{
+		margin: 0px;
+		box-sizing: border-box;
+		background-color: var(--background-color);
+	}
+	#main_body{
+		width: 40vw;
+		height: 100vh;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: var(--background-color);
+	}
+	#logo{
+		margin-top: 8vh;
+		margin-bottom: 2vh;
+	}
+	#logo > img{
+		height: 25vh;
+	}
+	#form_body {
+		width: 23vw;
+		background-color: white;
+		display: flex;
+		flex-direction: column;
+		padding: 8px 8px;
+		box-shadow: 0px 0px 5px 6px rgba(0, 0, 0, 0.2);
+	}
+	#form_body > h1 {
+		margin: 15px 0px;
+		align-self: center;
+		color: navy;
+	}
+	.form_margin {
+		margin-bottom: 5px;
+	}
+	.input{
+		height: 2rem;
+	}
+	#form_body > button {
+		background-color: var(--color-button);
+		border-radius: 6px 6px;
+	}
+	#form_body > button:active {
+		background-color: var(--color-active);
+		color: var(--text-color-active);
+	}
+>>>>>>> dd59bda (update main to hung)
