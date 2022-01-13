@@ -1,0 +1,198 @@
+body{
+    margin:0px;
+    padding: 0px;
+}
+.payment_container{
+    font-family: Helvetica Neue, sans-serif;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+}
+.payment_wrap-left{
+    flex:60%;
+    padding-left: 12vw;
+    padding-right: 7%;
+   
+}
+.payment_wrap-right{
+    flex: 40%;
+    min-height: 100vh;
+    padding-left: 2%;
+    padding-right: 10vw;
+    background-color: #fafafa;
+}
+.payment_con-right{
+    margin-top: 10%;
+}
+.payment_con-left{
+    margin-top: 10%;
+}
+.image-title{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../public/icongame.jpg");
+    width: 70px;
+    height: 70px;
+}
+.image-title ~ h5{
+    margin-top: 0px;
+    margin-bottom: 5px;
+    color: rgba(207, 65, 65, 0.774);
+    font-weight: 520;
+}
+.linked{
+    position: relative;
+}
+.linked > a{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+input{
+    width: 98%;
+    min-width: 400px;
+    margin-bottom: 10px;
+    height: 40px;
+    border-radius: 10px;
+    border-color: rgba(0, 0, 0, 0.26);
+    padding-left: 15px;
+    margin-right: 15px;
+}
+input:focus{
+    outline: 2px solid aqua;
+
+}
+.select_address_container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.select_address{
+
+    width: 30%;
+}
+.select_address>select{
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border-color: rgba(0, 0, 0, 0.26);
+    position: relative;
+
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+label{
+    position: relative;
+    top: 17px;
+    z-index: 100;
+    font-size: 0.8rem;
+    left: 10px;
+    color: rgb(155, 155, 155);
+}
+option{
+    padding-top: 10px;
+}
+form{
+    width: fit-content;
+}
+.form_bot{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.form_bot >button{
+    margin: 30px 0px;
+    background-color:#338dbc ;
+    color: whitesmoke;
+    padding: 20px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    outline: none;
+}
+.payment_wrap-left{
+    border-right: 2px solid rgba(70, 65, 65, 0.226);
+}
+.payment_product{
+    width: 80%;
+    min-width: 450px;
+}
+.product{
+    display: flex;
+    margin-bottom: 10px;
+}
+.product_mid, .product_right{
+    align-self: center;
+    font-size: 0.9rem;
+    width: 60%;
+}
+.product_left > img{
+    width: 60px;
+    height: 60px;
+   
+}
+.product_right{
+    flex: 3;
+}
+.product_left{
+position: relative;
+border: 2px solid rgba(70, 65, 65, 0.226);
+margin-right: 20px;
+border-radius: 10px;
+}
+.product_quan{
+    position: absolute;
+    left: 50px;
+    top:-8px;
+    background-color: rgb(161 161 162);
+    padding: 2px 6px;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.9rem;
+}
+.border_pro{
+    margin-top: 5px;
+    border-bottom: 2px solid rgba(70, 65, 65, 0.226);
+}
+
+.fx{
+    font-size: 0.9rem;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.sumprice{
+    font-size: 1.3rem;
+}
+.payment_sucess_wrap{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(34, 35, 36, 0.151);
+    
+}
+.payment_sucess{
+    background-color: rgb(39 255 137 / 98%);
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+.hidden{
+    display: none;
+}
+.error{
+    color: rgb(255, 0, 0);
+    height: 20px;
+    font-size: 1.2rem;
+    font-family: 'Times New Roman','Lucida Console', serif;
+}

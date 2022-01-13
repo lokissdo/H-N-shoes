@@ -3,15 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
-<<<<<<< HEAD
-<<<<<<< HEAD
--- Generation Time: Jan 12, 2022 at 04:51 AM
-=======
--- Generation Time: Jan 12, 2022 at 04:37 AM
->>>>>>> 23c9cc8 (.)
-=======
--- Generation Time: Jan 12, 2022 at 04:51 AM
->>>>>>> 56ed9e6 (update main to hung)
+-- Generation Time: Jan 13, 2022 at 05:42 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -91,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `cli_list` (
 
 INSERT INTO `cli_list` (`id`, `name`, `gender`, `address`, `email`, `phone`, `photo`, `password`, `birthday`, `token`) VALUES
 (5, 'Lokiss', b'00', 'no', '2@2', '12', 'no', '', '2021-12-10', '695bcb9f1897e98235f64704a06753b31640178666'),
-(14, '1', b'01', '', 'dokhaihung2003@gmail.com', '1', '', '$2y$10$DvjscuNyVQYCd/B3D6wnVu1NuF.CVOVyuRSBHSmsbKJozMBrVv43C', NULL, '2ee7906b28075db68ad1a02e2f4641a61640932025'),
+(14, '1', b'01', '', 'dokhaihung2003@gmail.com', '1', '', '$2y$10$DvjscuNyVQYCd/B3D6wnVu1NuF.CVOVyuRSBHSmsbKJozMBrVv43C', NULL, '2e617dcfc42c411fb19f6863f96d50441642042730'),
 (15, '2', b'01', '', 'dokhaihung2003@gmail.com2', '2', '', '$2y$10$04FOKbl86y9Vg.qOIv1YGuFxbt7h4PqrRmwYtzhZTYL6RPLCl8kZy', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -129,24 +121,16 @@ INSERT INTO `manufactures` (`id`, `name`, `description`, `phone`, `photo`, `addr
 
 DROP TABLE IF EXISTS `out_list`;
 CREATE TABLE IF NOT EXISTS `out_list` (
-<<<<<<< HEAD
   `id` int(11) NOT NULL AUTO_INCREMENT,
-=======
-  `id` int(11) NOT NULL,
->>>>>>> 23c9cc8 (.)
   `client_id` int(11) NOT NULL,
-  `order_time` timestamp NOT NULL,
+  `order_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `receiver_name` varchar(50) NOT NULL,
   `receiver_phone` varchar(15) NOT NULL,
   `receiver_address` varchar(100) NOT NULL,
   `note` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_out_manufacturers_id` (`client_id`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
-=======
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
->>>>>>> 23c9cc8 (.)
 
 --
 -- Dumping data for table `out_list`
@@ -154,7 +138,8 @@ CREATE TABLE IF NOT EXISTS `out_list` (
 
 INSERT INTO `out_list` (`id`, `client_id`, `order_time`, `receiver_name`, `receiver_phone`, `receiver_address`, `note`) VALUES
 (1, 5, '2021-12-24 10:33:32', 'Danh', '0922113344', 'Đà Nẵng', 'mới'),
-(2, 5, '2021-12-24 10:33:32', 'Danh', '0922113344', 'Đà Nẵng', 'mới');
+(2, 5, '2021-12-24 10:33:32', 'Danh', '0922113344', 'Đà Nẵng', 'mới'),
+(3, 14, '2022-01-13 05:41:55', 'Đỗ Khải Hưng', '0367634', 'Đường Lê thành phương, Phường Hoà Vinh , Thị xã Đông Hòa , Tỉnh Phú Yên ', '');
 
 -- --------------------------------------------------------
 
@@ -179,6 +164,10 @@ INSERT INTO `out_product` (`out_id`, `product_id`, `quantity`) VALUES
 (1, 5, 2),
 (1, 6, 12),
 (2, 12, 6);
+(3, 12, 1),
+(3, 23, 1),
+(3, 28, 3),
+(3, 32, 1);
 
 -- --------------------------------------------------------
 
@@ -246,15 +235,7 @@ CREATE TABLE IF NOT EXISTS `products_list` (
   KEY `FK_products_manufacturers_id` (`manufacturers_id`),
   KEY `FK_products_gender` (`gender_id`) USING BTREE,
   KEY `FK_products_category` (`category_id`) USING BTREE
-<<<<<<< HEAD
-<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4;
-=======
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4;
->>>>>>> 23c9cc8 (.)
-=======
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4;
->>>>>>> 56ed9e6 (update main to hung)
 
 --
 -- Dumping data for table `products_list`
@@ -274,10 +255,6 @@ INSERT INTO `products_list` (`id`, `name`, `price`, `quantity`, `gender_id`, `ca
 (14, 'Giày Thể Thao Cao Cấp Nữ Biti', 15000009, 998, 2, 3, '', 'https://product.hstatic.net/1000230642/product/02800hog__2__dd6e1a064a294e108c2c90e7a728470d_1024x1024.jpg', 3),
 (15, 'Giày Tây Nam Biti\'s DVM283770NAD (Nâu)', 150000, 999, 1, 2, '', 'https://product.hstatic.net/1000230642/product/dvm283770nad_dd6947c86c3049a99227e2854ddc1ef0_1024x1024.jpg', 3),
 (16, 'ZX 10000 KRUSTY BURGER', 3100000, 1000, 3, 3, 'Giày thể thao năng động đầy màu sắc', 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c59ed45d8b8c443481fcac7c01403b85_9366/ZX_10000_KRUSTY_BURGER_trang_H05783_01_standard.jpg', 5),
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 56ed9e6 (update main to hung)
 (17, 'Giày Superstar 82', 3500000, 999, 1, 3, 'Giày thể thao sành điệu chất chơi', 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/8c3a61df8aea41d48b16ad6500b34711_9366/Giay_Superstar_82_DJen_GX3746_01_standard.jpg', 5),
 (18, 'Nike Air Zoom Alphafly NEXT%', 8059000, 1, 1, 3, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d8e174e1-0c79-47e2-b7fc-1486288af645/air-zoom-alphafly-next-road-racing-shoes-13jzhr.png', 4),
 (19, 'Nike Free Run 5.0', 2929000, 5, 1, 3, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/bed45cdc-fe4c-4eb1-828e-ff6a4184970c/free-run-5-road-running-shoes-m8L9mr.png', 4),
@@ -297,12 +274,6 @@ INSERT INTO `products_list` (`id`, `name`, `price`, `quantity`, `gender_id`, `ca
 (33, 'Giày Thể Thao Bé Trai Biti\'s DSB137300TRG (Trắng)', 123456, 987, 4, 3, '', 'https://product.hstatic.net/1000230642/product/dsb137300trg28__5__0a6f100c2ced4d69821e55059c1f4efc_1024x1024.jpg', 4),
 (34, 'Giày Thể Thao Si Bé Trai Biti\'s DSB131900DEN', 395000, 100, 4, 3, '', 'https://product.hstatic.net/1000230642/product/dsb131900den__5__1e63f186a9ed46cf91d0c83820fccacf_1024x1024.jpg', 3),
 (35, 'Run Star Hike Pride High Top', 2500000, 25, 1, 3, '', 'https://www.converse.com.vn/pictures/catalog/products/sneakers/2021/ctas/170824v/170824Cstandard.jpg', 1);
-<<<<<<< HEAD
-=======
-(17, 'Giày Superstar 82', 3500000, 999, 1, 3, 'Giày thể thao sành điệu chất chơi', 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/8c3a61df8aea41d48b16ad6500b34711_9366/Giay_Superstar_82_DJen_GX3746_01_standard.jpg', 5);
->>>>>>> 23c9cc8 (.)
-=======
->>>>>>> 56ed9e6 (update main to hung)
 
 -- --------------------------------------------------------
 
@@ -326,11 +297,8 @@ CREATE TABLE IF NOT EXISTS `receipt_history` (
 
 INSERT INTO `receipt_history` (`out_id`, `adm_id`, `receipt_stat`, `work_time`) VALUES
 (1, 3, 'Đã duyệt', '2021-12-29 19:47:17'),
-<<<<<<< HEAD
 (2, NULL, 'Mới', NULL);
-=======
-(2, 3, 'Đã duyệt', '2022-01-12 04:25:18');
->>>>>>> 23c9cc8 (.)
+
 
 --
 -- Constraints for dumped tables

@@ -1,4 +1,3 @@
-
 <?php
 	$id = $_GET['d'];
 	require_once '../../root/connect.php';

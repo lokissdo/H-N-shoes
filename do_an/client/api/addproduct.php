@@ -7,13 +7,13 @@
     }
     $id=$_GET['id'];
     if (!isset( $_SESSION['cart'])){
-        $_COOKIE['quantity']=1;
-        setcookie('quantity',1, time()+8640000,"/"); 
+        $_SESSION['quantity']=1;
+       // setcookie('quantity',1, time()+8640000,"/"); 
         echo json_encode("hereeee");
     }
     else {
-        $_COOKIE['quantity']+=1;
-        setcookie('quantity', $_COOKIE['quantity'], time()+8640000,"/"); 
+        $_SESSION['quantity']+=1;
+       // setcookie('quantity', $_COOKIE['quantity'], time()+8640000,"/"); 
     }
     if(isset($_SESSION['cart'][$id]['quantity'])){
         $_SESSION['cart'][$id]['quantity']+=1;
