@@ -15,3 +15,4 @@
 				values ('$name','$gender','$category','$manufactures','$price','$quantity','$description','$photo')";
 	mysqli_query($ket_noi,$insert);
 	mysqli_close($ket_noi);
+	header('location:../admin_view.php?link=product');

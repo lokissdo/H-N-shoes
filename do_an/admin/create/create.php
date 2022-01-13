@@ -185,3 +185,4 @@
 	default:
 	header('location:logout.php');
 	exit();
+}?>
