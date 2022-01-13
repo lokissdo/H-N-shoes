@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 12, 2022 at 04:51 AM
+-- Generation Time: Jan 13, 2022 at 05:42 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `cli_list` (
 
 INSERT INTO `cli_list` (`id`, `name`, `gender`, `address`, `email`, `phone`, `photo`, `password`, `birthday`, `token`) VALUES
 (5, 'Lokiss', b'00', 'no', '2@2', '12', 'no', '', '2021-12-10', '695bcb9f1897e98235f64704a06753b31640178666'),
-(14, '1', b'01', '', 'dokhaihung2003@gmail.com', '1', '', '$2y$10$DvjscuNyVQYCd/B3D6wnVu1NuF.CVOVyuRSBHSmsbKJozMBrVv43C', NULL, '2ee7906b28075db68ad1a02e2f4641a61640932025'),
+(14, '1', b'01', '', 'dokhaihung2003@gmail.com', '1', '', '$2y$10$DvjscuNyVQYCd/B3D6wnVu1NuF.CVOVyuRSBHSmsbKJozMBrVv43C', NULL, '2e617dcfc42c411fb19f6863f96d50441642042730'),
 (15, '2', b'01', '', 'dokhaihung2003@gmail.com2', '2', '', '$2y$10$04FOKbl86y9Vg.qOIv1YGuFxbt7h4PqrRmwYtzhZTYL6RPLCl8kZy', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -123,7 +123,7 @@ DROP TABLE IF EXISTS `out_list`;
 CREATE TABLE IF NOT EXISTS `out_list` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `client_id` int(11) NOT NULL,
-  `order_time` timestamp NOT NULL,
+  `order_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `receiver_name` varchar(50) NOT NULL,
   `receiver_phone` varchar(15) NOT NULL,
   `receiver_address` varchar(100) NOT NULL,
@@ -138,7 +138,8 @@ CREATE TABLE IF NOT EXISTS `out_list` (
 
 INSERT INTO `out_list` (`id`, `client_id`, `order_time`, `receiver_name`, `receiver_phone`, `receiver_address`, `note`) VALUES
 (1, 5, '2021-12-24 10:33:32', 'Danh', '0922113344', 'Đà Nẵng', 'mới'),
-(2, 5, '2021-12-24 10:33:32', 'Danh', '0922113344', 'Đà Nẵng', 'mới');
+(2, 5, '2021-12-24 10:33:32', 'Danh', '0922113344', 'Đà Nẵng', 'mới'),
+(3, 14, '2022-01-13 05:41:55', 'Đỗ Khải Hưng', '0367634', 'Đường Lê thành phương, Phường Hoà Vinh , Thị xã Đông Hòa , Tỉnh Phú Yên ', '');
 
 -- --------------------------------------------------------
 
@@ -160,9 +161,10 @@ CREATE TABLE IF NOT EXISTS `out_product` (
 --
 
 INSERT INTO `out_product` (`out_id`, `product_id`, `quantity`) VALUES
-(1, 5, 2),
-(1, 6, 12),
-(2, 12, 6);
+(3, 12, 1),
+(3, 23, 1),
+(3, 28, 3),
+(3, 32, 1);
 
 -- --------------------------------------------------------
 
