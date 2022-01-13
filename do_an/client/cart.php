@@ -72,7 +72,10 @@
         </div>
         <div class="payment"> 
             <div class="payment-item payment-item-inter">ĐẶT HÀNG QUỐC TẾ<br>(áp dụng cho quốc gia khác)</div>
-            <div class="payment-item ">THANH TOÁN NGAY<br>(áp dụng cho Việt Nam)</div>
+            <div class="linked payment-item ">
+                THANH TOÁN NGAY<br>(áp dụng cho Việt Nam)
+                <a href="./checkout.php"></a>
+            </div>
         </div>
         <?php }
         else {
