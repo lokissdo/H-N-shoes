@@ -53,8 +53,8 @@
                             <img src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/40/000000/external-cart-essentials-icongeek26-linear-colour-icongeek26.png"/>
                             <div class="cart_text">
                                 <?php 
-                                if(isset($_COOKIE['quantity'])&&  isset($_SESSION['cart']))                              
-                                echo $_COOKIE['quantity'];
+                                if(isset($_SESSION['quantity'])&&  isset($_SESSION['cart']))                              
+                                echo $_SESSION['quantity'];
                                 else echo 0;
                                 ?> 
                             </div>

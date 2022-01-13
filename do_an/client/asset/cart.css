@@ -104,3 +104,13 @@ body{
 .delete-button:hover{
     box-shadow: 0px 4px 5px 0px #dd7849a6;
 }
+.linked{
+    position: relative;
+}
+.linked>a{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

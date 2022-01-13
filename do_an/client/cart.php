@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="asset/grid.css">
     <link rel="stylesheet"  href="asset/footer.css">
+    <link rel="icon" href="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/40/000000/external-cart-essentials-icongeek26-linear-colour-icongeek26.png" type="image/.jpg">
 </head>
 <body>
     <?php 
@@ -71,7 +72,10 @@
         </div>
         <div class="payment"> 
             <div class="payment-item payment-item-inter">ĐẶT HÀNG QUỐC TẾ<br>(áp dụng cho quốc gia khác)</div>
-            <div class="payment-item ">THANH TOÁN NGAY<br>(áp dụng cho Việt Nam)</div>
+            <div class="linked payment-item ">
+                THANH TOÁN NGAY<br>(áp dụng cho Việt Nam)
+                <a href="./checkout.php"></a>
+            </div>
         </div>
         <?php }
         else {

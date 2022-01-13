@@ -1,4 +1,3 @@
-
 <?php
 $name = strip_tags($_POST['name']);
 $phone = strip_tags($_POST['phone']);
