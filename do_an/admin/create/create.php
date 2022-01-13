@@ -1,6 +1,3 @@
-
-
-
 <?php switch ($link) {
 	case 'admin': ?>
 	<div class="create">
@@ -188,12 +185,3 @@
 	default:
 	header('location:logout.php');
 	exit();
-<<<<<<< HEAD
-<<<<<<< HEAD
-} ?>
-=======
-} ?>
->>>>>>> dd59bda (update main to hung)
-=======
-} ?>
->>>>>>> baee69e (hung)
