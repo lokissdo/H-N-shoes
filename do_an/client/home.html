@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./asset/account.css">
+</head>
+<body>
+    <h1 class="title-page">TÀI KHOẢN CỦA BẠN</h1>
+    <div class="content_wrap_container  ">
+        <div class="account_wrap ">
+            <h3 class="header-account ">TÀI KHOẢN</h3>
+            <div class="border_account"></div>
+            <div class="item_list chosen-page linked">
+                <div class="icon-infor">
+                    <img src="https://img.icons8.com/ios-glyphs/20/000000/user--v1.png"/>
+
+                </div>
+                <div class=" item-text-account">Thông tin tài khoản
+                  
+                </div>
+                <a href="./account.php"></a>
+            </div>
+            <div class="item_list linked">
+                <div class="icon-infor">
+                    <img src="https://img.icons8.com/ios-filled/20/000000/list.png"/>
+                </div>
+                <div class=" item-text-account">Quản lí đơn hàng</div>
+                <a href="./account.php?view=list-order"></a>
+            </div>
+            <div class="item_list linked">
+                <div class="icon-infor ">
+                    <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/20/000000/external-sign-out-interface-dreamstale-lineal-dreamstale.png"/>
+                </div>
+                <div class="linked item-text-account">Đăng xuất</div>
+
+                <a href="./signout.php"></a>
+            </div>
+        </div>
+
+
+        <div class="content_wrap hidden">
+
+            <!--  Home page  -->
+            <h3 class="header-account  ">
+                <div class="content-text">
+                    Thông tin tài khoản
+                </div>
+                <div class="content-update linked">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            width="25" height="25"
+                            viewBox="0 0 172 172"
+                            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M152.5425,6.88c-3.23844,0 -6.57094,1.19594 -9.03,3.655l-4.6225,4.73l17.845,17.845c-0.01344,0.01344 4.73,-4.6225 4.73,-4.6225c4.93156,-4.93156 4.93156,-13.02094 0,-17.9525c-2.4725,-2.4725 -5.68406,-3.655 -8.9225,-3.655zM133.3,20.425l-78.1525,78.1525l-0.215,1.075l-3.225,16.6625l-1.075,5.0525l5.0525,-1.075l16.6625,-3.225l1.075,-0.215l78.1525,-78.1525l-4.945,-4.8375l-76.54,76.4325l-8.385,-8.385l76.4325,-76.54zM10.32,34.4c-1.90812,0 -3.44,1.54531 -3.44,3.44v123.84c0,1.89469 1.53188,3.44 3.44,3.44h123.84c1.90813,0 3.44,-1.54531 3.44,-3.44v-99.76l-6.88,6.88v89.44h-116.96v-116.96h89.44l6.88,-6.88z"></path></g></g></svg>
+                    Cập nhật thông tin tài khoản
+                    <a href="./account.php?view=update-account"></a>
+                </div>
+            </h3>
+            <div class="border_account header-account-content"></div>
+            <div class="item_list">
+                <div class=" item-text-account">Họ và tên:</div>
+            </div>
+            <div class="item_list">
+                <div class=" item-text-account">Email:</div>
+            </div>
+            <div class="item_list">
+                <div class=" item-text-account">Địa chỉ: </div>
+            </div>
+            <div class="item_list">
+                <div class=" item-text-account">Điện thoại: </div>
+            </div>  
+        </div>
+        <div class="content_wrap ">
+            <div class="update-account-wrap ">
+                <form action="" class="update-account-form" method="post">
+                    <input class="form-item" name="first_name" type="text" placeholder="Họ">
+                    <input class="form-item" name="last_name" type="text" placeholder="Tên">
+                    <input class="form-item" name="email" type="email" placeholder="Email">
+                    <input class="form-item" name="phone_number" type="number" placeholder="Số điện thoại(*)">
+                    <input class="form-item" name="birthday" type="date" placeholder="Ngày sinh(dd/mm/yyyy)(*)">
+                    <input class="form-item" name="address_detail" type="text" placeholder="Địa chỉ">
+
+                    <select class="form-item" name="address_province" id="select_pro">
+                        <option data-code="null" value="null"> Vui lòng chọn tỉnh / thành phố </option>
+                    </select>
+                    <div class="success-update">Cập nhật tài khoản thành công</div>
+                    <button class="form-item" type="submit"> Cập nhật </button>
+                    <div class=" cancel-update">
+                          hoặc
+                        <a href="#">Hủy</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+<<<<<<< HEAD
+
+    </div>
+    <script src="./js/account.js"></script>
+=======
+
+    </div>
+    <script src="./js/account.js"></script>
+
+>>>>>>> 6242cae6fc930a472857dbcb630edd057761b076
+</body>
+</html>

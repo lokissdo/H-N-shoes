@@ -71,7 +71,7 @@
                             <img src="https://img.icons8.com/external-kmg-design-flat-kmg-design/32/000000/external-user-back-to-school-kmg-design-flat-kmg-design.png"/>
                             <a href="../account.php"></a>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

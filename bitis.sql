@@ -121,7 +121,7 @@ INSERT INTO `manufactures` (`id`, `name`, `description`, `phone`, `photo`, `addr
 
 DROP TABLE IF EXISTS `out_list`;
 CREATE TABLE IF NOT EXISTS `out_list` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL ,
   `client_id` int(11) NOT NULL,
   `order_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `receiver_name` varchar(50) NOT NULL,
@@ -161,6 +161,9 @@ CREATE TABLE IF NOT EXISTS `out_product` (
 --
 
 INSERT INTO `out_product` (`out_id`, `product_id`, `quantity`) VALUES
+(1, 5, 2),
+(1, 6, 12),
+(2, 12, 6);
 (3, 12, 1),
 (3, 23, 1),
 (3, 28, 3),
@@ -294,7 +297,8 @@ CREATE TABLE IF NOT EXISTS `receipt_history` (
 
 INSERT INTO `receipt_history` (`out_id`, `adm_id`, `receipt_stat`, `work_time`) VALUES
 (1, 3, 'Đã duyệt', '2021-12-29 19:47:17'),
-(2, 3, 'Đã duyệt', '2022-01-12 04:25:18');
+(2, NULL, 'Mới', NULL);
+
 
 --
 -- Constraints for dumped tables
