@@ -1,6 +1,6 @@
 <?php
-include "./api/start.php";
-if(!$_SESSION['id'] ||!$_SESSION['cart'] ){
+include "./api/authenticate.php";
+if(!Authenticate() ||!$_SESSION['cart'] ){
     header("Location: ./");
     exit;
 }

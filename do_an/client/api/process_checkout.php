@@ -1,7 +1,7 @@
 <?php 
 include "start.php";
-if(!$_SESSION['id'] ||!$_SESSION['cart'] ){
-    header("Location: ./");
+if(!$_SESSION['id'] || isset($_SESSION['id']['access']) ||!$_SESSION['cart'] ){
+    header("Location: ../");
     exit;
 }
 

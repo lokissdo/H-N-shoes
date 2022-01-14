@@ -6,6 +6,7 @@
 .content_wrap_container{
     display: flex;
     padding: 0px 12%;
+    margin-bottom: 20vh;
 }
 .header-account{
     display: flex;
