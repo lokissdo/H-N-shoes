@@ -4,209 +4,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="public/icongame.jpg" type="image/.jpg">
-   <link rel="stylesheet"  href="asset/header.css">
-   <link rel="stylesheet"  href="asset/grid.css">
-   <link rel="stylesheet"  href="asset/body.css">
-   <link rel="stylesheet"  href="asset/footer.css">
 
-   <!-- media="(min-width:1024px)" -->
-    <title>Store</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="./asset/account.css">
 </head>
 <body>
-    <header>
-        <div class="header__top">
-            <div class="wrapper_header__top">
-                <div class="items_top_header top_header_left">
-                    <div class=" sign signup">
-                        <a href="#" >
-                            <div class="sign__text">
-                                Đăng ký
-                            </div>
-                        </a>
-                    </div>
-                    <div class="sign signin"> 
-                        <a href="#" >
-                            <div class="sign__text">
-                                Đăng nhập
-                            </div>
-                        </a> 
-                    </div>
-                </div>
-                <div class="items_top_header top_header_mid">
-                    <a href="#" >
-                        <div class="header_mid_text">
-                            SNEAKER
-                        </div>
-                    </a>
-                </div>
-                <div class="items_top_header top_header_right">
-                    <div class="search">
-                        <form class="search_form"action="./Process/search.php" method="GET">
-                            <!-- <label for="fname">Anh:</label><br> -->
-                            <input type="text" id="search" name="search"><br>
-                            <button class="search_form_button" type="submit">Tìm kiếm</button>
-                        </form>
-                    </div>
-                    <div class="cart">
-                        <a href="#" >
-                            <div class="cart_text">
-                                Giỏ hàng
-                            </div>
-                        </a>
-                        <div class="cart_label"></div>
+    <h1 class="title-page">TÀI KHOẢN CỦA BẠN</h1>
+    <div class="content_wrap_container  ">
+        <div class="account_wrap ">
+            <h3 class="header-account ">TÀI KHOẢN</h3>
+            <div class="border_account"></div>
+            <div class="item_list chosen-page linked">
+                <div class="icon-infor">
+                    <img src="https://img.icons8.com/ios-glyphs/20/000000/user--v1.png"/>
 
-                    </div>
                 </div>
+                <div class=" item-text-account">Thông tin tài khoản
+                  
+                </div>
+                <a href="./account.php"></a>
+            </div>
+            <div class="item_list linked">
+                <div class="icon-infor">
+                    <img src="https://img.icons8.com/ios-filled/20/000000/list.png"/>
+                </div>
+                <div class=" item-text-account">Quản lí đơn hàng</div>
+                <a href="./account.php?view=list-order"></a>
+            </div>
+            <div class="item_list linked">
+                <div class="icon-infor ">
+                    <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/20/000000/external-sign-out-interface-dreamstale-lineal-dreamstale.png"/>
+                </div>
+                <div class="linked item-text-account">Đăng xuất</div>
+
+                <a href="./signout.php"></a>
             </div>
         </div>
-        <div class="header__bot">
-            <div class="wrap_items_header">
-                <a href="#"class="items_header_bot ">Trang chủ</a>
-                <a href="#"class="items_header_bot ">Giới Thiệu</a>
-                <a href="#"class="items_header_bot header_drop ">
-                    Nữ
-                    <div class="header_drop-list">
-                        <div class="header_drop-list-item">Giày thể thao</div>
-                        <div class="header_drop-list-item">Giày da</div>
-                        <div class="header_drop-list-item">Giày cao cổ</div>
-                        <div class="header_drop-list-item">Giày lười</div>
+
+
+        <div class="content_wrap hidden">
+
+            <!--  Home page  -->
+            <h3 class="header-account  ">
+                <div class="content-text">
+                    Thông tin tài khoản
+                </div>
+                <div class="content-update linked">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            width="25" height="25"
+                            viewBox="0 0 172 172"
+                            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M152.5425,6.88c-3.23844,0 -6.57094,1.19594 -9.03,3.655l-4.6225,4.73l17.845,17.845c-0.01344,0.01344 4.73,-4.6225 4.73,-4.6225c4.93156,-4.93156 4.93156,-13.02094 0,-17.9525c-2.4725,-2.4725 -5.68406,-3.655 -8.9225,-3.655zM133.3,20.425l-78.1525,78.1525l-0.215,1.075l-3.225,16.6625l-1.075,5.0525l5.0525,-1.075l16.6625,-3.225l1.075,-0.215l78.1525,-78.1525l-4.945,-4.8375l-76.54,76.4325l-8.385,-8.385l76.4325,-76.54zM10.32,34.4c-1.90812,0 -3.44,1.54531 -3.44,3.44v123.84c0,1.89469 1.53188,3.44 3.44,3.44h123.84c1.90813,0 3.44,-1.54531 3.44,-3.44v-99.76l-6.88,6.88v89.44h-116.96v-116.96h89.44l6.88,-6.88z"></path></g></g></svg>
+                    Cập nhật thông tin tài khoản
+                    <a href="./account.php?view=update-account"></a>
+                </div>
+            </h3>
+            <div class="border_account header-account-content"></div>
+            <div class="item_list">
+                <div class=" item-text-account">Họ và tên:</div>
+            </div>
+            <div class="item_list">
+                <div class=" item-text-account">Email:</div>
+            </div>
+            <div class="item_list">
+                <div class=" item-text-account">Địa chỉ: </div>
+            </div>
+            <div class="item_list">
+                <div class=" item-text-account">Điện thoại: </div>
+            </div>  
+        </div>
+        <div class="content_wrap ">
+            <div class="update-account-wrap ">
+                <form action="" class="update-account-form" method="post">
+                    <input class="form-item" name="first_name" type="text" placeholder="Họ">
+                    <input class="form-item" name="last_name" type="text" placeholder="Tên">
+                    <input class="form-item" name="email" type="email" placeholder="Email">
+                    <input class="form-item" name="phone_number" type="number" placeholder="Số điện thoại(*)">
+                    <input class="form-item" name="birthday" type="date" placeholder="Ngày sinh(dd/mm/yyyy)(*)">
+                    <input class="form-item" name="address_detail" type="text" placeholder="Địa chỉ">
+
+                    <select class="form-item" name="address_province" id="select_pro">
+                        <option data-code="null" value="null"> Vui lòng chọn tỉnh / thành phố </option>
+                    </select>
+                    <div class="success-update">Cập nhật tài khoản thành công</div>
+                    <button class="form-item" type="submit"> Cập nhật </button>
+                    <div class=" cancel-update">
+                          hoặc
+                        <a href="#">Hủy</a>
                     </div>
-    
-                </a>
-                <a href="#"class="items_header_bot header_drop">
-                    Nam
-                    <div class="header_drop-list">
-                        <div class="header_drop-list-item">Giày thể thao</div>
-                        <div class="header_drop-list-item">Giày da</div>
-                        <div class="header_drop-list-item">Giày cao cổ</div>
-                        <div class="header_drop-list-item">Giày lười</div>
-                    </div>
-                </a>
-                <a href="#"class="items_header_bot ">Trẻ Em</a>
-                <a href="#"class="items_header_bot ">Phụ kiện khác</a>
+                </form>
+
             </div>
         </div>
-    </header>
-    <div class="body_product">
-        <div class="grid wide">
-            <div class="row">
-                <div class="col m-3 c-3 l-3">
-                   <div class="container_product">
-                        <img src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/sale-off-3.jpg" width="100%" height="70%"alt="">
-                        <div class="name_product">
-                            Tên giày
-                        </div>
-                        <div class="price_product">
-                            Giá giày
-                        </div>
-                   </div>
-                </div>
-                <div class="col m-3 c-3 l-3">
-                    <div class="container_product">
 
-                    </div>
-                </div>
-                <div class="col m-3 c-3 l-3">
-                    <div class="container_product">
-
-                    </div>
-                </div>
-                <div class="col m-3 c-3 l-3">
-                    <div class="container_product">
-
-                    </div>
-                </div>
-                <div class="col m-3 c-3 l-3">
-                    <div class="container_product">
-
-                    </div>
-                </div>
-                <div class="col m-3 c-3 l-3">
-                    <div class="container_product">
- 
-                    </div>
-                 </div>
-                 <div class="col m-3 c-3 l-3">
-                     <div class="container_product">
- 
-                     </div>
-                 </div>
-                 <div class="col m-3 c-3 l-3">
-                     <div class="container_product">
- 
-                     </div>
-                 </div>
-                 <div class="col m-3 c-3 l-3">
-                     <div class="container_product">
- 
-                     </div>
-                 </div>
-                 <div class="col m-3 c-3 l-3">
-                     <div class="container_product">
- 
-                     </div>
-                 </div>
-                 <div class="col m-3 c-3 l-3">
-                    <div class="container_product">
-
-                    </div>
-                </div>
-                <div class="col m-3 c-3 l-3">
-                    <div class="container_product">
-
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-    <footer class="footer">
-        <div class="container_footer">
-            <div class="footer_item">
-                <div class="footer_item_title">Giới Thiệu
-                    <div class="footer_item_title-underline"></div>
-                </div>
-                <div class="footer_item_detail"> Chào mừng bạn đến với ngôi nhà H&N! Tại đây, mỗi một dòng chữ, mỗi chi tiết và hình ảnh đều là những bằng chứng mang dấu ấn lịch sử H&N 100 năm, và đang không ngừng phát triển lớn mạnh. </div>
-            </div>
-            <div class="footer_item">
-                <div class="footer_item_title">Địa chỉ
-                    <div class="footer_item_title-underline"></div>
-                </div>
-                <div class="footer_item_detail">
-                    <li class="item_address ">Đường xx, Quân xx, Thành phố xx</li>
-                    <li class="item_address ">03676341**</li>
-                    <li class="item_address ">dokhaihung2003@gmail.com</li>
-                    <li class="item_address ">SNEAKERSHOP</li>
-                </div>
-            </div>
-            <div class="footer_item">
-                <div class="footer_item_title">Menu
-                    <div class="footer_item_title-underline"></div>
-                </div>
-                <div class="footer_item_detail footer_contanier_menu">
-                    <div class="footer_contanier_menu_item">Trang chủ</div>
-                    <div class="footer_contanier_menu_item">Giới thiệu</div>
-                    <div class="footer_contanier_menu_item">Cửa hàng</div>
-                    <div class="footer_contanier_menu_item">Tin tức</div>
-                    <div class="footer_contanier_menu_item">Liên hệ</div>
-                </div>
-            </div>
-            <div class="footer_item">
-                <div class="footer_item_title">Mạng xã hội
-                    <div class="footer_item_title-underline"></div>
-                </div>
-                <div class="footer_item_detail">
-                    <a href="https://www.facebook.com"><img class="footer_item_detail-icon" src="https://img.icons8.com/fluency/30/000000/facebook-new.png"/></a>
-                    <a href="https://www.facebook.com"><img class="footer_item_detail-icon" src="https://img.icons8.com/fluency/30/000000/instagram-new.png"/></a>
-                    <a href="https://www.facebook.com"><img class="footer_item_detail-icon" src="https://img.icons8.com/color/30/000000/gmail-new.png"/></a>
-                    <a href="https://www.facebook.com"><img class="footer_item_detail-icon" src="https://img.icons8.com/fluency/30/000000/twitter.png"/></a>
-                </div>
-            </div>
+    <script src="./js/account.js"></script>
 
-        </div>
-        <div class="footer_copy_right">
-           <div class="footer_copy_right-text">© Bản quyền thuộc về . Thiết kế website H&N </div>
-        </div>
-    </footer>
 </body>
 </html>

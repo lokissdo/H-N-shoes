@@ -126,6 +126,10 @@ li{
    display: inline-block;
    padding: 0px 5px;
 }
+.sign__text > img,.sign__text > svg{
+    position: relative;
+    top: 10px;
+}
 
 .header_mid_text{
     color :white;
@@ -150,7 +154,6 @@ li{
 }
 .cart a{
     display: flex;
-    width: 100px;
 }
 .top_header_mid{
    margin-left: -100px;
@@ -177,4 +180,11 @@ padding-top: 10px;
     color: aliceblue;
     background-color: #363636e0;
     background-clip: border-box;
+}
+.profile > img{
+    width: 100%;
+    height: 100%;
+}
+.profile{
+    margin-left: 5px;
 }
