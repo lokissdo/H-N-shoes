@@ -178,3 +178,13 @@ padding-top: 10px;
     background-color: #363636e0;
     background-clip: border-box;
 }
+.linked{
+    position: relative;
+}
+.linked>a{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

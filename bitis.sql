@@ -121,7 +121,7 @@ INSERT INTO `manufactures` (`id`, `name`, `description`, `phone`, `photo`, `addr
 
 DROP TABLE IF EXISTS `out_list`;
 CREATE TABLE IF NOT EXISTS `out_list` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL ,
   `client_id` int(11) NOT NULL,
   `order_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `receiver_name` varchar(50) NOT NULL,
@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `out_list` (
   `note` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_out_manufacturers_id` (`client_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `out_list`

@@ -62,6 +62,12 @@
                         <div class="cart_label"></div>
 
                     </div>
+                    <div class="linked">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                width="40" height="40"viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#0ab8ff"><path d="M86,17.2c-19.00027,0 -34.4,15.39973 -34.4,34.4v5.73333c0,19.00027 15.39973,34.4 34.4,34.4c19.00027,0 34.4,-15.39973 34.4,-34.4v-5.73333c0,-19.00027 -15.39973,-34.4 -34.4,-34.4zM63.62656,112.10234c-16.82733,4.39747 -32.70069,12.67676 -38.55443,20.29063c-5.24027,6.8112 -0.25182,16.6737 8.34245,16.6737h105.15964c8.59427,0 13.58271,-9.86796 8.34245,-16.68489c-5.85373,-7.61387 -21.72163,-15.88196 -38.54323,-20.27943c-6.02,5.16573 -13.82504,8.29766 -22.37344,8.29766c-8.55413,0 -16.35344,-3.13766 -22.37344,-8.29766z"></path></g></g></svg>
+                        
+                        <a href="../profile.php"></a>
+                    </div>
                 </div>
             </div>
         </div>
