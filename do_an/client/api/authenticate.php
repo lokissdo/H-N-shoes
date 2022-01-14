@@ -2,7 +2,8 @@
 require "start.php";
 //header("location:javascript://history.go(-1)");
 function Authenticate(){
-    if(isset($_SESSION['id'])) return true;
+    if(isset($_SESSION['id']) && !isset($_SESSION['access'])) return true;
+    if(isset($_SESSION['access'])) unset($_SESSION['access']);
     if (isset($_COOKIE['token'])){
         require "connect.php";
         $sql="select * from cli_list
@@ -20,6 +21,3 @@ function Authenticate(){
     }
     return 0;
 }
-
-
-?>

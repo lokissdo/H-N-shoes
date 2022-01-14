@@ -1,6 +1,3 @@
-
-
-
 <?php switch ($link) {
 	case 'admin': ?>
 	<div class="create">

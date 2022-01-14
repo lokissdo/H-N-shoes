@@ -1,4 +1,5 @@
 
+<?php require_once "api/authenticate.php"; ?>
 <head>
     <link rel="stylesheet" href="asset/header.css">
 </head>
@@ -22,7 +23,6 @@
                     <div class="sign signin"> 
                         <a href=
                         <?php
-                          require_once "api/authenticate.php";
                          if (Authenticate()){
                             echo "\"./signout.php\"";
                         }else echo  "\"./login.php\"";
@@ -75,7 +75,7 @@
                     <div class="profile linked">
                             <img src="https://img.icons8.com/external-kmg-design-flat-kmg-design/32/000000/external-user-back-to-school-kmg-design-flat-kmg-design.png"/>
                             <a href="./account.php"></a>
-                        </div>
+                    </div>
                     
                 </div>
             </div>
