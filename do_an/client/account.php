@@ -13,6 +13,7 @@ $temp=explode(",",$res['address']);
 $addr="";
 for ($i=0;$i<count($temp)-1;$i++)
 $addr.=$temp[$i];
+$province=$temp[count($temp)-1];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -127,6 +128,7 @@ $addr.=$temp[$i];
     
 
     </div>
-    <?php require "footer.php"?>
+    <?php require "footer.php"; echo "<script> var province=\"$province\"; </script>" ?>
+    
 </body>
 </html>

@@ -27,10 +27,13 @@ window.onload=()=>{
     .then(response => response.json())
     .then(data => {
         var html="";
+        province=province.slice(1);
         for (let i=0;i<data.length;i++){
-            html+=` <option  value="${data[i].name}"> ${data[i].name} </option>`
+            if(province==data[i].name) html+=` <option selected value="${data[i].name}"> ${data[i].name} </option>`
+            else html+=` <option  value="${data[i].name}"> ${data[i].name} </option>`
         }
         document.querySelector("#select_pro").innerHTML+=html;
+        console.log(province)
     })
 }
 
