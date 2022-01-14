@@ -45,16 +45,19 @@
 			return c;
 		}
 	const button = document.querySelector("button.submit_form");
-		function submit(event) {
+	const form_submit = document.querySelector("form.manu_c");
+	button.addEventListener('click',check_submit);
+		function check_submit(event) {
+			event.preventDefault();
 			let a = 0;
 			let b = 0;
 			let c = 0;
 			a = check_name(a);
 			b = check_phone(b);
 			c = check_address(c);
-			if (a != 0 || b != 0 || c != 0){
-				event.preventDefault();
+			if (a == 0 && b == 0 && c == 0){
+				form_submit.submit();
 			}
 
 		}
-		button.addEventListener('click',submit);
+		

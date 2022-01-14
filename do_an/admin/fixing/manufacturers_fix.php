@@ -13,4 +13,5 @@ echo "Địa chỉ: <input type='text' name='address' value='".$result['address'
 echo "Mô tả: <textarea name='description' value='".$result['description']."'></textarea><br>";
 echo "<button type=\"submit\">Sửa thông tin</button>";
 echo "</form>";
+
 mysqli_close($ket_noi);

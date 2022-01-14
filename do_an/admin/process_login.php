@@ -28,5 +28,4 @@ header('location:admin_view.php');
 	echo "<script type='text/javascript'>alert('Không thành công');</script>";
 	sleep(5);
 	header('location:logout.php');
-	exit();
 }
