@@ -9,7 +9,8 @@ if ($_SESSION['access'] == 1){
 echo 	"<img id='adm_photo' src=\"".$result['photo']."\"><br>";
 echo 	"<form method=\"post\" action=\"update/admin_update.php\">
 			<input type='hidden' name='id' value='".$id."' >
-			Tên nhân viên: <input type='text' name='admin_name' value='".$result['name']."'><br>";
+			Tên nhân viên: <input type='text' name='name' value='".$result['name']."'><br>
+			<div class=\"name_error\"></div>";
 echo	"Giới tính: ";
 echo 	"<select name='gender'>";
 if ($result['gender'] == 1){
@@ -19,8 +20,10 @@ if ($result['gender'] == 1){
 }
 echo "</select>";
 echo  "<br>";
-echo "Số điện thoại: <input type='text' name='phone' value='".$result['phone']."'><br>";
-echo	"Địa chỉ: <input type='text' name='address' value='".$result['address']."'><br>";
+echo "Số điện thoại: <input type='text' name='phone' value='".$result['phone']."'><br>
+		<div class=\"phone_error\"></div>";
+echo	"Địa chỉ: <input type='text' name='address' value='".$result['address']."'><br>
+		<div class=\"address_error\"></div>";
 echo	"Sinh nhật: <input type='text' name='birthday' value='".$result['birthday']."'><br>";
 echo "<button type='submit'>Sửa thông tin</button>";
 echo "</form>";
