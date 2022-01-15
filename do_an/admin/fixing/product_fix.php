@@ -16,7 +16,8 @@
 echo "<img id='products_photo' src='".$result['photo']."'><br>";
 echo "<form method=\"post\" action=\"update/product_update.php\">
 		<input type='hidden' name='id' value='".$id."'>
-	Tên sản phẩm: <input type='text' name='name' value='".$result['name']."'><br>";
+	Tên sản phẩm: <input type='text' name='name' value='".$result['name']."'><br>
+	<div class=\"name_error\"></div>";
 
 echo 	"Giới tính: ";
 echo "<select name=\"gender\">";
@@ -48,8 +49,10 @@ echo	">".$manufactures_each['id']." - ".$manufactures_each['name']."</option>";
 echo "</select>";
 echo 	"<br>";
 
-echo 	"Giá sản phẩm: <input type='text' name='price' value='".$result['price']."'><br>";
-echo	"Số lượng: <input type='text' name='quantity' value='".$result['quantity']."'><br>";
+echo 	"Giá sản phẩm: <input type='text' name='price' value='".$result['price']."'><br>
+			<div class=\"price_error\"></div>";
+echo	"Số lượng: <input type='text' name='quantity' value='".$result['quantity']."'><br>
+			<div class=\"quantity_error\"></div>";
 echo 	"Mô tả: <textarea name='description'>".$result['description']."</textarea><br>";
 echo "<button type=\"submit\">Sửa thông tin</button>";
 echo 	"</form>";

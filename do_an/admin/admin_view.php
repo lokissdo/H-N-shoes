@@ -182,7 +182,7 @@
 						}?>
 			xhttp.send();
 		}
-		<?php if ($tool === 'create'){
+		<?php if ($tool === 'create' || $tool === 'view'){
 			switch ($link) {
 				case 'admin':
 					include 'javascript/js_validate_admin.php';
