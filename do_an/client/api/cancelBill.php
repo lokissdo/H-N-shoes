@@ -7,9 +7,10 @@ include "authenticate.php";
  }
 
  include "connect.php";
+ $temp=addslashes($_POST['id']);
  $sqlcheck="SELECT COUNT(*) as count FROM `out_list` 
  JOIN receipt_history on out_list.id=receipt_history.out_id
- WHERE receipt_history.receipt_stat='Mới' and out_list.id=$_POST[id] and out_list.client_id=$_SESSION[id]";
+ WHERE receipt_history.receipt_stat='Mới' and out_list.id='$temp' and out_list.client_id=$_SESSION[id]";
  $resTemp=mysqli_query($connect,$sqlcheck);
 if($resTemp->fetch_row()[0]!=1) {
     echo json_encode(0);
