@@ -120,7 +120,7 @@ INSERT INTO `manufactures` (`id`, `name`, `description`, `phone`, `photo`, `addr
 
 DROP TABLE IF EXISTS `out_list`;
 CREATE TABLE IF NOT EXISTS `out_list` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL ,
   `client_id` int(11) NOT NULL,
   `order_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `receiver_name` varchar(50) NOT NULL,

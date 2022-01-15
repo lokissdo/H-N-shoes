@@ -1,3 +1,6 @@
+
+
+
 <?php switch ($link) {
 	case 'admin': ?>
 	<div class="create">
@@ -32,7 +35,7 @@
 				</div>
 				<label>Ngày sinh:</label>
 				<div>
-					<input type="date" name="birthday">
+					<input type="date" name="birthday" placeholder="dd/mm/yyyy">
 					<div class="birthday_error">
 					</div> 
 				</div>
@@ -185,4 +188,4 @@
 	default:
 	header('location:logout.php');
 	exit();
-}?>
+} ?>

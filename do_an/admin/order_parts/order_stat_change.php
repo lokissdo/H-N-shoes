@@ -1,8 +1,9 @@
 
 <?php
-	$stat = $_POST['receipt_stat'];
-	$order_id = $_POST['order'];
 	require_once '../../root/connect.php';
+	$stat = mysqli_real_escape_string($ket_noi,$_POST['receipt_stat']);
+	$order_id = mysqli_real_escape_string($ket_noi,$_POST['order']);
+	
 	session_start();
 	$admin_id = $_SESSION['id'];
 	date_default_timezone_set('asia/ho_chi_minh');

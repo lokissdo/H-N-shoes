@@ -45,7 +45,7 @@
 			return c;
 		}
 
-
+	<?php if ($tool === 'create') { ?>
 
 	function check_mail(d) {
 			let email = document.getElementsByName("email")[0].value;
@@ -78,6 +78,7 @@
 			}
 			return e;
 		}
+	<?php } ?>
 		const button = document.querySelector("button.submit_form");
 		function submit(event) {
 			let a = 0;
