@@ -26,6 +26,7 @@ if(empty($_POST['name']) || empty($_POST['address'])|| empty($_POST['phone'])){
         $loi=mysqli_error($connect);    
     }while($loi);
     $sql_product="INSERT INTO `out_product` (`out_id`, `product_id`, `quantity`) VALUES ";
+    $sql_receipt="INSERT INTO `receipt_history` (`out_id`) VALUES ($id_bill)";
     $check_first=0;
     foreach($_SESSION['cart'] as $key=> $item ) { 
         if($check_first==0){
@@ -37,7 +38,7 @@ if(empty($_POST['name']) || empty($_POST['address'])|| empty($_POST['phone'])){
         }
     }
     $temp=mysqli_query($connect,$sql_product);
-    
+    $temp=mysqli_query($connect,$sql_receipt);
     unset($_SESSION['cart']);
    // echo json_encode($sql_product);
     echo json_encode(1);
