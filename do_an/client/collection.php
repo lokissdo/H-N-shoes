@@ -17,12 +17,13 @@
     }
     $gender=$genderArr[$slug];
     include "./api/connect.php";
-
+    if($gender[0]=='Nam' || $gender[0]=='Nữ') $sqlGender="n'$gender[0]' or gender=n'Nam, Nữ'";
+    else $sqlGender="n'$gender[0]'";
     $sql="SELECT products_list.id,products_list.name,products_list.price,products_list.photo,products_category.category,products_gender.gender
     FROM products_list
     INNER JOIN products_gender ON products_gender.id=products_list.gender_id
     INNER JOIN products_category ON products_category.id=products_list.category_id 
-    WHERE gender=\"$gender[0]\"
+    WHERE gender=$sqlGender
      ";
     $sqlCate="SELECT * FROM `products_category` WHERE 1";
     $res=mysqli_query($connect,$sql);

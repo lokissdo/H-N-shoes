@@ -14,6 +14,10 @@ $addr="";
 for ($i=0;$i<count($temp)-1;$i++)
 $addr.=$temp[$i];
 $province=$temp[count($temp)-1];
+if(isset($_GET['view']) && $_GET['view']=='list-order')
+$page=1;
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,12 +32,14 @@ $province=$temp[count($temp)-1];
 </head>
 <body>
         <?php require "header.php"?>
-        <h1 class="title-page">TÀI KHOẢN CỦA BẠN</h1>
+        <h1 class="title-page"><?php if(isset($page)) echo"ĐƠN HÀNG ĐÃ ĐẶT";
+                                        else echo "TÀI KHOẢN CỦA BẠN"
+        ?></h1>
         <div class="content_wrap_container  ">
             <div class="account_wrap ">
                 <h3 class="header-account ">TÀI KHOẢN</h3>
                 <div class="border_account"></div>
-                <div class="item_list chosen-page linked">
+                <div class="item_list <?php  if(!isset($page)) echo'chosen-page' ?> linked">
                     <div class="icon-infor">
                         <img src="https://img.icons8.com/ios-glyphs/20/000000/user--v1.png"/>
     
@@ -43,7 +49,7 @@ $province=$temp[count($temp)-1];
                     </div>
                     <a href="./account.php"></a>
                 </div>
-                <div class="item_list linked">
+                <div class="item_list linked <?php  if(isset($page)) echo'chosen-page' ?>">
                     <div class="icon-infor">
                         <img src="https://img.icons8.com/ios-filled/20/000000/list.png"/>
                     </div>
@@ -90,9 +96,88 @@ $province=$temp[count($temp)-1];
             </div>
         </div>
         <script src="./js/account.js"></script>
+   <?php } else if(isset($_GET['view']) && $_GET['view']=='list-order'){ 
+       include "./api/getbill.php";
+       $arrBill=getLisOrders();
+    ?>
 
-   <?php } else { 
-        ?>
+
+        <!-- list order -->
+        <link rel="stylesheet" href="./asset/grid.css">
+        <link rel="stylesheet" href="./asset/bill.css">
+        <div class="wrap_bill">
+        <?php foreach($arrBill as $id=>$oneBill){?>
+        <div class="bill-item" id="<?php echo $id?>">
+                <div class="row name-table-container ">
+                    <div class="tb-name-product c-4 m-4 l-4 l-o-2 col"> TÊN SẢN PHẨM</div>
+                    <div class="l-2 c-2 m-2 col" >SỐ LƯỢNG</div>
+                    <div class="l-2 c-2 m-2 col">GIÁ</div>
+                    <div class="l-2 c-2 m-2 col" >THÀNH TIỀN</div>
+                </div>
+
+                <?php 
+                $checkFirstPro=-1;
+                $sumOneBill=0;
+                foreach($oneBill['product'] as $oneProduct){
+                   
+                ?>
+                <!-- first product -->
+                <div class="row bill-one-product <?php if($checkFirstPro==-1) $checkFirstPro=0;else echo"hidden";
+                ?>" >
+                        <div class="product-img c-2 m-2 l-2">  
+                            <img src="<?php echo $oneProduct['photo']?>"alt="">   
+                        </div> 
+                        <div class="c-4 m-4 l-4 col">  
+                            <div class="product-name ">  
+                                <?php echo $oneProduct['name']?>  
+                            </div> 
+                            <div class="product-co-size-del">  
+                                    <div class="color">Màu: Đen</div>  
+                                    <div class="size">Size: 39</div>   
+                            </div> 
+                        
+                        </div> 
+                        <div class="quantity c-2 m-2 l-2 col"> 
+                        <?php echo $oneProduct['quantity']?>    
+                        </div> 
+                        <div class="one-price c-2 m-2 l-2 col"> <?php echo number_format($oneProduct['price'])?>   ₫</div>   
+                        <div class="sum-price c-2 m-2 l-2 col"> <?php $sumOneBill+=$oneProduct['price']*$oneProduct['quantity'];
+                                                             echo number_format($oneProduct['price']*$oneProduct['quantity'])?>   ₫</div>
+                        <div class="barrier"> </div>   
+                </div> 
+                <?php }?>
+                 
+                <div class="bill-view-more">Xem thêm</div>   
+                <div class="infor_delivery">
+                     <div>Người nhận: <span><?php echo $oneBill['receiver_name']?></span></div>
+                     <div>Địa chỉ: <span><?php echo $oneBill['receiver_address']?></span></div>
+                     <div>Số điện thoại liên hệ:<span> <?php echo $oneBill['receiver_phone']?></span></div>
+                 </div>
+                <div class="bill-total">
+                    <div>
+                        <div class="shipping-fee">Phí ship: 1000</div>
+                        <div class="total-bill-item">Tổng tiền: <?php echo number_format($sumOneBill)?> VNĐ</div>
+                    </div>             
+                    <div>
+                        <div class="bill_status">
+                            <?php if($oneBill['receipt_stat']=="Mới") echo 'CHƯA ĐƯỢC DUYỆT' ;
+                                 else if($oneBill['receipt_stat']=="Đã hủy") echo 'ĐÃ HỦY';
+                                 else echo 'ĐÃ DUYỆT';
+                            ?>
+                        </div>
+                        <?php if($oneBill['receipt_stat']=="Mới") echo' <div class="bill-cancel">HỦY ĐƠN</div>'?>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <?php }?>
+        
+
+
+        </div>
+        <script src="./js/bill.js"></script>
+        <?php } else{ ?>
         <div class="content_wrap  ">
 
             <!--  Home page  -->
@@ -128,7 +213,7 @@ $province=$temp[count($temp)-1];
     
 
     </div>
+   
     <?php require "footer.php"; echo "<script> var province=\"$province\"; </script>" ?>
-    
 </body>
 </html>
