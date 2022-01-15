@@ -64,7 +64,7 @@ price.forEach(e=>{
     e.innerText=new Intl.NumberFormat().format(e.innerText)+" đ";
 })
 function error(){
-    warning.textContent="Vui lòng điền đầy đủ thông tin";
+    warning.textContent="Vui lòng điền đầy đủ và chính xác thông tin";
     setTimeout(()=>{
        warning.textContent="";
    },3000);

@@ -1,12 +1,12 @@
 <?php 
-include "start.php";
-if(!$_SESSION['id'] || isset($_SESSION['id']['access']) ||!$_SESSION['cart'] ){
+include "authenticate.php";
+if(!Authenticate() || empty($_SESSION['quantity'])){
     header("Location: ../");
     exit;
 }
 
-if(empty($_POST['name']) || empty($_POST['address'])|| empty($_POST['phone'])){
-    echo json_encode("0");
+if(empty($_POST['name']) || empty($_POST['address'])|| empty($_POST['phone']) || strlen($_POST['phone']) <10 || $_POST['phone'][0]!='0'){
+    echo json_encode(0);
 }else{
     require "connect.php";
     $name=addslashes($_POST['name']);
@@ -39,9 +39,9 @@ if(empty($_POST['name']) || empty($_POST['address'])|| empty($_POST['phone'])){
     }
     $temp=mysqli_query($connect,$sql_product);
     $temp=mysqli_query($connect,$sql_receipt);
-    unset($_SESSION['cart']);
-   // echo json_encode($sql_product);
+    unset($_SESSION['cart'],$_SESSION['quantity']);
     echo json_encode(1);
     mysqli_close($connect);
 }
+
 ?>

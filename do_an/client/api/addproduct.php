@@ -5,16 +5,7 @@
         header("location:javascript://history.go(-1)");
         exit;
     }
-    $id=$_GET['id'];
-    if (!isset( $_SESSION['cart'])){
-        $_SESSION['quantity']=1;
-       // setcookie('quantity',1, time()+8640000,"/"); 
-        echo json_encode("hereeee");
-    }
-    else {
-        $_SESSION['quantity']+=1;
-       // setcookie('quantity', $_COOKIE['quantity'], time()+8640000,"/"); 
-    }
+    $id=addslashes($_GET['id']);
     if(isset($_SESSION['cart'][$id]['quantity'])){
         $_SESSION['cart'][$id]['quantity']+=1;
     }
@@ -22,14 +13,25 @@
       
         include "connect.php";
         $sql="select * from products_list
-        where id=$id 
+        where id='$id' 
         limit 1";
         $res=mysqli_query($connect,$sql);
         $item=mysqli_fetch_assoc($res);
+        if(empty($item['name'])) exit;
         $_SESSION['cart'][$id]['quantity']=1;
         $_SESSION['cart'][$id]['price']=$item['price'];
         $_SESSION['cart'][$id]['photo']=$item['photo'];
         $_SESSION['cart'][$id]['name']=$item['name'];
     }
-    echo json_encode("hehehe");
+    if (!isset( $_SESSION['quantity'])){
+        $_SESSION['quantity']=1;
+        echo json_encode("hehe");
+    }
+    else {
+        $_SESSION['quantity']+=1;
+        echo json_encode("hehe");
+
+    }
+  
+
 ?>
