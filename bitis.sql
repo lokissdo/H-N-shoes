@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 13, 2022 at 05:42 AM
+-- Generation Time: Jan 15, 2022 at 05:09 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `bitis`
 --
-CREATE DATABASE IF NOT EXISTS `bitis` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `bitis`;
 
 -- --------------------------------------------------------
 
@@ -75,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `cli_list` (
   `birthday` date DEFAULT NULL,
   `token` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cli_list`
@@ -83,8 +81,9 @@ CREATE TABLE IF NOT EXISTS `cli_list` (
 
 INSERT INTO `cli_list` (`id`, `name`, `gender`, `address`, `email`, `phone`, `photo`, `password`, `birthday`, `token`) VALUES
 (5, 'Lokiss', b'00', 'no', '2@2', '12', 'no', '', '2021-12-10', '695bcb9f1897e98235f64704a06753b31640178666'),
-(14, '1', b'01', '', 'dokhaihung2003@gmail.com', '1', '', '$2y$10$DvjscuNyVQYCd/B3D6wnVu1NuF.CVOVyuRSBHSmsbKJozMBrVv43C', NULL, '2e617dcfc42c411fb19f6863f96d50441642042730'),
-(15, '2', b'01', '', 'dokhaihung2003@gmail.com2', '2', '', '$2y$10$04FOKbl86y9Vg.qOIv1YGuFxbt7h4PqrRmwYtzhZTYL6RPLCl8kZy', NULL, NULL);
+(14, 'Đỗ Khải Hưng', b'00', 'Đông Hòa, Tỉnh Bắc Ninh', 'dokhaihung2003@gmail.com', '03676', '', '$2y$10$DvjscuNyVQYCd/B3D6wnVu1NuF.CVOVyuRSBHSmsbKJozMBrVv43C', '2003-10-09', '1590b7a602c5cb02e2d5281d4853e78e1642181208'),
+(15, '4', b'01', '56', 'dokhaihung2003@gmail.com22', '2', '', '$2y$10$04FOKbl86y9Vg.qOIv1YGuFxbt7h4PqrRmwYtzhZTYL6RPLCl8kZ', '2022-01-11', NULL),
+(16, '1', b'01', '', '1@21', '03676', '', '$2y$10$jqeudVyf33Kzm8XSJ6p84uNaeQYVHYYdLjPt6L1hc.JS6RfVL7h82', '2022-01-26', NULL);
 
 -- --------------------------------------------------------
 
@@ -121,7 +120,7 @@ INSERT INTO `manufactures` (`id`, `name`, `description`, `phone`, `photo`, `addr
 
 DROP TABLE IF EXISTS `out_list`;
 CREATE TABLE IF NOT EXISTS `out_list` (
-  `id` int(11) NOT NULL ,
+  `id` int(11) NOT NULL,
   `client_id` int(11) NOT NULL,
   `order_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `receiver_name` varchar(50) NOT NULL,
@@ -139,7 +138,9 @@ CREATE TABLE IF NOT EXISTS `out_list` (
 INSERT INTO `out_list` (`id`, `client_id`, `order_time`, `receiver_name`, `receiver_phone`, `receiver_address`, `note`) VALUES
 (1, 5, '2021-12-24 10:33:32', 'Danh', '0922113344', 'Đà Nẵng', 'mới'),
 (2, 5, '2021-12-24 10:33:32', 'Danh', '0922113344', 'Đà Nẵng', 'mới'),
-(3, 14, '2022-01-13 05:41:55', 'Đỗ Khải Hưng', '0367634', 'Đường Lê thành phương, Phường Hoà Vinh , Thị xã Đông Hòa , Tỉnh Phú Yên ', '');
+(3, 14, '2022-01-13 05:41:55', 'Đỗ Khải Hưng', '0367634', 'Đường Lê thành phương, Phường Hoà Vinh , Thị xã Đông Hòa , Tỉnh Phú Yên ', ''),
+(4, 14, '2022-01-13 09:54:58', 'Đỗ Khải Hưng', '0123456789', 'Kp2 , Xã Sơn Hội , Huyện Sơn Hòa , Tỉnh Phú Yên ', ''),
+(5, 14, '2022-01-15 05:00:51', 'dokhaihung', '01234589', ', Xã Phú Tâm , Huyện Châu Thành , Tỉnh Sóc Trăng ', '');
 
 -- --------------------------------------------------------
 
@@ -161,13 +162,13 @@ CREATE TABLE IF NOT EXISTS `out_product` (
 --
 
 INSERT INTO `out_product` (`out_id`, `product_id`, `quantity`) VALUES
-(1, 5, 2),
-(1, 6, 12),
-(2, 12, 6);
 (3, 12, 1),
 (3, 23, 1),
 (3, 28, 3),
-(3, 32, 1);
+(3, 32, 1),
+(4, 11, 2),
+(4, 20, 1),
+(5, 31, 3);
 
 -- --------------------------------------------------------
 
@@ -235,7 +236,7 @@ CREATE TABLE IF NOT EXISTS `products_list` (
   KEY `FK_products_manufacturers_id` (`manufacturers_id`),
   KEY `FK_products_gender` (`gender_id`) USING BTREE,
   KEY `FK_products_category` (`category_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `products_list`
@@ -245,7 +246,7 @@ INSERT INTO `products_list` (`id`, `name`, `price`, `quantity`, `gender_id`, `ca
 (2, 'Run Star Hike Create Next Purpose: Sustainability Hi-Top', 2500000, 1000, 3, 3, '', 'https://www.converse.com.vn/pictures/catalog/products/sneakers/2021/ctas/171575/171575Cstandard.jpg', 1),
 (5, 'Chuck Taylor All Star Lift Surface Fusion', 1500000, 1000, 3, 3, '', 'https://www.converse.com.vn/pictures/catalog/products/sneakers/2021/ctas/571670c/571670Cstandard.jpg', 1),
 (6, 'Chuck Taylor All Star Crater Knit High Top', 1500000, 1000, 4, 3, '', 'https://www.converse.com.vn/pictures/catalog/products/sneakers/2021/ctas/170869c/170869Cshot2.jpg', 1),
-(7, 'Giày sandal nữ Aokang 682831037', 150000, 20, 2, 1, '', 'https://img.yes24.vn/Upload/ProductImage/anvietsh/2013660_L.jpg?width=550&height=550', 4),
+(7, 'Giày sandal nữ Aokang 682831037', 150000, 20, 2, 1, '', 'https://product.hstatic.net/1000152342/product/682831080-1_d4f8d51c75ac4cd088acbb25a54d00da_3db3fa5aea0d4563a65ce638cc5f8925_1024x1024.jpg', 4),
 (8, 'Giày sandal nữ Senta SE107SH08YOHVN', 1500000, 1000, 2, 1, '', 'https://img.yes24.vn/Upload/ProductImage/SENTA/1986228_L.jpg?width=550&height=550', 3),
 (9, 'Giày sandal nữ Aokang 682831080', 100000, 200, 2, 1, '', 'https://img.yes24.vn/Upload/ProductImage/anvietsh/2013639_L.jpg?width=550&height=550', 1),
 (10, 'Giày sandal Adidas Adilete F35417', 1500000, 10009, 1, 1, '', 'https://img.yes24.vn/Upload/ProductImage/GmarketSport/2030428_L.jpg?width=550&height=550', 4),
@@ -285,7 +286,7 @@ DROP TABLE IF EXISTS `receipt_history`;
 CREATE TABLE IF NOT EXISTS `receipt_history` (
   `out_id` int(11) NOT NULL,
   `adm_id` int(11) DEFAULT NULL,
-  `receipt_stat` enum('Đã hủy','Mới','Đã duyệt') NOT NULL,
+  `receipt_stat` enum('Đã hủy','Mới','Đã duyệt') NOT NULL DEFAULT 'Mới',
   `work_time` datetime DEFAULT NULL,
   PRIMARY KEY (`out_id`),
   KEY `FK_out_adm_id` (`adm_id`)
@@ -297,8 +298,10 @@ CREATE TABLE IF NOT EXISTS `receipt_history` (
 
 INSERT INTO `receipt_history` (`out_id`, `adm_id`, `receipt_stat`, `work_time`) VALUES
 (1, 3, 'Đã duyệt', '2021-12-29 19:47:17'),
-(2, NULL, 'Mới', NULL);
-
+(2, 3, 'Đã duyệt', '2022-01-12 04:25:18'),
+(3, NULL, 'Mới', NULL),
+(4, NULL, 'Mới', '2022-01-15 04:57:08'),
+(5, NULL, 'Mới', NULL);
 
 --
 -- Constraints for dumped tables
