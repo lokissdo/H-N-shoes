@@ -25,13 +25,9 @@
     }
     if (!isset( $_SESSION['quantity'])){
         $_SESSION['quantity']=1;
-        echo json_encode("hehe");
     }
     else {
         $_SESSION['quantity']+=1;
-        echo json_encode("hehe");
-
     }
-  
-
+    echo json_encode(1);
 ?>

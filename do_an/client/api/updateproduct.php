@@ -12,5 +12,5 @@ if(isset($_SESSION['cart'][$id]['quantity']) && $quantity >= 0){
         $_SESSION['cart'][$id]['quantity']=$quantity;
     }
     if($_SESSION['quantity']<0)$_SESSION['quantity']=0;
-}else unset($_SESSION);
+}else unset($_SESSION['quantity'],$_SESSION['cart']);
 ?>

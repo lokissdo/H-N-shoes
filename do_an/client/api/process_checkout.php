@@ -5,7 +5,7 @@ if(!Authenticate() || empty($_SESSION['quantity'])){
     exit;
 }
 
-if(empty($_POST['name']) || empty($_POST['address'])|| empty($_POST['phone']) || strlen($_POST['phone']) <10 || $_POST['phone'][0]!='0'){
+if(empty($_POST['name']) || empty($_POST['address'])|| empty($_POST['phone']) ||!(strlen($_POST['phone']) ==10 || strlen($_POST['phone']) ==11) || $_POST['phone'][0]!='0'){
     echo json_encode(0);
 }else{
     require "connect.php";
