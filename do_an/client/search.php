@@ -21,7 +21,7 @@
     ";
     $res=mysqli_query($connect,$sql);
     ?>
-    <img class="img_container"src="https://www.converse.com.vn/pictures/catalog/products/about.jpg" alt="">
+    <img class="img_container"src="https://file.hstatic.net/1000230642/collection/banner-kid_d89442a89fda42dfb7dc7349b6472f71_master.jpg" alt="">
    <h1 class="result-textheader"> Kết quả tìm kiếm </h1>
    <div class="result_container">
         <div class="result_section">
