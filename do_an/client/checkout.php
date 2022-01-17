@@ -7,14 +7,6 @@ if(!Authenticate() ||!$_SESSION['cart'] ){
 $products=$_SESSION['cart'];
 $sum=0;
 $deli_fee=20000;
-// include "./api/connect.php";
-// $findMaxId="SELECT id from out_list
-//     ORDER BY id DESC
-//     LIMIT 1";
-//     $res=mysqli_query($connect,$findMaxId);
-//     $id_bill=mysqli_fetch_row($res)[0];
-//     print_r($res);
-//     exit;
 ?>
 <!DOCTYPE html>
 <html lang="en">
