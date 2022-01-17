@@ -5,7 +5,6 @@ var district=document.querySelector("#select_dis")
 var town=document.querySelector("#select_town")
 var warning=document.querySelector(".error")
 var btn=document.querySelector("#sumbit_form")
-var warning=document.querySelector(".error")
 var success=document.querySelector(".payment_sucess_wrap")
 var address,namee,phone;
 var defaultAddress={
