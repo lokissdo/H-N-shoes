@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 15, 2022 at 05:09 AM
+-- Generation Time: Jan 26, 2022 at 12:18 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `bitis`
 --
+CREATE DATABASE IF NOT EXISTS `bitis` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `bitis`;
 
 -- --------------------------------------------------------
 
@@ -57,6 +59,34 @@ INSERT INTO `adm_list` (`id`, `name`, `phone`, `address`, `gender`, `birthday`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cli_forgot`
+--
+
+DROP TABLE IF EXISTS `cli_forgot`;
+CREATE TABLE IF NOT EXISTS `cli_forgot` (
+  `id_forgot` int(11) NOT NULL AUTO_INCREMENT,
+  `cli_id` int(11) DEFAULT NULL,
+  `code` varchar(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_forgot`),
+  KEY `FK_cli_forgot` (`cli_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cli_forgot`
+--
+
+INSERT INTO `cli_forgot` (`id_forgot`, `cli_id`, `code`, `created_at`) VALUES
+(2, 14, '', '2022-01-26 11:36:00'),
+(3, 16, '1', '2022-01-26 11:36:00'),
+(4, 17, 'cf16c599', '2022-01-26 11:36:00'),
+(5, 17, '6487ec2a', '2022-01-26 11:36:00'),
+(6, 17, '6487ec2a', '2022-01-26 11:36:00'),
+(25, 14, '4e688eb7', '2022-01-26 12:14:33');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cli_list`
 --
 
@@ -73,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `cli_list` (
   `birthday` date DEFAULT NULL,
   `token` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cli_list`
@@ -81,9 +111,11 @@ CREATE TABLE IF NOT EXISTS `cli_list` (
 
 INSERT INTO `cli_list` (`id`, `name`, `gender`, `address`, `email`, `phone`, `photo`, `password`, `birthday`, `token`) VALUES
 (5, 'Lokiss', b'00', 'no', '2@2', '12', 'no', '', '2021-12-10', '695bcb9f1897e98235f64704a06753b31640178666'),
-(14, 'Đỗ Khải Hưng', b'00', 'Đông Hòa, Tỉnh Bắc Ninh', 'dokhaihung2003@gmail.com', '03676', '', '$2y$10$DvjscuNyVQYCd/B3D6wnVu1NuF.CVOVyuRSBHSmsbKJozMBrVv43C', '2003-10-09', '1590b7a602c5cb02e2d5281d4853e78e1642181208'),
+(14, 'Đỗ Khải Hưng', b'00', 'Đông Hòa, Tỉnh Phú Yên', 'dokhaihung2003@gmail.com', '03676', '', '$2y$10$XoxIu3p6myHVTkmbedey6OZ/mFf5DSEUyez49iLM1gHuaToOhIBFW', '2003-10-09', '7b335cfbc604f31971292f61be43f7e81642304618'),
 (15, '4', b'01', '56', 'dokhaihung2003@gmail.com22', '2', '', '$2y$10$04FOKbl86y9Vg.qOIv1YGuFxbt7h4PqrRmwYtzhZTYL6RPLCl8kZ', '2022-01-11', NULL),
-(16, '1', b'01', '', '1@21', '03676', '', '$2y$10$jqeudVyf33Kzm8XSJ6p84uNaeQYVHYYdLjPt6L1hc.JS6RfVL7h82', '2022-01-26', NULL);
+(16, '1', b'01', '', '1@21', '03676', '', '$2y$10$jqeudVyf33Kzm8XSJ6p84uNaeQYVHYYdLjPt6L1hc.JS6RfVL7h82', '2022-01-26', NULL),
+(17, '1', b'01', '', '1@1', '1', '', '$2y$10$9Ba2RbA9l/d4cHk8SvzIgeGtd35oB3.8xlhw1cuC19xxVxVIjbqIS', NULL, 'f6eb3fe5a092472bb66a3351b75427211642246460'),
+(18, 'Nguyễn Thanh Đăng', b'00', 'Kim Nổ huyện Dung Boom, Thành phố Hà Nội', 'phuongnguyendung2003@gmail.com', '0375578569', '', '$2y$10$AU53URPldBOPPMqjIrhc9eb9ARfsi8AZWS1t8YwtDUcXJ9L1vqD4C', '2003-07-18', 'd88bf9c5fe73e5dd545909e4f35e25081642432171');
 
 -- --------------------------------------------------------
 
@@ -120,7 +152,7 @@ INSERT INTO `manufactures` (`id`, `name`, `description`, `phone`, `photo`, `addr
 
 DROP TABLE IF EXISTS `out_list`;
 CREATE TABLE IF NOT EXISTS `out_list` (
-  `id` int(11) NOT NULL ,
+  `id` int(11) NOT NULL,
   `client_id` int(11) NOT NULL,
   `order_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `receiver_name` varchar(50) NOT NULL,
@@ -136,11 +168,20 @@ CREATE TABLE IF NOT EXISTS `out_list` (
 --
 
 INSERT INTO `out_list` (`id`, `client_id`, `order_time`, `receiver_name`, `receiver_phone`, `receiver_address`, `note`) VALUES
-(1, 5, '2021-12-24 10:33:32', 'Danh', '0922113344', 'Đà Nẵng', 'mới'),
-(2, 5, '2021-12-24 10:33:32', 'Danh', '0922113344', 'Đà Nẵng', 'mới'),
 (3, 14, '2022-01-13 05:41:55', 'Đỗ Khải Hưng', '0367634', 'Đường Lê thành phương, Phường Hoà Vinh , Thị xã Đông Hòa , Tỉnh Phú Yên ', ''),
 (4, 14, '2022-01-13 09:54:58', 'Đỗ Khải Hưng', '0123456789', 'Kp2 , Xã Sơn Hội , Huyện Sơn Hòa , Tỉnh Phú Yên ', ''),
-(5, 14, '2022-01-15 05:00:51', 'dokhaihung', '01234589', ', Xã Phú Tâm , Huyện Châu Thành , Tỉnh Sóc Trăng ', '');
+(5, 14, '2022-01-15 05:00:51', 'dokhaihung', '01234589', ', Xã Phú Tâm , Huyện Châu Thành , Tỉnh Sóc Trăng ', ''),
+(6, 14, '2022-01-15 11:20:54', 'Hùng', '98765', 'Gầm Cầu, Xã Vinh Tiền , Huyện Tân Sơn , Tỉnh Phú Thọ ', ''),
+(7, 14, '2022-01-15 15:00:40', 'dokhaihung', '122', ', Phường Phong Châu , Thị xã Phú Thọ , Tỉnh Phú Thọ ', ''),
+(8, 14, '2022-01-15 15:01:40', '2', '2', '2, Phường Đồng Lạc , Thành phố Chí Linh , Tỉnh Hải Dương ', ''),
+(9, 14, '2022-01-15 15:02:41', '2', '2', '2, Phường Đồng Lạc , Thành phố Chí Linh , Tỉnh Hải Dương ', ''),
+(10, 14, '2022-01-15 15:03:05', '2', '2', '2, Xã Hồng Phong , Huyện Nam Sách , Tỉnh Hải Dương ', ''),
+(11, 14, '2022-01-15 15:03:42', '2', '2', '2, Xã Hồng Phong , Huyện Nam Sách , Tỉnh Hải Dương ', ''),
+(12, 14, '2022-01-15 15:43:19', '1', '0367834190', ', Phường Hùng Vương , Thành phố Phúc Yên , Tỉnh Vĩnh Phúc ', ''),
+(13, 14, '2022-01-17 15:03:14', 'Nguyễn Phương  Dung', '0375578561', '1, Xã Kim Nỗ , Huyện Đông Anh , Thành phố Hà Nội ', ''),
+(14, 18, '2022-01-17 15:13:51', 'Linh', '0000000000', ', Xã Kim Chung , Huyện Đông Anh , Thành phố Hà Nội ', ''),
+(15, 14, '2022-01-18 07:27:37', 'dokhaihung', '0367634196', ', Xã Xuân Giang , Huyện Sóc Sơn , Thành phố Hà Nội ', ''),
+(16, 18, '2022-01-21 05:18:09', 'dokhaihungC  ', '0123456555', ', Xã Cam Đường , Thành phố Lào Cai , Tỉnh Lào Cai ', '');
 
 -- --------------------------------------------------------
 
@@ -168,7 +209,23 @@ INSERT INTO `out_product` (`out_id`, `product_id`, `quantity`) VALUES
 (3, 32, 1),
 (4, 11, 2),
 (4, 20, 1),
-(5, 31, 3);
+(5, 31, 3),
+(6, 12, 1),
+(6, 20, 2),
+(7, 19, 5),
+(7, 23, 5),
+(7, 29, 4),
+(8, 15, 2),
+(10, 15, 1),
+(12, 11, 3),
+(12, 22, 3),
+(13, 34, 5),
+(14, 20, 46),
+(15, 12, 1),
+(15, 25, 1),
+(16, 8, 9),
+(16, 11, 10),
+(16, 34, 4);
 
 -- --------------------------------------------------------
 
@@ -236,20 +293,20 @@ CREATE TABLE IF NOT EXISTS `products_list` (
   KEY `FK_products_manufacturers_id` (`manufacturers_id`),
   KEY `FK_products_gender` (`gender_id`) USING BTREE,
   KEY `FK_products_category` (`category_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `products_list`
 --
 
 INSERT INTO `products_list` (`id`, `name`, `price`, `quantity`, `gender_id`, `category_id`, `description`, `photo`, `manufacturers_id`) VALUES
-(2, 'Run Star Hike Create Next Purpose: Sustainability Hi-Top', 2500000, 1000, 3, 3, '', 'https://www.converse.com.vn/pictures/catalog/products/sneakers/2021/ctas/171575/171575Cstandard.jpg', 1),
-(5, 'Chuck Taylor All Star Lift Surface Fusion', 1500000, 1000, 3, 3, '', 'https://www.converse.com.vn/pictures/catalog/products/sneakers/2021/ctas/571670c/571670Cstandard.jpg', 1),
-(6, 'Chuck Taylor All Star Crater Knit High Top', 1500000, 1000, 4, 3, '', 'https://www.converse.com.vn/pictures/catalog/products/sneakers/2021/ctas/170869c/170869Cshot2.jpg', 1),
+(2, 'Run Star Hike Create Next Purpose: Sustainability Hi-Top', 2500000, 1000, 3, 3, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a4042d5e-4ee8-4df7-8cc8-d81d2518717d/metcon-7-training-shoes-knCh3v.png', 1),
+(5, 'Chuck Taylor All Star Lift Surface Fusion', 1500000, 1000, 3, 3, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a4042d5e-4ee8-4df7-8cc8-d81d2518717d/metcon-7-training-shoes-knCh3v.png', 1),
+(6, 'Chuck Taylor All Star Crater Knit High Top', 1500000, 1000, 4, 3, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a4042d5e-4ee8-4df7-8cc8-d81d2518717d/metcon-7-training-shoes-knCh3v.png', 1),
 (7, 'Giày sandal nữ Aokang 682831037', 150000, 20, 2, 1, '', 'https://product.hstatic.net/1000152342/product/682831080-1_d4f8d51c75ac4cd088acbb25a54d00da_3db3fa5aea0d4563a65ce638cc5f8925_1024x1024.jpg', 4),
-(8, 'Giày sandal nữ Senta SE107SH08YOHVN', 1500000, 1000, 2, 1, '', 'https://img.yes24.vn/Upload/ProductImage/SENTA/1986228_L.jpg?width=550&height=550', 3),
-(9, 'Giày sandal nữ Aokang 682831080', 100000, 200, 2, 1, '', 'https://img.yes24.vn/Upload/ProductImage/anvietsh/2013639_L.jpg?width=550&height=550', 1),
-(10, 'Giày sandal Adidas Adilete F35417', 1500000, 10009, 1, 1, '', 'https://img.yes24.vn/Upload/ProductImage/GmarketSport/2030428_L.jpg?width=550&height=550', 4),
+(8, 'Giày sandal nữ Senta SE107SH08YOHVN', 1500000, 1000, 2, 1, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a4042d5e-4ee8-4df7-8cc8-d81d2518717d/metcon-7-training-shoes-knCh3v.png', 3),
+(9, 'Giày sandal nữ Aokang 682831080', 100000, 200, 2, 1, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a4042d5e-4ee8-4df7-8cc8-d81d2518717d/metcon-7-training-shoes-knCh3v.png', 1),
+(10, 'Giày sandal Adidas Adilete F35417', 1500000, 10009, 1, 1, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a4042d5e-4ee8-4df7-8cc8-d81d2518717d/metcon-7-training-shoes-knCh3v.png', 4),
 (11, 'Giày Sandal Nam Aokang 182831014', 170000, 202, 1, 1, '', 'https://shop-cdn.coccoc.com/images/product/Hg/Cf/HgCfycRike.jpg', 4),
 (12, 'Giày Sandal Doctor Nam BIGGBEN Da Bò Thật SD70', 200000, 999, 1, 1, '', 'https://salt.tikicdn.com/cache/400x400/ts/product/74/a2/d3/f02e8c1714cf99b458cba8269bb6d232.jpg.webp', 1),
 (13, 'Sandal Eva Phun Nam Biti\'s Hunter DEMH00201XAM (Xám)', 1500000, 1000, 1, 1, '', 'https://salt.tikicdn.com/cache/400x400/ts/product/d5/1f/b6/5fb3c22b35097a46a7f46f436bbbc2e3.jpg.webp', 3),
@@ -274,7 +331,7 @@ INSERT INTO `products_list` (`id`, `name`, `price`, `quantity`, `gender_id`, `ca
 (32, 'Sandal Bé Trai Biti\'s DRB030700XNH', 275000, 999, 4, 1, '', 'https://product.hstatic.net/1000230642/product/drb030700xnh_193393af24044f4989d825bacb64a365_1024x1024.jpg', 3),
 (33, 'Giày Thể Thao Bé Trai Biti\'s DSB137300TRG (Trắng)', 123456, 987, 4, 3, '', 'https://product.hstatic.net/1000230642/product/dsb137300trg28__5__0a6f100c2ced4d69821e55059c1f4efc_1024x1024.jpg', 4),
 (34, 'Giày Thể Thao Si Bé Trai Biti\'s DSB131900DEN', 395000, 100, 4, 3, '', 'https://product.hstatic.net/1000230642/product/dsb131900den__5__1e63f186a9ed46cf91d0c83820fccacf_1024x1024.jpg', 3),
-(35, 'Run Star Hike Pride High Top', 2500000, 25, 1, 3, '', 'https://www.converse.com.vn/pictures/catalog/products/sneakers/2021/ctas/170824v/170824Cstandard.jpg', 1);
+(35, 'Run Star Hike Pride High Top', 2500000, 25, 1, 3, '', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a4042d5e-4ee8-4df7-8cc8-d81d2518717d/metcon-7-training-shoes-knCh3v.png', 1);
 
 -- --------------------------------------------------------
 
@@ -297,15 +354,30 @@ CREATE TABLE IF NOT EXISTS `receipt_history` (
 --
 
 INSERT INTO `receipt_history` (`out_id`, `adm_id`, `receipt_stat`, `work_time`) VALUES
-(1, 3, 'Đã duyệt', '2021-12-29 19:47:17'),
-(2, 3, 'Đã duyệt', '2022-01-12 04:25:18'),
-(3, NULL, 'Mới', NULL),
-(4, NULL, 'Mới', '2022-01-15 04:57:08'),
-(5, NULL, 'Mới', NULL);
+(3, NULL, 'Đã hủy', NULL),
+(4, NULL, 'Đã hủy', '2022-01-15 04:57:08'),
+(5, NULL, 'Đã hủy', NULL),
+(6, NULL, 'Đã hủy', NULL),
+(7, NULL, 'Đã hủy', NULL),
+(8, NULL, 'Đã hủy', NULL),
+(9, NULL, 'Mới', NULL),
+(10, NULL, 'Đã hủy', NULL),
+(11, NULL, 'Mới', NULL),
+(12, NULL, 'Đã hủy', NULL),
+(13, NULL, 'Mới', NULL),
+(14, NULL, 'Mới', NULL),
+(15, NULL, 'Mới', NULL),
+(16, NULL, 'Đã duyệt', NULL);
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `cli_forgot`
+--
+ALTER TABLE `cli_forgot`
+  ADD CONSTRAINT `FK_cli_forgot` FOREIGN KEY (`cli_id`) REFERENCES `cli_list` (`id`);
 
 --
 -- Constraints for table `out_list`

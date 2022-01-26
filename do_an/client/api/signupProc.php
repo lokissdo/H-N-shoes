@@ -37,5 +37,7 @@ function createNewUser($password,$name,$gender,$email,$phone,$birthday){
         return -1;
     }
     mysqli_close($connect);
+    include "mail.php";
+    if(!sendMail("Đăng ký tài khoản thành công","Chúc mừng bạn đã đăng ký tài khoản thành công ở H&N shop, chúc bạn có những trải nghiệm tốt nhất",$email)) return -1;
     return 1;
 }

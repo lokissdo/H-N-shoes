@@ -110,3 +110,10 @@ input::-webkit-inner-spin-button {
    color : #034ea1;
    text-decoration: none;
 }
+.change_password{
+    background-color: #034ea1;
+    padding: 7px 15px ;
+    padding-bottom: 25px;
+    color: aliceblue;
+    margin-left: 70%;
+}

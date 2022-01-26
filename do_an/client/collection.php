@@ -9,7 +9,7 @@
    $genderArr=array(
     "men"=>array('Nam','https://file.hstatic.net/1000230642/collection/banner_2_5bb1ad24c8614286a924e55e5d04ee5c_master.jpg'),
     "women"=>array('Nữ','https://file.hstatic.net/1000230642/collection/banner_1_06ad51b53c88417ba2dc77d0653438e2_master.jpg'),
-    "kids"=>array('Trẻ em','https://converse.com.vn/pictures/catalog/banner/kids/FH19CTASCOREMIXEDGROUP2.jpg')
+    "kids"=>array('Trẻ em','https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/w_1364,c_limit/8166ef8b-915a-4b87-9f7c-776c9feda452/nike-kids.png')
    );
    if(empty($genderArr[$slug])){
         header('location:../');
