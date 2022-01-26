@@ -50,13 +50,13 @@ width: 20vw;
  background-size: 100% 100%;
 }
 .cate-men div{
-    background-image: url('https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/viVN/Images/running-ss22-supernova-launch-glp-m-teaser-carousel-d_tcm337-825366.jpg') ;
+    background-image: url('../public/men_cate.jpg') ;
 }
 .cate-women div{
-    background-image: url('https://www.converse.com/dw/image/v2/BCZC_PRD/on/demandware.static/-/Sites-cnv-master-catalog/default/dw40ee424c/images/e_08/168817C_E_08X1.jpg?sw=406') ;
+    background-image: url('../public/women_cate.webp') ;
 }
 .cate-kid div{
-    background-image: url('https://www.converse.com/dw/image/v2/BCZC_PRD/on/demandware.static/-/Sites-cnv-master-catalog/default/dw0249fd29/images/a_08/172726C_A_08X1.jpg?sw=406') ;
+    background-image: url('../public/kids_cate.webp') ;
 }
 
 .cate_arrow-down {
