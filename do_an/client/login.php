@@ -84,7 +84,7 @@ if (Authenticate()){
                             <input type="checkbox" name="remembered" id="checkbox"> 
                             <label for="checkbox">Nhớ mật khẩu</label>         
                         </div>
-                        <a href="./forgot_pass.php"class="forgotpassword" style="text-decoration:none"> Quên mật khẩu</a>
+                        <a href="./forgot_pass.php"class="forgotpassword" style="text-decoration:none">Quên mật khẩu</a>
                     </div>
                     <button id="button_login" class="buttonlogin">Login</button>
                 </form>

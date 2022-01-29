@@ -24,7 +24,7 @@ $(".update-account-form").onsubmit=(e)=>{
          else successUpdate()
     })
 }
-// handle events
+// handle messages
 function errorUpdate(mess){
    if (mess==0) warning.textContent="Vui lòng điền đầy đủ thông tin";
    else if(mess==-1)warning.textContent="Mật khẩu không chính xác"

@@ -66,7 +66,7 @@ $("#code").onsubmit=(e)=>{
     })
 }
 
-// handle events
+// handle messages
 function errorUpdate(mess){
     warning.classList.remove("success");
     switch(mess){
