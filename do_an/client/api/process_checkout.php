@@ -18,6 +18,7 @@ if(empty($_POST['name']) || empty($_POST['address'])|| empty($_POST['phone']) ||
     LIMIT 1";
     $res=mysqli_query($connect,$findMaxId);
     $id_bill=mysqli_fetch_row($res)[0];
+    // add new bill
     do{
         $id_bill++;
         $sql="INSERT INTO `out_list` (`id`, `client_id`, `receiver_name`, `receiver_phone`, `receiver_address`, `note`) 
@@ -25,7 +26,11 @@ if(empty($_POST['name']) || empty($_POST['address'])|| empty($_POST['phone']) ||
         $result=mysqli_query($connect, $sql);
         $loi=mysqli_error($connect);    
     }while($loi);
+    
+    // insert into middle table between product and customer
     $sql_product="INSERT INTO `out_product` (`out_id`, `product_id`, `quantity`) VALUES ";
+
+    // insert into receipt history
     $sql_receipt="INSERT INTO `receipt_history` (`out_id`) VALUES ($id_bill)";
     $check_first=0;
     foreach($_SESSION['cart'] as $key=> $item ) { 

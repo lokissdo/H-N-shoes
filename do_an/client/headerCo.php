@@ -1,9 +1,8 @@
-
 <head>
     <link rel="stylesheet" href="../asset/header.css">
 </head>
 <body>
-<header>
+<div class="header">
         <div class="header__top">
             <div class="wrapper_header__top">
                 <div class="items_top_header top_header_left">
@@ -49,8 +48,10 @@
                     <div class="search">
                         <form class="search_form" action="./search.php" method="GET">
                             <!-- <label for="fname">Anh:</label><br> -->
-                            <input type="text" placeholder="   Tìm kiếm"class="search_input"id="search" name="search" ><br>
+                            <input type="text" placeholder="   Tìm kiếm"  autocomplete="off" class="search_input"id="search" name="search" ><br>
                             <button id="search_form_button"class="search_form_button" type="submit"></button>
+                            <div class="list_suggestion">
+                            </div>
                         </form>
                     </div>
                     <div class="cart">
@@ -95,6 +96,7 @@
                 <a href="#"class="items_header_bot ">Phụ kiện khác</a>
             </div>
         </div>
-    </header>
+</div>
+    <div class="offset_header"></div>
     <script src="../js/headerCo.js"></script>
 </body>
