@@ -9,10 +9,11 @@
     --header__top:calc(var(--headerHeight)*0.6);
     --header__bot:calc(var(--headerHeight)*0.4);
 }
-header{
+.header{
     height: var(--headerHeight);
-    position: relative;
-    z-index: 10;
+    position: fixed;
+    top: 0;
+    z-index: 5;
 }
 a{
     text-decoration: none;
@@ -20,18 +21,14 @@ a{
 .header__top{
     height: var(--header__top);
     width: 100vw;
-    position: fixed; 
     background-color: black;
     display: flex;
     justify-content: space-around;
 }
 
 .header__bot{
-    margin-top: var(--header__top);
     height: var(--header__bot);
     width: 100%;
-    position: fixed;
-
     background-color: #dcdcdc;
 
    
@@ -43,7 +40,7 @@ position: fixed;
 background-color: white;
 margin-left: -15px;
 border-radius: 10px;
-z-index: 100;
+z-index: 6;
 
 }
 li{
@@ -207,4 +204,31 @@ padding-top: 10px;
     bottom: 0;
     right: 0;
     left: 0;
+}
+
+ .list_suggestion{
+    top:50px;
+    border: 1px solid black;
+    z-index: 10000;
+    background-color: azure;
+    position: absolute;
+
+}
+.list_suggestion-item{
+    width: 250px;
+    height: 45px;
+    display: flex;
+    padding: 5px 0px;
+    font-size: 0.9rem;
+}
+.list_suggestion-item > img{
+    width: 40px;
+    height: 30px;
+}
+.list_suggestion-item:hover{
+    text-decoration: underline;
+}
+.offset_header{
+    height: var(--headerHeight)
+
 }

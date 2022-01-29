@@ -96,6 +96,8 @@ $page=1;
             </div>
         </div>
         <script src="./js/account.js"></script>
+
+
    <?php } else if(isset($_GET['view']) && $_GET['view']=='list-order'){ 
        include "./api/getbill.php";
        $arrBill=getLisOrders();
@@ -177,6 +179,19 @@ $page=1;
 
         </div>
         <script src="./js/bill.js"></script>
+
+
+        <?php } else if(isset($_GET['view']) && $_GET['view']=='change-password'){ ?>
+            <div class="content_wrap  ">
+                <form  class="update-account-form" method="post">
+                        <input class="form-item" name="password" type="password" placeholder="Mật khẩu cũ" > 
+                        <input class="form-item" name="new_password" type="password" placeholder="Mật khẩu mới" > 
+                        <input class="form-item" name="new_password_again" type="password" placeholder="Mật khẩu mới" > 
+                        <div class="success-update hidden">Cập nhật mật khẩu thành công</div>
+                        <button class="form-item" type="submit">Submit</button>
+                </form>
+            </div>
+            <script src="./js/changepass.js"></script>
         <?php } else{ ?>
         <div class="content_wrap  ">
 
@@ -206,6 +221,11 @@ $page=1;
             </div>
             <div class="item_list">
                 <div class=" item-text-account">Điện thoại: <?php echo $res['phone']?> </div>
+            </div>  
+            <div class="item_list">
+                <div class=" change_password linked">Đổi mật khẩu
+                    <a href="./account.php?view=change-password"></a>
+                </div>
             </div>  
         </div>
 

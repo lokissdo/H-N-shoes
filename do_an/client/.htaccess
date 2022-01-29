@@ -1,0 +1,2 @@
+ErrorDocument 404 /team/do_an/client/error_404.php
+ErrorDocument 500 /team/do_an/client/error_404.php
