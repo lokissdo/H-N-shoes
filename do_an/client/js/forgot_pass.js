@@ -1,10 +1,12 @@
-// 0. Khong tồn tại email
-//-1. Một ngày gửi quá 2 lần.
-//-2. Mật khẩu mới không khớp
+//  0. Khong tồn tại email
+// -1. Một ngày gửi quá 2 lần.
+// -2. Mật khẩu mới không khớp
 // -3. Mã code sai
 // -4. Không đủ thông tin
 // -5. Quá giờ
-// 1. Thành công.
+//  1. Thành công.
+
+
 const waiting_time=80000;
 const $=document.querySelector.bind(document);
 const warning=$("#message");

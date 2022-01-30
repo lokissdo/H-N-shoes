@@ -1,4 +1,5 @@
 const warning=document.querySelector(".success-update");
+// update information
 document.forms[1].onsubmit=(e)=>{
     e.preventDefault();
     const params = new URLSearchParams([...new FormData(e.target).entries()]);
@@ -37,7 +38,7 @@ window.onload=()=>{
     })
 }
 
-// handle events
+// handle messages
 function errorUpdate(){
     warning.textContent="Vui lòng điền đầy đủ thông tin";
     warning.classList.remove("hidden")
