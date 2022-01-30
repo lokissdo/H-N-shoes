@@ -5,6 +5,7 @@
     $arr=explode("/",$url);
     return $arr[count($arr)-1];
    }  
+   const MaxProductsOnePage=8;
    $slug=getSlug($url);
    $genderArr=array(
     "men"=>array('Nam','https://file.hstatic.net/1000230642/collection/banner_2_5bb1ad24c8614286a924e55e5d04ee5c_master.jpg'),
@@ -27,15 +28,28 @@
      ";
     $sqlCate="SELECT * FROM `products_category` WHERE 1";
     $res=mysqli_query($connect,$sql);
-    //$res=mysqli_fetch_all($res);
+
+    // Set All Star Products
+    $res=mysqli_fetch_all($res,MYSQLI_ASSOC);
+    $resAllStar=array_slice($res,0,MaxProductsOnePage);
     $resCate=mysqli_query($connect,$sqlCate);
     $resCate=mysqli_fetch_all($resCate,MYSQLI_ASSOC);
     $cateArr=array();
+
+    // Array: products by category 
     foreach ($res as $key=>$item  ){
         if(empty($cateArr[$item['category']])) $cateArr[$item['category']]=array();
-       array_push($cateArr[$item['category']],$item);
+        if(count($cateArr[$item['category']]) < MaxProductsOnePage)  array_push($cateArr[$item['category']],$item);
+        $check=1;
+        foreach($cateArr as $tempA){
+            if(count($tempA) < 8) {
+                $check=0;
+                break;
+            }
+        }
+        if($check===1) break;
     }
-
+    // Set chosen category
     if(isset($_SESSION['cate'])){
         echo " <script> 
         window.onload=()=>{hasCate(\"$_SESSION[cate]\")}
@@ -89,38 +103,38 @@
     <!-- display items -->
     <div class="grid wide">
         <?php
-        array_push($resCate,'total');
-         foreach($resCate as $key=> $itemCate ) {
-             ?>
-           <div class="row <?php  if($itemCate!='total') echo"hide-container "; echo $key ?> ">
-           <?php
-                if($itemCate=='total') $targetCate=$res;
-                else if (empty($cateArr[$itemCate['category']])) {
-                    echo "<h1>KHÔNG CÓ SẢN PHẨM</h1></div>";
-                    continue;
-                }
-                else $targetCate=$cateArr[$itemCate['category']];
-                 foreach( $targetCate as $kiditem ) {
-                ?>
-               <div class="col m-4 c-6 l-3"> 
-                  <div class="container_product">      
-                     <div class="prod_container_pic">
-                           <img src=" <?php echo $kiditem['photo']?>" alt="">
-                     </div>
-                       <div class="name_product">
-                       <?php echo $kiditem['name']?>
-                       </div>
-                       <h4># 171305V</h4>
-                       <div class="price_product">
-                       <?php  echo  number_format($kiditem['price'])." VND"?> 
-                       </div>
-                       <a href="../product.php?id=<?php echo $kiditem['id']?> "></a>
-                  </div>
-               </div>
-               <?php }?>
-           </div>
-           <?php }?>
-         </div>
+        array_push($resCate,'AllStar');
+         foreach($resCate as $key=> $itemCate ) {?>
+                <div class="row <?php  if($itemCate!='AllStar') echo"hide-container "; echo $key ?> ">
+                <?php
+                    if($itemCate=='AllStar') $productsByCategory=$resAllStar;
+                    else if (empty($cateArr[$itemCate['category']])) {
+                        echo "<h1>KHÔNG CÓ SẢN PHẨM</h1></div>";
+                        continue;
+                    }
+                     else $productsByCategory=$cateArr[$itemCate['category']];
+                    foreach( $productsByCategory as $oneProduct ) {?>
+                            <div class="col m-4 c-6 l-3"> 
+                               <div class="container_product">      
+                                  <div class="prod_container_pic">
+                                        <img src=" <?php echo $oneProduct['photo']?>" alt="">
+                                  </div>
+                                    <div class="name_product">
+                                        <?php echo $oneProduct['name']?>
+                                    </div>
+                                    <h4># 171305V</h4>
+                                    <div class="price_product">
+                                        <?php  echo  number_format($oneProduct['price'])." VND"?> 
+                                    </div>
+                                    <a href="../product.php?id=<?php echo $oneProduct['id']?> "></a>
+                               </div>
+                            </div>
+                    <?php }?>
+                </div>
+
+            <?php }?>
+    </div>
+    <div class="load-more"> Xem thêm</div>
          <script src="../js/collection.js"></script>
 </body>
 </html>

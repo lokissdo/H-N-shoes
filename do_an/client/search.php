@@ -15,10 +15,15 @@
     }
     require "header.php";
     require "api/connect.php";
+    $MaxProductsOnePage=8;
     $sql="
     SELECT * FROM `products_list` WHERE name LIKE '%".addslashes($_GET['search'])."%'
-    limit 50 
+    limit $MaxProductsOnePage  
     ";
+    
+    echo "<script>
+            const search='$_GET[search]'
+        </script>";
     $res=mysqli_query($connect,$sql);
     ?>
     <img class="img_container"src="https://file.hstatic.net/1000230642/collection/banner-kid_d89442a89fda42dfb7dc7349b6472f71_master.jpg" alt="">
@@ -47,6 +52,7 @@
         ?>
         </div>
    </div>
+   <div class="load-more"> Xem thêm</div>
 
   <script src="js/search.js"></script>
 </body>
