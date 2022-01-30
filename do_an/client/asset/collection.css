@@ -120,3 +120,16 @@ right: 0;
 .hide-container{
     display: none;
 }
+.load-more{
+    margin: 0px 45vw;
+    border: 2px solid rgba(61, 61, 61, 0.719);
+    border-radius: 5px;
+    box-shadow:0 3px 10px rgb(0 0 0 / 0.2);
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+.load-more:hover{
+    background-color: rgb(253, 212, 158);
+}
