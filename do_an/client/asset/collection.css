@@ -77,12 +77,26 @@ h1{
     height: 45vh;
     position: relative;
 }
-
+@keyframes FadeInUp {
+    from{
+        opacity: 0;
+        -webkit-transform: translate3d(0,100%,0);;
+        transform: translate3d(0,100%,0);
+    }
+    to{
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+    
+}
 
 .container_product{
     height: 100%;
     cursor: pointer;
+    animation: FadeInUp .7s ease-in-out ;
 }
+
 .container_product h4{
     font-weight: 400;
     margin:0px;
@@ -132,4 +146,8 @@ right: 0;
 }
 .load-more:hover{
     background-color: rgb(253, 212, 158);
+}
+.sort{
+    display: flex;
+    justify-content: space-around;
 }
