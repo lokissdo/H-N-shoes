@@ -20,12 +20,14 @@
     include "./api/connect.php";
     if($gender[0]=='Nam' || $gender[0]=='Nữ') $sqlGender="n'$gender[0]' or gender=n'Nam, Nữ'";
     else $sqlGender="n'$gender[0]'";
-    $sql="SELECT products_list.id,products_list.name,products_list.price,products_list.photo,products_category.category,products_gender.gender
+    $sql="SELECT products_list.id,products_list.name,products_list.price,products_list.photo,products_category.category,products_gender.gender,manufactures.name as manu_name
     FROM products_list
     INNER JOIN products_gender ON products_gender.id=products_list.gender_id
     INNER JOIN products_category ON products_category.id=products_list.category_id 
+    INNER JOIN manufactures ON manufactures.id=products_list.manufacturers_id
     WHERE gender=$sqlGender
      ";
+    // die($sql);
     $sqlCate="SELECT * FROM `products_category` WHERE 1";
     $res=mysqli_query($connect,$sql);
 
@@ -36,6 +38,7 @@
     $resCate=mysqli_fetch_all($resCate,MYSQLI_ASSOC);
     $cateArr=array();
 
+    
     // Array: products by category 
     foreach ($res as $key=>$item  ){
         if(empty($cateArr[$item['category']])) $cateArr[$item['category']]=array();
@@ -56,10 +59,13 @@
             </script> ";
             unset($_SESSION['cate']);
     }
-
+    // select manufactures
+    $sqlManu="SELECT * FROM `manufactures` WHERE 1";
+    $resManu=mysqli_query($connect,$sqlManu);
     //print_r($_SESSION['cate']);
    // print_r(mysqli_fetch_all($res));
    // exit;
+   
     
 ?>
 <!DOCTYPE html>
@@ -99,7 +105,26 @@
         </div>
         <div class="cate_itemLR"></div>
     </div>
-
+    <div class="sort">    
+        <div class="sort_price">
+            <label for="price">Sắp xếp theo giá:</label>
+            <select name="price" id="price">
+                <option value="null">Mặc định</option>
+                <option value="DESC">Giảm dần</option>
+                <option value="ASC">Tăng dần</option>     
+            </select>
+        </div>
+        <div class="sort_manufactures">
+            <label for="manufactures">Nhà sản xuất:</label>
+            <select name="manufactures" id="manufactures">
+                <option value="null">Tất cả</option>
+                <?php foreach($resManu as $oneManu){?>
+                <option value="<?php echo $oneManu['name']?>"> <?php echo strtoupper($oneManu['name'])?></option>
+                <?php }?>      
+            </select>
+                        
+        </div>
+    </div>
     <!-- display items -->
     <div class="grid wide">
         <?php
