@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 29, 2022 at 10:47 AM
+-- Generation Time: Jan 31, 2022 at 05:46 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `bitis`
 --
-CREATE DATABASE IF NOT EXISTS `bitis` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+CREATE DATABASE IF NOT EXISTS `bitis` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `bitis`;
 
 -- --------------------------------------------------------
@@ -66,11 +66,11 @@ DROP TABLE IF EXISTS `cli_forgot`;
 CREATE TABLE IF NOT EXISTS `cli_forgot` (
   `id_forgot` int(11) NOT NULL AUTO_INCREMENT,
   `cli_id` int(11) DEFAULT NULL,
-  `code` varchar(20) NOT NULL,
+  `code` varchar(20) CHARACTER SET latin1 NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_forgot`),
   KEY `FK_cli_forgot` (`cli_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cli_forgot`
@@ -178,9 +178,7 @@ INSERT INTO `out_list` (`id`, `client_id`, `order_time`, `receiver_name`, `recei
 (6, 14, '2022-01-15 11:20:54', 'Hùng', '98765', 'Gầm Cầu, Xã Vinh Tiền , Huyện Tân Sơn , Tỉnh Phú Thọ ', ''),
 (7, 14, '2022-01-15 15:00:40', 'dokhaihung', '122', ', Phường Phong Châu , Thị xã Phú Thọ , Tỉnh Phú Thọ ', ''),
 (8, 14, '2022-01-15 15:01:40', '2', '2', '2, Phường Đồng Lạc , Thành phố Chí Linh , Tỉnh Hải Dương ', ''),
-(9, 14, '2022-01-15 15:02:41', '2', '2', '2, Phường Đồng Lạc , Thành phố Chí Linh , Tỉnh Hải Dương ', ''),
 (10, 14, '2022-01-15 15:03:05', '2', '2', '2, Xã Hồng Phong , Huyện Nam Sách , Tỉnh Hải Dương ', ''),
-(11, 14, '2022-01-15 15:03:42', '2', '2', '2, Xã Hồng Phong , Huyện Nam Sách , Tỉnh Hải Dương ', ''),
 (12, 14, '2022-01-15 15:43:19', '1', '0367834190', ', Phường Hùng Vương , Thành phố Phúc Yên , Tỉnh Vĩnh Phúc ', ''),
 (13, 14, '2022-01-17 15:03:14', 'Nguyễn Phương  Dung', '0375578561', '1, Xã Kim Nỗ , Huyện Đông Anh , Thành phố Hà Nội ', ''),
 (14, 18, '2022-01-17 15:13:51', 'Linh', '0000000000', ', Xã Kim Chung , Huyện Đông Anh , Thành phố Hà Nội ', ''),
@@ -348,10 +346,10 @@ CREATE TABLE IF NOT EXISTS `products_rating` (
   `id_product` int(11) NOT NULL,
   `id_customer` int(11) NOT NULL,
   `rating` int(11) NOT NULL,
-  `comment` text CHARACTER SET utf8mb4,
+  `comment` text,
   PRIMARY KEY (`id_product`,`id_customer`),
   KEY `FK_rating_client` (`id_customer`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `products_rating`
@@ -362,6 +360,7 @@ INSERT INTO `products_rating` (`id_product`, `id_customer`, `rating`, `comment`)
 (12, 14, 5, ''),
 (12, 18, 2, 'kkkkssssk'),
 (14, 14, 3, 'h'),
+(23, 14, 4, 'Giày nhìn hơi cũ '),
 (28, 14, 5, ''),
 (29, 14, 2, NULL);
 
@@ -392,11 +391,9 @@ INSERT INTO `receipt_history` (`out_id`, `adm_id`, `receipt_stat`, `work_time`) 
 (6, NULL, 'Đã hủy', NULL),
 (7, NULL, 'Đã hủy', NULL),
 (8, NULL, 'Đã hủy', NULL),
-(9, NULL, 'Mới', NULL),
 (10, NULL, 'Đã hủy', NULL),
-(11, NULL, 'Mới', NULL),
 (12, NULL, 'Đã hủy', NULL),
-(13, NULL, 'Mới', NULL),
+(13, NULL, 'Đã hủy', NULL),
 (14, NULL, 'Mới', NULL),
 (15, NULL, 'Mới', NULL),
 (16, NULL, 'Đã duyệt', NULL);

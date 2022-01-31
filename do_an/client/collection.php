@@ -161,5 +161,6 @@
     </div>
     <div class="load-more"> Xem thêm</div>
          <script src="../js/collection.js"></script>
+<?php mysqli_close($connect);?>
 </body>
 </html>
