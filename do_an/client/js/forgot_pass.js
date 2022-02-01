@@ -10,6 +10,7 @@
 const waiting_time=80000;
 const $=document.querySelector.bind(document);
 const warning=$("#message");
+var timer_out;
 $("#forgot_pass").onsubmit=(e)=>{
     e.preventDefault();
     $("#button_forgot").disabled=true;
@@ -20,6 +21,7 @@ $("#forgot_pass").onsubmit=(e)=>{
     }
     const params = new URLSearchParams([...new FormData(e.target).entries()]);
     console.log(params.toString())
+    $(".loader").classList.remove('hidden');
      fetch("./api/forgot_pass.php",{
          headers: {
                 'Accept': 'application/json, text/plain, */*',
@@ -40,6 +42,8 @@ $("#forgot_pass").onsubmit=(e)=>{
             // successUpdate()
          }
          $("#button_forgot").disabled=false;
+         $(".loader").classList.add('hidden');
+
     })
 }
 
@@ -70,6 +74,7 @@ $("#code").onsubmit=(e)=>{
 
 // handle messages
 function errorUpdate(mess){
+    clearTimeout(timer_out);
     warning.classList.remove("success");
     switch(mess){
         case 0:
@@ -91,15 +96,16 @@ function errorUpdate(mess){
             warning.textContent="Mã đã hết hạn"
             break;
     }
-    setTimeout(()=>{
+    timer_out=setTimeout(()=>{
         warning.textContent="";
    },3000);
 }
 function successUpdate(){
+    clearTimeout(timer_out);
     warning.classList.add("success");
     warning.textContent="Cập nhật mật khẩu thành công";
     $(".timer-con").classList.add("hidden");
-    setTimeout(()=>{
+    timer_out=setTimeout(()=>{
         warning.textContent="";
    },3000);
 }
