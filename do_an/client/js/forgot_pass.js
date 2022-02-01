@@ -14,11 +14,12 @@ var timer_out;
 $("#forgot_pass").onsubmit=(e)=>{
     e.preventDefault();
     $("#button_forgot").disabled=true;
-    if($("#new_password").value!=$("#new_password_again").value) {
-        errorUpdate(-2);
+    if(isDiffPass()!=1) {
+        if(isDiffPass()==0)  errorUpdate(-2);
+        else errorUpdate(-4);
         $("#button_forgot").disabled=false;
         return;
-    }
+      }
     const params = new URLSearchParams([...new FormData(e.target).entries()]);
     console.log(params.toString())
     $(".loader").classList.remove('hidden');
@@ -50,6 +51,11 @@ $("#forgot_pass").onsubmit=(e)=>{
 $("#code").onsubmit=(e)=>{
     e.preventDefault();
     const params = new URLSearchParams([...new FormData($("#forgot_pass")).entries()]);
+    if(isDiffPass()!=1) {
+      if(isDiffPass()==0)  errorUpdate(-2);
+      else errorUpdate(-4);
+        return;
+    }
     var code=$("#password_code").value;
     params.append('code',code)
     console.log(params.toString())
@@ -70,6 +76,11 @@ $("#code").onsubmit=(e)=>{
             successUpdate()
          }
     })
+}
+function isDiffPass(){
+    if($("#new_password").value=="" || $("#new_password_again").value=="") return -1;
+    if($("#new_password").value!=$("#new_password_again").value) return 0;
+    return 1;
 }
 
 // handle messages

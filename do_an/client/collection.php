@@ -54,6 +54,7 @@
     }
     // Set chosen category
     if(isset($_SESSION['cate'])){
+        echo $_SESSION['cate'];
         echo " <script> 
         window.onload=()=>{hasCate(\"$_SESSION[cate]\")}
             </script> ";

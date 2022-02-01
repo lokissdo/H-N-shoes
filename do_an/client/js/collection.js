@@ -10,6 +10,7 @@ arrayCate.forEach(element => {
     }
 });
 function hasCate(category){
+    console.log("hehe")
     arrayCate.forEach(e=>{
         if(e.innerText==category) filter(e.id)     
     })
@@ -121,6 +122,4 @@ $("#price").onchange=()=>{
 $("#manufactures").onchange=()=>{
     changeFilter();
 }
-window.onload=()=>{
-    if($("#manufactures").value!='null' || $("#price").value!='null') changeFilter();
-}
+if($("#manufactures").value!='null' || $("#price").value!='null') changeFilter();
