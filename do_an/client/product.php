@@ -11,21 +11,28 @@
 </head>
 <body>
     <?php
-    include "api/start.php";
     include "api/connect.php";
+    include "api/authenticate.php";
+    if(Authenticate()) $id_customer=$_SESSION['id'];
+    else $id_customer=-1;
     if(empty($_GET['id'])){
         header("Location: ./");
         exit;
     }
-    $sql="SELECT products_list.id,products_list.name,products_list.price,products_list.quantity,products_list.photo,products_gender.gender,products_category.category
+    $idQuery=addslashes($_GET['id']);
+    $sql="SELECT products_list.*,products_gender.gender,products_category.category,manufactures.name as manu_name
     FROM products_list
     INNER JOIN products_category ON products_category.id=products_list.category_id
     INNER JOIN manufactures ON manufactures.id=products_list.manufacturers_id
     INNER JOIN products_gender ON products_gender.id=products_list.gender_id
-    WHERE products_list.id=$_GET[id]";
+    WHERE products_list.id=$idQuery";
     $resmen=mysqli_query($connect,$sql);
     $item=mysqli_fetch_assoc($resmen);
-    // print_r($item);
+    if(empty($item)){
+        header("Location: ./");
+        exit;
+    }
+     
     // die($sql);
     // exit;
     $gender=$item['gender'];
@@ -57,7 +64,7 @@
     </div>
     <h1 class="product_name"><?php echo $item['name']?></h1>
     <div class="manu_name linked">
-        CONVERSE
+            <?php echo strtoupper($item['manu_name'])?>
         <a href="#"></a>
     </div>
     <div class="description_container">
@@ -88,6 +95,8 @@
             </div>
         </div>
     </div>
+    <script src="js/product.js"> </script>
+    <?php include "./product_rating.php"?>
     <div class="cate">
         <div class="cate_itemLR "></div>
         <div class="cate_mid-bot">
@@ -95,6 +104,7 @@
         </div>
         <div class="cate_itemLR"></div>
     </div>
-    <script src="js/product.js"> </script>
+    
+    
 </body>
 </html>

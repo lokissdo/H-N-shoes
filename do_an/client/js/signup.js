@@ -1,10 +1,13 @@
-let button=document.querySelector("#button_signup");
-var warning=document.querySelector("#warning_signup");
+const $=document.querySelector.bind(document);
+const $$=document.querySelectorAll.bind(document);
+
+let button=$("#button_signup");
+var warning=$("#warning_signup");
 //let input=document.querySelectorAll("input")
 function buttonclick(e){
     let check=1;
     let countGender=0;
-    let input=document.querySelectorAll("input")
+    let input=$$("input")
     console.log(input)
     for (let i=0;i<input.length;i++){
         if(input[i].name=="male" || input[i].name=="female"){
@@ -21,11 +24,13 @@ function buttonclick(e){
                 check=0;
                 break;
         }
+        
+        
         // console.log(input[i])
         // console.log("hi")
            //else  if(!input[i].value && input[i].name!="gender" &&input[i].name!="birthday")
     }
-    if(check && document.querySelector("#signup_password").value!=document.querySelector("#signup_password_again").value)
+    if(check && $("#signup_password").value!=$("#signup_password_again").value)
     {
         e.preventDefault();
         warning.classList.remove("successSignup");
@@ -47,9 +52,9 @@ function buttonclick(e){
         },3000);
         return;
     }
-    // e.preventDefault();
-    // console.log(countGender," ",check)
-        
+    if (!$("#signup_email").validity.valid) return ;
+    $(".loader").classList.remove("hidden");
+    e.target.classList.add("hidden");        
 }
 button.addEventListener('click',buttonclick)
 function success(){

@@ -69,7 +69,7 @@ $page=1;
             <?php if(isset($_GET['view']) &&$_GET['view']=='update-account'){
              
     ?>
-
+        <!-- update account's information -->
         <div class="content_wrap ">
             <div class="update-account-wrap ">
                 <form  class="update-account-form" method="post">
@@ -97,14 +97,12 @@ $page=1;
         </div>
         <script src="./js/account.js"></script>
 
-
+    <!-- list order -->
    <?php } else if(isset($_GET['view']) && $_GET['view']=='list-order'){ 
        include "./api/getbill.php";
-       $arrBill=getLisOrders();
+       $arrBill=getListOrders(0);
     ?>
 
-
-        <!-- list order -->
         <link rel="stylesheet" href="./asset/grid.css">
         <link rel="stylesheet" href="./asset/bill.css">
         <div class="wrap_bill">
@@ -123,7 +121,7 @@ $page=1;
                 foreach($oneBill['product'] as $oneProduct){
                    
                 ?>
-                <!-- first product -->
+                <!-- first product ( show and the others are hidden) -->
                 <div class="row bill-one-product <?php if($checkFirstPro==-1) $checkFirstPro=0;else echo"hidden";
                 ?>" >
                         <div class="product-img c-2 m-2 l-2">  
@@ -175,12 +173,12 @@ $page=1;
             </div>
             <?php }?>
         
-
-
+            <div class="load-more"> Xem thêm hóa đơn</div>
         </div>
+        
         <script src="./js/bill.js"></script>
 
-
+                <!-- change password -->
         <?php } else if(isset($_GET['view']) && $_GET['view']=='change-password'){ ?>
             <div class="content_wrap  ">
                 <form  class="update-account-form" method="post">

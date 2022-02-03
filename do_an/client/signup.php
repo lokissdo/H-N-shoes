@@ -36,7 +36,7 @@
                         }
                         unset($_SESSION['mess']);     
                    }
-                    if (isset($_POST['email'])){
+                    if (isset($_POST['email']) && isset($_POST['phonenumber']) && isset($_POST['password']) && isset($_POST['fullname'])){
                         require_once "api/signupProc.php";
                         $email=addslashes($_POST['email']);
                         $password=addslashes($_POST['password']);
@@ -55,6 +55,9 @@
                         $_SESSION['mess']=$res;
                         header('location:'.$_SERVER['REQUEST_URI'].'');
                      }
+                     if($Error &&(!isset($_SESSION['fullname']) || !isset($_SESSION['phonenumber'])|| !isset($_SESSION['gender'])|| !isset($_SESSION['birthday']))) 
+                        header('location:'.$_SERVER['REQUEST_URI'].'');
+
                     ?> 
                 </div>
                 <form action="./signup.php" method="POST">
@@ -92,6 +95,7 @@
                     </div>
                     <button id="button_signup" class="buttonlogin">Đăng ký</button>
                 </form>
+                <div class="loader hidden"></div>
                 <div class="bottomform">
                     <div class="required" ><span>*</span>: Bắt buộc</div>
                     <a href="./login.php">Đăng nhập</a>
