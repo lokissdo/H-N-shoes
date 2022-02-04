@@ -49,7 +49,7 @@ if (Authenticate()){
                          </script> ";
                    unset($_SESSION['error']);
                   }
-                    if (isset($_POST['email'])){
+                    if (isset($_POST['email']) && isset($_POST['password'])){
                         require_once "api/signinProc.php";
                         $id="";
                         $email=addslashes($_POST['email']);

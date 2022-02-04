@@ -57,7 +57,7 @@ animation: FadeInUp .7s ease-in-out ;
     font-weight: 700;
     font-size: 13px;
     line-height: 34px;
-    z-index: 100;
+    z-index: 2;
     border: 1px solid #ccc;
     text-align: center;
 }
