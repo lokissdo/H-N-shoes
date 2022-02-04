@@ -7,7 +7,9 @@
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
-
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -22,9 +24,7 @@ CREATE DATABASE IF NOT EXISTS `bitis` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8
 USE `bitis`;
 
 -- --------------------------------------------------------
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+
 --
 -- Table structure for table `adm_list`
 --
