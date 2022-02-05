@@ -29,7 +29,9 @@ if (count($res) > 1){
 }
 include "mail.php";
 $code=substr(md5(uniqid(mt_rand(), true)) , 0, 8);
-$sql="INSERT INTO `cli_forgot` (`cli_id`, `code`) VALUES ('$id', '$code');";
+date_default_timezone_set("Asia/Ho_Chi_Minh");
+$time_insert=date('Y-m-d H:i:s',time());
+$sql="INSERT INTO `cli_forgot` (`cli_id`, `code`,`created_at`) VALUES ('$id', '$code','$time_insert');";
 $res=mysqli_query($connect,$sql);
 echo json_encode(1);
 if(!sendMail("Khôi phục mật khẩu", "Mã xác nhận của bạn là: <strong> $code </strong>",$email)) exit;
