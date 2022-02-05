@@ -14,7 +14,7 @@ $deli_fee=20000;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Check-out</title>
     <link rel="stylesheet" href="asset/payment.css">
     <link rel="icon" href="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/40/000000/external-cart-essentials-icongeek26-linear-colour-icongeek26.png" type="image/.jpg">
 </head>
@@ -107,7 +107,7 @@ $deli_fee=20000;
                     <div class="border_pro"></div>
                     <div class=" fx sumprice">
                         <div class="sumprice-text">Tổng Tiền:</div>
-                        <div class="money sumprice-pr"><?php echo $sum-$deli_fee?></div>
+                        <div class="money sumprice-pr"><?php echo $sum+$deli_fee?></div>
                     </div>
                 </div>
             </div>
