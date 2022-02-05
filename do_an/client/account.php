@@ -25,9 +25,10 @@ $page=1;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Account</title>
     <link rel="stylesheet" href="./asset/account.css">
     <link rel="stylesheet" href="./asset/footer.css">
+    <link rel="icon" href="https://img.icons8.com/external-kmg-design-flat-kmg-design/32/000000/external-user-back-to-school-kmg-design-flat-kmg-design.png" type="image/.jpg">
 
 </head>
 <body>
@@ -106,7 +107,9 @@ $page=1;
         <link rel="stylesheet" href="./asset/grid.css">
         <link rel="stylesheet" href="./asset/bill.css">
         <div class="wrap_bill">
-        <?php foreach($arrBill as $id=>$oneBill){?>
+        <?php 
+        if(count($arrBill)==0) echo "<h1> Bạn chưa có hóa đơn nào! </h1>";
+        foreach($arrBill as $id=>$oneBill){?>
         <div class="bill-item" id="<?php echo $id?>">
                 <div class="row name-table-container ">
                     <div class="tb-name-product c-4 m-4 l-4 l-o-2 col"> TÊN SẢN PHẨM</div>
