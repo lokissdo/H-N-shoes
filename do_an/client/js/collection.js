@@ -52,16 +52,23 @@ $(".load-more").onclick=()=>{
         $(".load-more").style.display="none";
      }
      else {
-         data.forEach(element => {
-            displayingListProducts.innerHTML+=processData(element);
+        //  data.forEach(element => {
+        //     displayingListProducts.innerHTML+=processData(element);
+        //  });
+        data.forEach(element => {
+            let div=document.createElement("div")
+            div.classList.add("col", "m-4", "c-6", "l-3")
+            div.innerHTML=processData(element);
+            displayingListProducts.appendChild(div);
          });
        if(data.length < MaxProductsOnePage)  $(".load-more").style.display="none";
      }
     });
 }
 function processData(element){
+    //  <div class="col m-4 c-6 l-3">
+    // </div>
     return `
-    <div class="col m-4 c-6 l-3"> 
                        <div class="container_product">      
                           <div class="prod_container_pic">
                                 <img src="${element['photo']}" alt="">
@@ -75,7 +82,7 @@ function processData(element){
                             </div>
                             <a href="../product.php?id=${element['id']} "></a>
                        </div>
-                    </div>
+                    
     `
 }
 function resetLoadBtn(key){
@@ -105,11 +112,19 @@ function changeFilter(){
         displayingListProducts.innerHTML="<h1>Không có sản phẩm nào </h1>"
      }
      else {
-         var html=``;
+        //  var html=``;
+        //  data.forEach(element => {
+        //     html+=processData(element);
+        //  });
+        //  displayingListProducts.innerHTML=html;
+        displayingListProducts.innerHTML='';
          data.forEach(element => {
-            html+=processData(element);
+            let div=document.createElement("div")
+            div.classList.add("col", "m-4", "c-6", "l-3")
+            div.innerHTML=processData(element);
+            displayingListProducts.appendChild(div);
          });
-         displayingListProducts.innerHTML=html;
+        
        if(data.length < MaxProductsOnePage)  $(".load-more").style.display="none";
        else $(".load-more").style.display="block";
      }
@@ -122,4 +137,3 @@ $("#price").onchange=()=>{
 $("#manufactures").onchange=()=>{
     changeFilter();
 }
-if($("#manufactures").value!='null' || $("#price").value!='null') changeFilter();
