@@ -1,3 +1,15 @@
+<?php 
+function isMobileDev(){
+    if(!empty($_SERVER['HTTP_USER_AGENT'])){
+       $user_ag = $_SERVER['HTTP_USER_AGENT'];
+       if(preg_match('/(Mobile|Android|Tablet|GoBrowser|[0-9]x[0-9]*|uZardWeb\/|Mini|Doris\/|Skyfire\/|iPhone|Fennec\/|Maemo|Iris\/|CLDC\-|Mobi\/)/uis',$user_ag)){
+          return true;
+       };
+    };
+    return false;
+}
+if(!isMobileDev()){
+?>
 <head>
     <link rel="stylesheet" href="../asset/header.css">
 </head>
@@ -38,7 +50,7 @@
                     </div>
                 </div>
                 <div class="items_top_header top_header_mid">
-                    <a href="#" >
+                    <a href="../" >
                         <div class="header_mid_text">
                             SNEAKER
                         </div>
@@ -100,3 +112,4 @@
     <div class="offset_header"></div>
     <script src="../js/headerCo.js"></script>
 </body>
+<?php } else include "headerMobiCo.php"?>

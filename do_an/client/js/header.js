@@ -57,3 +57,20 @@ $("#search").onkeyup=(e)=>{
        
     })
 }
+
+// mobile
+let timerMenu;
+const menu=$(".menu")
+if(menu){
+    menu.onclick=()=>{
+        $(".menu_wrapper_con").style.animation="slideShow linear 0.2s"
+        $(".menu_wrapper").style.display="block";
+        $(".menu_close").onclick=()=>{
+            clearTimeout(timerMenu)
+            $(".menu_wrapper_con").style.animation="slideHide linear 0.2s"
+            timerMenu=setTimeout(()=>{
+            $(".menu_wrapper").style.display="none"
+            },180)
+        }
+    }
+}
