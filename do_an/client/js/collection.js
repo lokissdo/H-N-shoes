@@ -15,21 +15,27 @@ function hasCate(category){
         if(e.innerText==category) filter(e.id)     
     })
 }
-function filter(id){
-    for (let i=0;i<arrayCol.length;i++){
-        if(arrayCol[i].classList.contains(`${id}`)) {
-            arrayCol[i].classList.remove('hide-container','chosen')
-            displayingListProducts=arrayCol[i];
-        }
-        else  arrayCol[i].classList.add('hide-container','chosen')
-    }
+async function filter(id){
+    console.log(id);
     for (let i=0;i<arrayCate.length;i++){
         if(arrayCate[i].id!=id) arrayCate[i].classList.remove('chosen')
         else  arrayCate[i].classList.add('chosen')
         
     }
+    for (let i=0;i<arrayCol.length;i++){
+        if(arrayCol[i].classList.contains(`${id}`)) {
+            displayingListProducts=arrayCol[i];
+            await changeFilter()
+        }
+    }
+    for (let i=0;i<arrayCol.length;i++){
+        if(arrayCol[i].classList.contains(`${id}`)) {
+            arrayCol[i].classList.remove('hide-container')      
+        }
+        else  arrayCol[i].classList.add('hide-container')
+    }
     resetLoadBtn(displayingListProducts);
-    changeFilter()
+    
 }
 
 // Load more
@@ -92,11 +98,12 @@ function resetLoadBtn(key){
 }
 resetLoadBtn()
 
-function changeFilter(){
+async function changeFilter(){
     var gender_Cate=$$(".chosen");
+    console.log(gender_Cate)
     var manu=$("#manufactures").value;
     var sortPrice=$("#price").value;
-    fetch("../api/loadmore/collection.php",{
+    await fetch("../api/loadmore/collection.php",{
         headers: {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/x-www-form-urlencoded'
