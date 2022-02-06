@@ -37,14 +37,14 @@
 						?>
 						<div class="list_items order_list">
 							<div class="align_left">
-								<?php echo "Tên: ".$each['name'];?><br>
-								<?php echo "Địa chỉ: ".$each['address'];?><br>
-								<?php echo "Số điện thoại: ".$each['phone']; ?>
+								<div class="one_liner"><?php echo "Tên: ".$each['name'];?></div>
+								<div class="one_liner"><?php echo "Địa chỉ: ".$each['address'];?></div>
+								<div class="one_liner"><?php echo "Số điện thoại: ".$each['phone']; ?></div>
 							</div>
 							<div class="align_left">
-								<?php echo "Tên người nhận: ".$each['receiver_name'];?><br>
-								<?php echo "Địa chỉ người nhận: ".$each['receiver_address'];?><br>
-								<?php echo "Số điện thoại người đặt: ".$each['receiver_phone']; ?>
+								<div class="one_liner"><?php echo "Tên người nhận: ".$each['receiver_name'];?></div>
+								<div class="one_liner"><?php echo "Địa chỉ người nhận: ".$each['receiver_address'];?></div>
+								<div class="one_liner"><?php echo "Số điện thoại người đặt: ".$each['receiver_phone']; ?></div>
 							</div>
 							<div class="align_center"><?php echo date('H:i:s d/m/Y',strtotime($each['order_time']));?></div>
 							<form action="order_parts/order_stat_change.php" method="POST">
