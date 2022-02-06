@@ -54,11 +54,23 @@
     }
     // Set chosen category
     if(isset($_SESSION['cate'])){
-        echo $_SESSION['cate'];
+        //echo $_SESSION['cate'];
         echo " <script> 
-        window.onload=()=>{hasCate(\"$_SESSION[cate]\")}
+        window.onload=()=>{
+            hasCate(\"$_SESSION[cate]\")
+            if($(\"#manufactures\").value!='null' || $(\"#price\").value!='null') 
+            changeFilter();
+        }
             </script> ";
             unset($_SESSION['cate']);
+    }
+    else{
+        echo " <script> 
+        window.onload=()=>{
+            if($(\"#manufactures\").value!='null' || $(\"#price\").value!='null') 
+            changeFilter();
+        }
+            </script> ";
     }
     // select manufactures
     $sqlManu="SELECT * FROM `manufactures` WHERE 1";
@@ -76,7 +88,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="../public/icongame.jpg" type="image/.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../asset/header.css">
     <link rel="stylesheet"  href="../asset/grid.css">
     <link rel="stylesheet" href="../asset/collection.css">
 
