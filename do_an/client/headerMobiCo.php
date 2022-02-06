@@ -77,11 +77,12 @@
                 <div class="sign signin"> 
                     <a href=
                         <?php
+                        $img_temp='<img src="https://img.icons8.com/external-kmg-design-flat-kmg-design/32/000000/external-sign-in-user-interface-kmg-design-flat-kmg-design.png"/>';
                          if (Authenticate()){
-                            echo "\"../signout.php\"><div class=\"sign__text\">Đăng xuất";
-                        }else echo  "\"../login.php\"><div class=\"sign__text\">Đăng nhập";
+                            echo "\"../signout.php\"><div class=\"sign__text\">$img_temp"." Đăng xuất";
+                        }else echo  "\"../login.php\"><div class=\"sign__text\">$img_temp"." Đăng nhập";
                         ?>    
-                         <img src="https://img.icons8.com/external-kmg-design-flat-kmg-design/32/000000/external-sign-in-user-interface-kmg-design-flat-kmg-design.png"/>
+                        
                          
                         </div>
                     </a> 
