@@ -18,7 +18,7 @@ $(".load-more").onclick=()=>{
      for (let i=0;i<data.length;i++){
         html+=`
         <div class="section-box">
-                <a href="./product.php?id=${data[i].id}>"class="search-link">
+                <a href="./product.php?id=${data[i].id}"class="search-link">
                     <span class="number"> ${Nowindex+i+1} </span>
                     <div class="item_search">
                         <div class="item-pic">

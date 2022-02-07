@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
+    <title>Forgot Password</title>
     <link rel="icon" href="public/icongame.jpg" type="image/.jpg">
     <link rel="stylesheet" href="asset/forgot_pass.css">
 </head>
@@ -27,6 +27,7 @@
                     </div>
                     <button id="button_forgot" class="buttonlogin">Gửi</button>
                 </form>
+                <div class="loader hidden"></div>
                 <form id="code" class="hidden"  method="POST">
                     <div>Vào mail của bạn để nhận mã</div>
                     <div class="timer-con">Mã còn hiệu lực trong:<span class="timer"> </span></div>

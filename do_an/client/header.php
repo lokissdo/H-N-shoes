@@ -1,5 +1,17 @@
 
-<?php require_once "api/authenticate.php"; ?>
+<?php 
+function isMobileDev(){
+    if(!empty($_SERVER['HTTP_USER_AGENT'])){
+       $user_ag = $_SERVER['HTTP_USER_AGENT'];
+       if(preg_match('/(Mobile|Android|Tablet|GoBrowser|[0-9]x[0-9]*|uZardWeb\/|Mini|Doris\/|Skyfire\/|iPhone|Fennec\/|Maemo|Iris\/|CLDC\-|Mobi\/)/uis',$user_ag)){
+          return true;
+       };
+    };
+    return false;
+}
+if(!isMobileDev()){
+require_once "api/authenticate.php"; 
+?>
 <head>
     <link rel="stylesheet" href="asset/header.css">
 </head>
@@ -24,17 +36,9 @@
                         <a href=
                         <?php
                          if (Authenticate()){
-                            echo "\"./signout.php\"";
-                        }else echo  "\"./login.php\"";
-                        ?> >
-                            <div class="sign__text">
-                                
-                            <?php
-                            if (Authenticate()){
-                                echo "Đăng xuất";
-                            }
-                            else echo "Đăng nhập";
-                            ?>  
+                            echo "\"./signout.php\"><div class=\"sign__text\">Đăng xuất";
+                        }else echo  "\"./login.php\"><div class=\"sign__text\">Đăng nhập";
+                        ?> 
                              <img src="https://img.icons8.com/external-kmg-design-flat-kmg-design/32/000000/external-sign-in-user-interface-kmg-design-flat-kmg-design.png"/>
                              
                             </div>
@@ -42,7 +46,7 @@
                     </div>
                 </div>
                 <div class="items_top_header top_header_mid">
-                    <a href="#" >
+                    <a href="./" >
                         <div class="header_mid_text">
                             SNEAKER
                         </div>
@@ -52,7 +56,7 @@
                     <div class="search">
                         <form class="search_form" action="./search.php" method="GET">
                             <!-- <label for="fname">Anh:</label><br> -->
-                            <input type="text" placeholder="   Tìm kiếm" autocomplete="off" class="search_input"id="search" name="search" ><br>
+                            <input type="text" placeholder="Tìm kiếm" autocomplete="off" class="search_input"id="search" name="search" ><br>
                             <button id="search_form_button"class="search_form_button" type="submit"></button>
                             <div class="list_suggestion">
                             </div>
@@ -131,3 +135,6 @@
     <div class="offset_header"></div>
     <script src="js/header.js"></script>
 </body>
+<?php }
+else include "headerMobi.php";
+?>

@@ -131,3 +131,16 @@ padding: 10px;
 background-color: #f3f3f3;
 border-radius: 20px;
 }
+@media only screen and (max-width: 390px) {
+  .box-form {
+    width: 90%;
+  }
+  .loginform_container{
+    margin: 30px 5px;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .intro{
+    display: none;
+  }
+}
