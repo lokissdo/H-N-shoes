@@ -57,7 +57,14 @@ function formattonumber(str){
     a.forEach(element => {
         res=res*1000+Number(element);
     });
-    return res;
+    let res2=0;
+    a=str.split(".");
+    a.forEach(element => {
+        res2=res2*1000+Number(element);
+    });
+    if(isNaN(res2)) 
+        return res;
+    return res2;
 }
 
 

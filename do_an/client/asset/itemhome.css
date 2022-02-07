@@ -8,6 +8,7 @@
     margin-top: 8px;
     margin-bottom: 8px;
     height: 50vh;
+    min-height: 380px;
     position: relative;
 }
 .price_product{

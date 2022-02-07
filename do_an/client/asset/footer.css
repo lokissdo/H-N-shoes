@@ -62,3 +62,12 @@
     padding: 8px;
     color: #cac8cf;
 }
+@media only screen and (max-width: 850px) {
+    .footer_item_title{
+        font-size: 0.9rem;
+    }
+    .footer_item_detail{
+        font-size: 0.8rem;
+    }
+  }
+  
