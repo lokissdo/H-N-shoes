@@ -17,6 +17,9 @@
         exit;
     }
     $gender=$genderArr[$slug];
+    echo " <script> 
+    const genderPage='$gender[0]';
+        </script> ";
     include "./api/connect.php";
     if($gender[0]=='Nam' || $gender[0]=='Nữ') $sqlGender="n'$gender[0]' or gender=n'Nam, Nữ'";
     else $sqlGender="n'$gender[0]'";
