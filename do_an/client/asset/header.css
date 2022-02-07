@@ -175,7 +175,7 @@ padding-top: 10px;
     border-bottom: 2px solid #cd2b2f;
 }
 .items_header_bot:last-child{
-    min-width: 100px;
+    min-width: 122px;
 }
 .chosen{
     color: aliceblue;
@@ -234,5 +234,4 @@ padding-top: 10px;
 }
 .offset_header{
     height: var(--headerHeight)
-
 }
