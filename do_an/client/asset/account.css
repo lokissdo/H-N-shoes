@@ -131,3 +131,16 @@ input::-webkit-inner-spin-button {
 .load-more:hover{
     background-color: rgb(253, 212, 158);
 }
+@media only screen and (max-width: 800px) {
+    .content_wrap_container {
+      padding: 0px;
+    }
+    .item_list{
+        margin: 20px 10px;
+    }
+    .item_list,.content-text,.content-update,.header-account   {
+        font-size: 1rem;
+        height: fit-content;
+    }
+    
+  }

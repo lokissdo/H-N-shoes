@@ -40,7 +40,8 @@ async function filter(id){
 
 // Load more
 $(".load-more").onclick=()=>{
-    var gender_Cate=$$(".chosen");
+    var cate=$(".chosen.cate_mid_item")
+    console.log(cate.innerText)
     var manu=$("#manufactures").value;
     var sortPrice=$("#price").value;
     fetch("../api/loadmore/collection.php",{
@@ -49,7 +50,7 @@ $(".load-more").onclick=()=>{
                 'Content-Type': 'application/x-www-form-urlencoded'
         },
         method: "POST",
-        body: `gender=${gender_Cate[0].innerText}&cate=${gender_Cate[1].innerText}&offset=${displayingListProducts.children.length}&manufacture=${manu}&price=${sortPrice}`
+        body: `gender=${genderPage}&cate=${cate.innerText}&offset=${displayingListProducts.children.length}&manufacture=${manu}&price=${sortPrice}`
     })
     .then(i=>i.json())
     .then(data=>{
@@ -99,8 +100,7 @@ function resetLoadBtn(key){
 resetLoadBtn()
 
 async function changeFilter(){
-    var gender_Cate=$$(".chosen");
-    console.log(gender_Cate)
+    var cate=$(".chosen.cate_mid_item")
     var manu=$("#manufactures").value;
     var sortPrice=$("#price").value;
     await fetch("../api/loadmore/collection.php",{
@@ -109,7 +109,7 @@ async function changeFilter(){
                 'Content-Type': 'application/x-www-form-urlencoded'
         },
         method: "POST",
-        body: `gender=${gender_Cate[0].innerText}&cate=${gender_Cate[1].innerText}&offset=0&manufacture=${manu}&price=${sortPrice}`
+        body: `gender=${genderPage}&cate=${cate.innerText}&offset=0&manufacture=${manu}&price=${sortPrice}`
     })
     .then(i=>i.json())
     .then(data=>{

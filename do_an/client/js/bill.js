@@ -28,8 +28,9 @@ function clickCancelBill(e){
         .then(r=>r.json())
         .then(mess=>{
             if(mess=1){
-                e.target.textContent="ĐÃ HỦY";
                 e.target.parentNode.children[0].textContent="ĐÃ HỦY"
+                e.target.textContent="ĐÃ HỦY";
+                e.target.style.display="none";
             }
         })
        
