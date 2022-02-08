@@ -268,7 +268,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
-		grid-gap: 0px;
+		grid-gap: 2vh;
 		justify-self: stretch;
 		background: green;
 		padding: 2vh;
@@ -276,31 +276,52 @@
 	}
 	#manufactures_info_detail_products_list{
 		grid-column: 1 / last-line;
-		background: whitesmoke;
+		background: lightgray;
+		border-radius: 30px;
+		box-shadow: 3px 3px 3px 5px rgba(0, 0, 0, 0.2);
 		align-self: stretch;
 		display: grid;
 		grid-gap: 0px;
-		grid-template-rows: repeat(5, 1fr);
+		grid-template-rows: repeat(5, 7.8vh);
 		overflow: auto;
+		box-sizing: border-box;
 	}
-	.manufactures_info_detail_products_list_header{
+	.manufactures_info_detail_products_list_title{
 		justify-self: stretch;
 		align-self: stretch;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		background-color: palegoldenrod;
 	}
 	.manufactures_info_detail_products_list_header > h1{
 		margin: 0px;
+
+	}
+	.header_row {
+		background: lightcyan;
 	}
 	.manufactures_info_detail_products_list_rows{
 		display: grid;
 		grid-gap: 0px;
+		width: 100%;
 		grid-template-columns: 23vw 18vw 19vw;
 		justify-content: center;
 		justify-items: stretch;
 		align-items: stretch;
 		align-content: stretch;
+	}
+	.manufactures_info_detail_products_list_rows > div.align_left{
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		padding-left: 3vw;
+	}
+	.div_graph{
+		background-color: whitesmoke;
+		justify-self: stretch;
+		align-self: stretch;
+
 	}
 	#main_list{
 		background: var(--color-nav-hor-active);
