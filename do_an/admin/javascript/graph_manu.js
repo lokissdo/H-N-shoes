@@ -22,14 +22,18 @@ new Chart("week_chart", {
             yAxes: [{
                 display: true,
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    callback: function (value) { if (Number.isInteger(value)) { return value; } },
+                        stepSize: 1
                 }
+            }],
+            xAxes: [{
+              ticks: {
+                callback:function(value){
+                  return value.substr(0, 10) + "...";
+                }
+              }
             }]
-            pointLabels: {
-        callback: (label: any) => {
-          return label.length > 5 ? label.substr(0, 5) + '...' : label;
-        },
-      }
         }
   }
 });
@@ -54,14 +58,18 @@ new Chart("month_chart", {
             yAxes: [{
                 display: true,
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    callback: function (value) { if (Number.isInteger(value)) { return value; } },
+                        stepSize: 1
                 }
+            }],
+            xAxes: [{
+              ticks: {
+                callback:function(value){
+                  return value.substr(0, 10) + "...";
+                }
+              }
             }]
-            pointLabels: {
-        callback: (label: any) => {
-          return label.length > 5 ? label.substr(0, 5) + '...' : label;
-        },
-      }
         }
   }
 });
