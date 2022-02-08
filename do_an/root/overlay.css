@@ -317,6 +317,12 @@
 		align-items: center;
 		padding-left: 3vw;
 	}
+	.div_graph{
+		background-color: whitesmoke;
+		justify-self: stretch;
+		align-self: stretch;
+
+	}
 	#main_list{
 		background: var(--color-nav-hor-active);
 		display: grid;
