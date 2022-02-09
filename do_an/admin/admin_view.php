@@ -9,6 +9,11 @@
 	<style type="text/css">
 	<?php require "../root/overlay.css" ?>
 	</style>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+	</script>
+
 </head>
 <body>
 	<?php 
@@ -132,7 +137,22 @@
 				echo "document.getElementById(\"main_body\").innerHTML = this.responseText;";
 			} else {
 				echo "document.getElementById(\"main_list\").innerHTML = this.responseText;";
-			}?>
+			}
+				switch ($link){
+					case 'product':
+						echo "";
+						break;
+					case 'manufacturers':
+						echo "var script = document.createElement(\"script\");
+    							script.type = \"text/javascript\";
+    							script.src = \"javascript/graph_manu.js.\"; 
+    							document.getElementsByTagName(\"body\")[0].appendChild(script);
+    							return false;";
+						break;
+					default:
+						echo "";
+					}
+					?>
 			};
 			<?php
 			switch($link){

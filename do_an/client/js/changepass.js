@@ -1,4 +1,3 @@
-const $=document.querySelector.bind(document);
 const warning=$(".success-update");
 $(".update-account-form").onsubmit=(e)=>{
     e.preventDefault();
